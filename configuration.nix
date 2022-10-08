@@ -8,7 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./kmonad-module.nix
     ];
+
+  # nixpkgs.config.allowBroken = true;
 
   boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader = {
@@ -51,6 +54,7 @@
   # Configure keymap in X11
   services.xserver.layout = "us";
   services.xserver.xkbOptions = "caps:super";
+  services.kmonad.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -90,7 +94,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    haskellPackages.kmonad
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #   wget
   ];
@@ -105,7 +108,7 @@
   };
 
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = "experimental-features = nix-command flakes";
   };
 

@@ -4,14 +4,14 @@
 
 { config, lib, pkgs, inputs, ... }:
 
+let 
+  user = "nixolas";
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # ./kmonad-module.nix
     ];
-
-  # nixpkgs.config.allowBroken = true;
 
   boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader = {
@@ -56,11 +56,16 @@
   services.xserver.xkbOptions = "caps:super";
   services.kmonad = {
     enable = true;
-    config = builtins.readFile ./rsrcs/keyboard.kbd;
 
-    defcfg = {
-      enable = true;
-      fallthrough = true;
+    keyboards.internal = {
+      device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
+      config = builtins.readFile ./rsrcs/keyboard.kbd;
+      
+
+      defcfg = {
+        enable = true;
+        fallthrough = true;
+      };
     };
   };
   
@@ -92,7 +97,7 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.nixolas = {
+  users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "input" "uinput" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
@@ -105,6 +110,12 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #   wget
   ];
+
+  fonts.fonts = with pkgs; [
+    dejavu_fonts
+    meslo-lgs-nf
+  ];
+
 
   system.autoUpgrade.enable = true;
 

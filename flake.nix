@@ -35,6 +35,8 @@
               home-manager.users.${user} = { 
                 imports = [
                   ./home.nix
+                  ./modules/zsh.nix
+                  ./modules/urxvt.nix
 	        ];
               };
             }

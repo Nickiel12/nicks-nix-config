@@ -29,13 +29,16 @@ in
       neofetch
       ranger
       obsidian
+      powerline
 
       # Gui application
       firefox
+      libsForQt5.kate
     ];
 
     sessionVariables = {
       EDITOR = editor;
     };
   };
+  
 }

@@ -21,7 +21,43 @@
         "type": "github"
       }
     },
+    "kmonad": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "dir": "nix",
+        "lastModified": 1664950533,
+        "narHash": "sha256-TooqJDgGNyyhpIGB8U28Y3poYUFW4jeH9h59D7cKSls=",
+        "owner": "kmonad",
+        "repo": "kmonad",
+        "rev": "af8c2253754882b5b50c824ce9906d35f9b95657",
+        "type": "github"
+      },
+      "original": {
+        "dir": "nix",
+        "owner": "kmonad",
+        "repo": "kmonad",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1653326962,
+        "narHash": "sha256-W8feCYqKTsMre4nAEpv5Kx1PVFC+hao/LwqtB2Wci/8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "41cc1d5d9584103be4108c1815c350e07c807036",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1665081174,
         "narHash": "sha256-6hsmzdhdy8Kbvl5e0xZNE83pW3fKQvNiobJkM6KQrgA=",
@@ -40,7 +76,8 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "kmonad": "kmonad",
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "utils": {

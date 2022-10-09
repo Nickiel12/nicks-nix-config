@@ -7,9 +7,11 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    kmonad.url = "github:kmonad/kmonad?dir=nix";
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager, kmonad }:
     let
       user = "nixolas";
       system = "x86_64-linux";
@@ -26,6 +28,7 @@
           specialArgs = { inherit user; };
           modules = [
             ./configuration.nix
+            kmonad.nixosModules.default
 	    home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

@@ -2,13 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./kmonad-module.nix
+      # ./kmonad-module.nix
     ];
 
   # nixpkgs.config.allowBroken = true;
@@ -54,8 +54,16 @@
   # Configure keymap in X11
   services.xserver.layout = "us";
   services.xserver.xkbOptions = "caps:super";
-  services.kmonad.enable = true;
+  services.kmonad = {
+    enable = true;
+    config = builtins.readFile ./rsrcs/keyboard.kbd;
 
+    defcfg = {
+      enable = true;
+      fallthrough = true;
+    };
+  };
+  
   nixpkgs.config.allowUnfree = true;
 
   # Enable CUPS to print documents.
@@ -86,7 +94,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nixolas = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "input" "uinput" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     password = "password";
    };
@@ -111,6 +119,12 @@
     package = pkgs.nixVersions.stable;
     extraOptions = "experimental-features = nix-command flakes";
   };
+
+  services.udev.extraRules =
+  ''
+    # KMonad user access to /dev/uinput
+    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+  '';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

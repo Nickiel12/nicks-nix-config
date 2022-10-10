@@ -3,6 +3,13 @@
 let
     user = "nixolas";
     editor = "vim";
+    moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
+    nixpkgs = import <nixpkgs> {
+      overlays = [ moz_overlay ];
+    };
+    ruststable = (nixpkgs.latest.rustChannels.stable.rust.override {
+      extensions = [ "rust-src" "rust-analysis" ];}
+    );
 in
 {
 
@@ -32,7 +39,12 @@ in
       powerline
 
       nodejs # required for coc-nvim
-      # Gui application
+ 
+      cargo
+      rustc
+      rustfmt
+
+     # Gui application
       firefox
       libsForQt5.kate
     ];

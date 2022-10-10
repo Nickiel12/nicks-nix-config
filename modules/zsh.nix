@@ -40,9 +40,4 @@ in
     source = ../rsrcs/.p10k.zsh;
   };
 
-  # programs.zsh.ohMyZsh = {
-  #  enable = true;
-    
-
-  # };
 }

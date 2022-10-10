@@ -37,6 +37,7 @@
                   ./home.nix
                   ./modules/zsh.nix
                   ./modules/urxvt.nix
+                  ./modules/vim.nix
 	        ];
               };
             }

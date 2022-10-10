@@ -31,6 +31,7 @@ in
       obsidian
       powerline
 
+      nodejs # required for coc-nvim
       # Gui application
       firefox
       libsForQt5.kate

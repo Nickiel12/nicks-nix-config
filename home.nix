@@ -33,10 +33,14 @@ in
     stateVersion = "22.05";
   
     packages = with pkgs; [
+      # utilities
+      ffmpeg-full  
+      frei0r   # kdenlive video plugins
+    
+      # commandline utils
+      powerline
       neofetch
       ranger
-      obsidian
-      powerline
 
       nodejs # required for coc-nvim
  
@@ -46,7 +50,9 @@ in
 
      # Gui application
       firefox
-      libsForQt5.kate
+      obsidian
+      libsForQt5.kate   # kate/kwrite
+      kdenlive
     ];
 
     sessionVariables = {

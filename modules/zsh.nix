@@ -4,6 +4,10 @@ let
 
 in 
 {
+
+  home.packages = with.pkgs; [
+    zsh-powerlevel10k
+  ];
   
   programs.zsh = {
     enable = true; # technically also enabled in user shell
@@ -12,11 +16,6 @@ in
     initExtraFirst = '' 
       neofetch
     '';
-
-    initExtra = ''
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-    '';
-
 
     autocd = true;
 
@@ -31,7 +30,6 @@ in
       {
         name = "powerline10k";
         src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
     ];
   };

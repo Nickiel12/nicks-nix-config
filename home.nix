@@ -36,6 +36,7 @@ in
       # utilities
       ffmpeg-full  
       frei0r   # kdenlive video plugins
+      pandoc
     
       # commandline utils
       powerline
@@ -52,7 +53,13 @@ in
       firefox
       obsidian
       libsForQt5.kate   # kate/kwrite
-      kdenlive
+      libsForQt5.ark    # kde archive manager
+      inkscape
+
+      # Kdenlive and deps
+      libsForQt5.kdenlive  
+      mediainfo
+      mlt
     ];
 
     sessionVariables = {

@@ -23,6 +23,8 @@ in
           coc-nvim
           rust-vim
           vim-nix
+          typescript-vim
+          vim-javascript
     ];
 
     extraConfig = builtins.readFile ../rsrcs/.vimrc;

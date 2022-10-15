@@ -5,6 +5,8 @@ set shiftwidth=4
 set foldmethod=syntax
 set foldlevel=20
 set number
+let laststatus=2
+set statusline="%f%m%r%h%w [%Y] %< %3p%% of %L"
 syntax on
 syntax enable
 filetype plugin indent on
@@ -16,6 +18,7 @@ filetype plugin indent on
 
     set signcolumn=number
 
+    let g:typescript_compiler_binary = 'npx tsc'
 
     " Use tab for trigger completion with characters ahead and navigate.
     " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

@@ -5,8 +5,7 @@ set shiftwidth=4
 set foldmethod=syntax
 set foldlevel=20
 set number
-let laststatus=2
-set statusline="%f%m%r%h%w [%Y] %< %3p%% of %L"
+set guifont=MesloLGS\ NF\ 10
 syntax on
 syntax enable
 filetype plugin indent on
@@ -18,6 +17,7 @@ filetype plugin indent on
 
     set signcolumn=number
 
+    let g:airline_powerline_fonts=1
     let g:typescript_compiler_binary = 'npx tsc'
 
     " Use tab for trigger completion with characters ahead and navigate.

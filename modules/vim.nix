@@ -18,10 +18,14 @@ in
             };
           };
         in [
+          vim-airline
+          vim-airline-themes
           moonfly
+
           coc-rust-analyzer 
           coc-nvim
           rust-vim
+
           vim-nix
           typescript-vim
           vim-javascript

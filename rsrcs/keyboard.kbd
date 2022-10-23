@@ -1,4 +1,22 @@
-(defalias cc (tap-next esc lmet))
+#|-----------------------------------
+
+(deflayer name
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _  
+  _    _    _    _    _    _    _    _    _    _    _    _   
+  _    _    _              _              _    _    _   
+)
+
+------------------------------------|#
+
+(defalias 
+    cc (tap-next esc lmet) ;; tap for escape, combine with another key for meta
+    tbsmod (tap-hold 150 tab (around-next (layer-toggle tableader))) ;; tap tab and it sends tab, hold tab and it switches layers while the button is pressed
+    
+    tmnl (cmd-button "date >> /tmp/tbtested.txt") ;; run urxvt terminal
+    tpd (around lsft f13) ;; toggle touchpad
+)
 (defalias qw (layer-switch qwerty))
 
 (defsrc
@@ -11,8 +29,16 @@
 
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @tbsmod q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cc a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rctl @qw
+)
+
+(deflayer tableader 
+  _    @tpd _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    @tmnl
+  _    _    _    _    _    _    _    _    _    _    _    _   
+  _    _    _              _              _    _    _   
 )

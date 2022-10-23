@@ -54,6 +54,9 @@ in
       obsidian
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager
+      libsForQt5.kwallet
+      libsForQt5.kwallet-pam
+      libsForQt5.kwalletmanager
       inkscape
 
       # Kdenlive and deps

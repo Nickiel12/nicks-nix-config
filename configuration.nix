@@ -65,8 +65,13 @@ in
       defcfg = {
         enable = true;
         fallthrough = true;
+        allowCommands = true;
       };
     };
+  };
+
+  security.pam.services = {
+    lightdm.enableKwallet = true;
   };
   
   nixpkgs.config.allowUnfree = true;

@@ -52,6 +52,7 @@ in
      # Gui application
       firefox
       obsidian
+      darktable
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager
       libsForQt5.kwallet

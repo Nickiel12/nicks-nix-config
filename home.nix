@@ -44,10 +44,6 @@ in
       ranger
 
       nodejs # required for coc-nvim
- 
-      cargo
-      rustc
-      rustfmt
 
      # Gui application
       firefox

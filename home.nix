@@ -42,6 +42,7 @@ in
       powerline
       neofetch
       ranger
+      # vhs
 
       nodejs # required for coc-nvim
 

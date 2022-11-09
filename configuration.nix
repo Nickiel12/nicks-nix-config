@@ -13,6 +13,7 @@ in
       ./hardware-configuration.nix
     ];
 
+  boot.supportedFilesystems = [ "nfts" ];
   boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader = {
     efi = {

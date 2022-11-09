@@ -16,6 +16,9 @@ in {
       ./laptop
       ../modules/plasma_desktop.nix
       ../modules/kmonad.nix
+      {
+        networking.hostname = "NicksNixLaptop";
+      }
       kmonad.nixosModules.default
       home-manager.nixosModules.home-manager {
         home-manager = {

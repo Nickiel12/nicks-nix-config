@@ -22,8 +22,6 @@
     options = "--delete-generations 8d";
   };
 
-  networking.hostName = "NicksNixOs";
-
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "input" "uinput" ]; 

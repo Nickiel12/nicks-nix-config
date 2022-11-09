@@ -12,12 +12,12 @@ in {
     inherit system;
     specialArgs = { inherit user; };
     modules = [
-      ./configuration.nix
       ./laptop
+      ./configuration.nix
       ../modules/plasma_desktop.nix
       ../modules/kmonad.nix
       {
-        networking.hostname = "NicksNixLaptop";
+        networking.hostName = "NicksNixLaptop";
       }
       kmonad.nixosModules.default
       home-manager.nixosModules.home-manager {

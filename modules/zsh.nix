@@ -17,9 +17,7 @@ in
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
 
-
     autocd = true;
-
     history = {
       path = "$HOME/.histfile";
       size = 2000;
@@ -34,6 +32,10 @@ in
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
     ];
+
+    shellAliases = {
+      ls = "exa";
+    };
   };
   
   home.file.".p10k.zsh" = {

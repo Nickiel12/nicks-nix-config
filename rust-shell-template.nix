@@ -6,8 +6,6 @@ let
   ruststable = (pkgs.latest.rustChannels.stable.default.override {
       extensions = [
         "rust-src"
-        "rustfmt"
-        "clippy"
       ];
     });
 in

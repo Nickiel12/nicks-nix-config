@@ -1,7 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 
 let
-    user = "nixolas";
     editor = "vim";
     moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
     nixpkgs = import <nixpkgs> {
@@ -42,6 +41,7 @@ in
       powerline
       neofetch
       ranger
+      exa
       # vhs
 
       nodejs # required for coc-nvim

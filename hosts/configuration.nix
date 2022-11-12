@@ -5,11 +5,6 @@
 { config, lib, pkgs, user, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   boot.supportedFilesystems = [ "nfts" ];
 
   boot.loader.systemd-boot.configurationLimit = 5;

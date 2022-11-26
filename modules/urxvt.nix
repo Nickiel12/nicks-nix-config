@@ -19,7 +19,7 @@ in
       foreground = "#F4EFD6";
       background = "[80]#202020";
       fontColor = "#ffffff";
-      blurRadius = "10"; # Doesn't seem to be affecting it
+      rxvt-unicode = "10";
 
       color1 = "#E44B4B";
       color4 = "#0091F1";

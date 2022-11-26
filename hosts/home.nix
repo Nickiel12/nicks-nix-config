@@ -42,7 +42,7 @@ in
       neofetch
       ranger
       exa
-      # vhs
+      vhs
 
       nodejs # required for coc-nvim
 
@@ -65,6 +65,7 @@ in
 
     sessionVariables = {
       EDITOR = editor;
+      NIX_SHELL_PRESERVE_PROMPT = 1;
     };
   };
   

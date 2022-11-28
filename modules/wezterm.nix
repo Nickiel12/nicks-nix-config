@@ -2,6 +2,8 @@
 
 let 
 
+  cursor_color = "#2CCCE4";
+
 in
 {
   programs.wezterm = {
@@ -20,6 +22,12 @@ in
         ];
         foreground = "#F4EFD6";
         background = "#202020";
+
+        cursor_bg = cursor_color;
+        cursor_border = cursor_color; 
+
+        selection_bg = "#8ED1FC";
+        selection_fg = "black";
       };
       
     };

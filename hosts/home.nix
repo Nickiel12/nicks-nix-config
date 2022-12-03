@@ -46,21 +46,28 @@ in
 
       nodejs # required for coc-nvim
 
-     # Gui application
-      firefox
-      obsidian
-      darktable
+      # Gui application
+      firefox   # Internet access
+      obsidian  # Markdown and notes
+      darktable # RAW processing
+      inkscape  # Vector drawing
+      krita     # Raster drawing
+
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager
+
+      # KWallet
       libsForQt5.kwallet
       libsForQt5.kwallet-pam
       libsForQt5.kwalletmanager
-      inkscape
 
       # Kdenlive and deps
       libsForQt5.kdenlive  
       mediainfo
       mlt
+
+      # Drawing tablet driver
+      opentabletdriver
     ];
 
     sessionVariables = {

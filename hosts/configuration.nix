@@ -27,6 +27,7 @@
   fonts.fonts = with pkgs; [
     dejavu_fonts
     meslo-lgs-nf
+    xkcd-font
   ];
 
   time.timeZone = "America/Los_Angeles";

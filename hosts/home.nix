@@ -36,6 +36,7 @@ in
       ffmpeg-full  
       frei0r   # kdenlive video plugins
       pandoc
+      fontpreview
     
       # commandline utils
       powerline

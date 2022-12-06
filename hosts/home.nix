@@ -50,7 +50,6 @@ in
       # Gui application
       firefox   # Internet access
       obsidian  # Markdown and notes
-      spotify   # Music streaming
       darktable # RAW processing
       inkscape  # Vector drawing
       krita     # Raster drawing

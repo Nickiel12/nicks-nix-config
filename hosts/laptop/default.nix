@@ -3,6 +3,8 @@
 {
   imports = [ (import ./hardware-configuration.nix) ];
 
+  hardware.bluetooth.enable = true;
+
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;

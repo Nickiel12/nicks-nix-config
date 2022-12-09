@@ -5,6 +5,8 @@
 
   hardware.bluetooth.enable = true;
 
+  time.hardwareClockInLocalTime = true;
+
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;

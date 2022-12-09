@@ -53,6 +53,7 @@ in
       darktable # RAW processing
       inkscape  # Vector drawing
       krita     # Raster drawing
+      libreoffice # Office editing
 
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager

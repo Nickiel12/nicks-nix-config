@@ -27,7 +27,10 @@ filetype plugin indent on
           \ pumvisible() ? "\<C-n>" :
           \ CheckBackspace() ? "\<TAB>" :
           \ coc#refresh()
+
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
     function! CheckBackspace() abort
       let col = col('.') - 1

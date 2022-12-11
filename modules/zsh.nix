@@ -35,6 +35,7 @@ in
 
     shellAliases = {
       ls = "exa";
+      gust = "/home/nixolas/Documents/Gust/target/debug/gust";
     };
   };
   

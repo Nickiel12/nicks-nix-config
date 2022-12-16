@@ -3,9 +3,14 @@
 {
   networking.networkmanager.enable = true;
 
-  security.pam.services = {
-    lightdm.enableKwallet = true;
-  };
+  security.pam.services.nixolas.enableKwallet = true;
+
+  environment.systemPackages = with pkgs; [
+    # KWallet
+    pkgs.libsForQt5.kwallet
+    pkgs.libsForQt5.kwallet-pam
+    pkgs.libsForQt5.kwalletmanager
+  ];
 
   services.xserver = {
     enable = true;

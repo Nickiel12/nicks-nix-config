@@ -62,11 +62,6 @@ in
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager
 
-      # KWallet
-      libsForQt5.kwallet
-      libsForQt5.kwallet-pam
-      libsForQt5.kwalletmanager
-
       # Kdenlive and deps
       libsForQt5.kdenlive  
       mediainfo

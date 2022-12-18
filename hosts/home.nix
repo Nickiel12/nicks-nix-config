@@ -58,6 +58,7 @@ in
       inkscape  # Vector drawing
       krita     # Raster drawing
       libreoffice # Office editing
+      vscodium
 
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager

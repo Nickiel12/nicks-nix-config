@@ -15,7 +15,7 @@
     cc (tap-next esc lmet) ;; tap for escape, combine with another key for meta
     tbsmod (tap-hold 100 tab (around-next (layer-toggle tableader))) ;; tap tab and it sends tab, hold tab and it switches layers while the button is pressed
     
-    tmnl (cmd-button "wezterm") ;; run the terminal
+    tmnl ret;; do nothing because terminals require environmental variables sad (cmd-button "wezterm") ;; run the terminal
     tpd (around lsft f13) ;; toggle touchpad
 )
 (defalias qw (layer-switch qwerty))

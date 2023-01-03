@@ -1,6 +1,3 @@
-(defcfg
-    allow-cmd true
-)
 
 #|-----------------------------------
 
@@ -16,9 +13,9 @@
 
 (defalias 
     cc (tap-next esc lmet) ;; tap for escape, combine with another key for meta
-    tbsmod (tap-hold 150 tab (around-next (layer-toggle tableader))) ;; tap tab and it sends tab, hold tab and it switches layers while the button is pressed
+    tbsmod (tap-hold 100 tab (around-next (layer-toggle tableader))) ;; tap tab and it sends tab, hold tab and it switches layers while the button is pressed
     
-    tmnl (cmd-button "date >> /tmp/tbtested.txt") ;; run urxvt terminal
+    tmnl (cmd-button "wezterm") ;; run the terminal
     tpd (around lsft f13) ;; toggle touchpad
 )
 (defalias qw (layer-switch qwerty))

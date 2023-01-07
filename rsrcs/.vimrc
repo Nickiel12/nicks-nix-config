@@ -91,3 +91,6 @@ filetype plugin indent on
 
 colorscheme moonfly
 set number
+
+" Remove moonfly's background color for the terminal color
+highlight Normal ctermbg=NONE

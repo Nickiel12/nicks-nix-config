@@ -10,7 +10,7 @@ in
     dotDir = ".config/zsh";
 
     initExtraFirst = '' 
-      neofetch
+      pfetch
     '';
 
     initExtra = ''

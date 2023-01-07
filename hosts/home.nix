@@ -45,6 +45,7 @@ in
       # commandline utils
       powerline
       neofetch
+      pfetch
       ranger
       exa
       vhs

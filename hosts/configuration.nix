@@ -25,8 +25,8 @@
   };
 
   fonts.fonts = with pkgs; [
+    nerdfonts
     dejavu_fonts
-    meslo-lgs-nf
     xkcd-font
   ];
 

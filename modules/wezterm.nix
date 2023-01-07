@@ -39,7 +39,7 @@ return {
     window_background_opacity = 0.8,
     font = wezterm.font_with_fallback {
         'DejaVuSansMono',
-        'MesloLGS NF'
+        'DejaVuSansMono-Nerd-Font',
         },
     font_size = 11.0,
     color_scheme = 'SeeThroughBlack',

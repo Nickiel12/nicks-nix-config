@@ -95,3 +95,4 @@ set number
 " Remove moonfly's background color for the terminal color
 highlight Normal ctermbg=NONE
 highlight LineNr ctermbg=NONE
+highlight CocInlayHint ctermbg=NONE

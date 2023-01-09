@@ -43,9 +43,9 @@ in
       fontpreview
     
       # commandline utils
-      powerline
-      neofetch
       pfetch
+      fortune
+      neofetch
       ranger
       exa
       vhs

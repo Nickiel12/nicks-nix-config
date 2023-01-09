@@ -11,6 +11,7 @@ in
 
     initExtraFirst = '' 
       pfetch
+      fortune
     '';
 
     initExtra = ''

@@ -45,6 +45,7 @@ in
       # commandline utils
       pfetch
       fortune
+      rmtrash
       neofetch
       ranger
       exa

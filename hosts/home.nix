@@ -12,6 +12,7 @@ let
 in
 {
 
+  xdg.mimeApps.associations.added."text/plain" = "vim";  
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -79,5 +80,4 @@ in
       NIX_SHELL_PRESERVE_PROMPT = 1;
     };
   };
-  
 }

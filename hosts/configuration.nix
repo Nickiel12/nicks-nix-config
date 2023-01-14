@@ -5,6 +5,8 @@
 { config, lib, pkgs, user, inputs, ... }:
 
 {
+
+  
   boot.supportedFilesystems = [ "nfts" ];
 
   boot.loader.systemd-boot.configurationLimit = 5;
@@ -17,6 +19,7 @@
     options = "--delete-generations 8d";
   };
 
+  programs.zsh.enable = true;
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "input" "uinput" ]; 

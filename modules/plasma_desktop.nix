@@ -3,14 +3,17 @@
 {
   networking.networkmanager.enable = true;
 
-  security.pam.services.nixolas.enableKwallet = true;
+  security.pam.services.kwallet = {
+    name = "kdewallet";
+    enableKwallet = true;
+  };
 
-  environment.systemPackages = with pkgs; [
+  #environment.systemPackages = with pkgs; [
     # KWallet
-    pkgs.libsForQt5.kwallet
-    pkgs.libsForQt5.kwallet-pam
-    pkgs.libsForQt5.kwalletmanager
-  ];
+  #  pkgs.libsForQt5.kwallet
+  #  pkgs.libsForQt5.kwallet-pam
+  #  pkgs.libsForQt5.kwalletmanager
+  #];
 
   services.xserver = {
     enable = true;
@@ -19,7 +22,7 @@
 
     desktopManager.plasma5.enable = true;
     displayManager = {
-      lightdm.enable = true;
+      sddm.enable = true;
     };
 
     libinput = {

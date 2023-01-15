@@ -1,7 +1,6 @@
 { config, pkgs, user, ... }:
 
 let
-    editor = "vim";
     moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
     nixpkgs = import <nixpkgs> {
       overlays = [ moz_overlay ];
@@ -11,8 +10,6 @@ let
     );
 in
 {
-
-  xdg.mimeApps.associations.added."text/plain" = "vim";  
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -76,7 +73,6 @@ in
     ];
 
     sessionVariables = {
-      EDITOR = editor;
       NIX_SHELL_PRESERVE_PROMPT = 1;
     };
   };

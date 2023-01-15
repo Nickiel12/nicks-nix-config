@@ -31,6 +31,7 @@ in
           vim-javascript
     ];
 
+    defaultEditor = true;
     extraConfig = builtins.readFile ../rsrcs/.vimrc;
   };
  

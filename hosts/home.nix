@@ -58,7 +58,8 @@ in
       inkscape  # Vector drawing
       krita     # Raster drawing
       libreoffice # Office editing
-      vscodium
+      vscodium    # when vim isn't enough
+      qalculate-gtk # unit-friendly calculator
 
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager

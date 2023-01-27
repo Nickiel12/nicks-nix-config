@@ -39,15 +39,19 @@ in
       frei0r   # kdenlive video plugins
       pandoc
       fontpreview
+
+      texlive.combined.scheme-medium
     
       # commandline utils
       pfetch
       fortune
       rmtrash
       ripgrep
+      fd
       neofetch
       ranger
       exa
+      xdotool
       vhs
 
       nodejs # required for coc-nvim

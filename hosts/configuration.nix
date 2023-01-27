@@ -6,7 +6,6 @@
 
 {
 
-  
   boot.supportedFilesystems = [ "nfts" ];
 
   boot.loader.systemd-boot.configurationLimit = 5;
@@ -19,7 +18,6 @@
     options = "--delete-generations 8d";
   };
 
-  programs.git.enable = true;
   programs.zsh.enable = true;
   users.users.${user} = {
     isNormalUser = true;

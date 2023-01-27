@@ -28,12 +28,12 @@ in {
           users.${user} = { 
             imports = [
               ./home.nix
-              ../modules/git.nix
               ../modules/emacs.nix
-              ../modules/wezterm.nix
-              ../modules/urxvt.nix
-              ../modules/xdg.nix
+              ../modules/git.nix
+              ../modules/fusuma.nix
               ../modules/vim.nix
+              ../modules/wezterm.nix
+              ../modules/xdg.nix
               ../modules/zsh.nix
             ];
           };

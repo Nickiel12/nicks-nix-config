@@ -19,6 +19,7 @@
     options = "--delete-generations 8d";
   };
 
+  programs.git.enable = true;
   programs.zsh.enable = true;
   users.users.${user} = {
     isNormalUser = true;

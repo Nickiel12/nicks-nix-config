@@ -28,8 +28,8 @@ in {
           users.${user} = { 
             imports = [
               ./home.nix
-              ../modules/emacs.nix
               ../modules/git.nix
+              ../modules/emacs.nix
               ../modules/wezterm.nix
               ../modules/urxvt.nix
               ../modules/xdg.nix

@@ -1,6 +1,8 @@
+{ pkgs, lib, ... }:
 let
 
-  configRepoUrl = "https://github.com/Nickiel12/Nicks-Doom"
+  configRepoUrl = "https://github.com/Nickiel12/Nicks-Doom";
+  git = "${pkgs.git}/bin/git";
 
 in
 {
@@ -9,12 +11,12 @@ in
     package = pkgs.emacs-gtk;
   };
   services.emacs.enable = true;
-  home.activation.doom = lib.hm.dag.entryAfter["writeBoundary"] ''
+    home.activation.doom = lib.hm.dag.entryAfter["writeBoundary"] ''
     if [ ! -d .emacs.d ]; then
-      git clone --depth 1 https://github.com/doomemacs/doomemacs .emacs.d
+       ${git} clone --depth 1 https://github.com/doomemacs/doomemacs .emacs.d
     fi
     mkdir -p .doom.d
-    git clone "${configRepoUrl}" "doom.d"
+    ${git} clone ${configRepoUrl} .doom.d
   '';
 
   home.packages = with pkgs; [

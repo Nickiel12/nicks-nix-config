@@ -44,6 +44,7 @@ in
       pfetch
       fortune
       rmtrash
+      ripgrep
       neofetch
       ranger
       exa

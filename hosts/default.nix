@@ -28,6 +28,7 @@ in {
           users.${user} = { 
             imports = [
               ./home.nix
+              ../modules/emacs.nix
               ../modules/git.nix
               ../modules/wezterm.nix
               ../modules/urxvt.nix

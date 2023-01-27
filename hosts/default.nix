@@ -31,6 +31,7 @@ in {
               ../modules/git.nix
               ../modules/wezterm.nix
               ../modules/urxvt.nix
+              ../modules/xdg.nix
               ../modules/vim.nix
               ../modules/zsh.nix
             ];

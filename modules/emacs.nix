@@ -19,6 +19,9 @@ in
     if [ ! -d .emacs.d ]; then
        ${git} clone --depth 1 https://github.com/doomemacs/doomemacs .emacs.d
     fi
+    if [ ! -d .doom.d ]; then
+      ${git} clone https://github.com/Nickiel12/Nicks-Doom .doom.d
+    fi
   '';
   # mkdir -p .doom.d
   # ${git} clone ${configRepoUrl} .doom.d

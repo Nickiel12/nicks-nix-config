@@ -18,16 +18,5 @@
          };
        };
      };
-     plugin = {
-       inputs = {
-         libinput_command_input = {
-            # options for lib/plugin/inputs/libinput_command_input
-          enable-tap = true; # click to tap
-          enable-dwt = true; # disable tap while typing
-         };
-       };
-     };
-
    };
-  };
 }

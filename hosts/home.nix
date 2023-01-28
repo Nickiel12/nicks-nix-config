@@ -57,14 +57,15 @@ in
       nodejs # required for coc-nvim
 
       # Gui application
-      firefox   # Internet access
-      obsidian  # Markdown and notes
       darktable # RAW processing
+      firefox   # Internet access
       inkscape  # Vector drawing
+      kicad     # PCB design
       krita     # Raster drawing
-      libreoffice # Office editing
-      vscodium    # when vim isn't enough
+      libreoffice   # Office editing
+      obsidian      # Markdown and notes
       qalculate-gtk # unit-friendly calculator
+      vscodium      # when vim isn't enough
 
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager

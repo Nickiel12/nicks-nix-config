@@ -60,6 +60,7 @@ in
       darktable # RAW processing
       firefox   # Internet access
       inkscape  # Vector drawing
+      jellyfin-media-player # plex-like media player client
       kicad     # PCB design
       krita     # Raster drawing
       libreoffice   # Office editing

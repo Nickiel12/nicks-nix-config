@@ -39,6 +39,7 @@ in
       frei0r   # kdenlive video plugins
       pandoc
       fontpreview
+      cmake
 
       texlive.combined.scheme-medium
     

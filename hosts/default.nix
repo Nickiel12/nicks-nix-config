@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, user, kmonad, rust-overlay, ... }:
+{ lib, inputs, nixpkgs, home-manager, user, kmonad, ... }:
 
 let 
   system = "x86_64-linux";
@@ -19,10 +19,6 @@ in {
       {
         networking.hostName = "NicksNixLaptop";
       }
-      ({ pkgs, ... }: {
-            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-          })
       kmonad.nixosModules.default
       home-manager.nixosModules.home-manager {
         home-manager = {

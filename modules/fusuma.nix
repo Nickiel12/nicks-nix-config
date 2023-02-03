@@ -7,16 +7,16 @@
    extraPackages = with pkgs; [ coreutils xdotool ];
 
    settings = {
-     swipe = {
-       "4" = {
-         left = {
-          command = "xdotool set_desktop --relative -- 1";
-          };
+      swipe = {
+        "4" = {
+           left = {
+             command = "xdotool set_desktop --relative -- 1";
+           };
+           right = {
+             command = "xdotool set_desktop --relative -- -1";
+           };
          };
-         right = {
-          command = "xdotool set_desktop --relative -- -1";
-         };
-       };
-     };
-   };
+      };
+    };
+  };
 }

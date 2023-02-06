@@ -42,6 +42,18 @@ in {
     ];
   };
 
+  NixsServer = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit user; };
+    modules = [
+      ./nixsserver
+      ./nixsserver/configuration.nix
+      {
+        networking.hostName = "NicksServer";
+      }
+    ];
+  };
+
   NicksNixVMBox = lib.nixosSystem {
     inherit system;
     specialArgs = { inherit user; };

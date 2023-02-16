@@ -91,13 +91,13 @@ in
       opentabletdriver
     ];
 
-    xsession = {
-      enable = true;
-      windowManager.command = "plasma5-session";
-    };
-
     sessionVariables = {
       NIX_SHELL_PRESERVE_PROMPT = 1;
     };
+  };
+
+  xsession = {
+    enable = true;
+    windowManager.command = "plasma5-session";
   };
 }

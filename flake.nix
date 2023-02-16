@@ -36,6 +36,7 @@
             kmonad.nixosModules.default
             ./hosts/laptop
             ./hosts/configuration.nix
+            ./users/nicholix_configuration.nix
             ./modules/kmonad.nix
             home-manager.nixosModules.home-manager {
               home-manager = {

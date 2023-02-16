@@ -6,8 +6,41 @@
 
 {
 
-  boot.supportedFilesystems = [ "nfts" ];
+  networking.networkmanager.enable = true;
 
+  security.pam.services.kwallet = {
+    name = "kdewallet";
+    enableKwallet = true;
+  };
+
+  services.xserver = {
+    enable = true;
+    layout = "us";
+    xkbOptions = "caps:super";
+
+    desktopManager.plasma5.enable = true;
+    desktopManager.default = "none";
+
+    displayManager = {
+      sddm.enable = true;
+    };
+
+    libinput = {
+      enable = true;
+      touchpad = {
+        tapping = true;
+        naturalScrolling = true;
+        disableWhileTyping = true;
+        tappingDragLock = true;
+    
+        additionalOptions = ''
+          Option "TappingButtonMap" "lmr"
+        '';
+      };
+    };
+  };
+
+  boot.supportedFilesystems = [ "nfts" ];
   boot.loader.systemd-boot.configurationLimit = 5;
 
   nix.settings.auto-optimise-store = true;

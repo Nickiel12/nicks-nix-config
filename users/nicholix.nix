@@ -47,7 +47,6 @@ in
     packages = with pkgs; [
       # utilities
       ffmpeg-full  
-      frei0r   # kdenlive video plugins
       pandoc
       fontpreview
 
@@ -59,8 +58,6 @@ in
       rmtrash
       ripgrep
       fd
-      neofetch
-      ranger
       exa
       xdotool
       vhs
@@ -68,24 +65,13 @@ in
       nodejs # required for coc-nvim
 
       # Gui application
-      darktable # RAW processing
       firefox   # Internet access
-      inkscape  # Vector drawing
-      jellyfin-media-player # plex-like media player client
-      kicad     # PCB design
-      krita     # Raster drawing
       libreoffice   # Office editing
-      obsidian      # Markdown and notes
       qalculate-gtk # unit-friendly calculator
       vscodium      # when vim isn't enough
 
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager
-
-      # Kdenlive and deps
-      libsForQt5.kdenlive  
-      mediainfo
-      mlt
 
       # Drawing tablet driver
       opentabletdriver

@@ -19,7 +19,6 @@
     xkbOptions = "caps:super";
 
     desktopManager.plasma5.enable = true;
-    desktopManager.default = "none";
 
     displayManager = {
       sddm.enable = true;

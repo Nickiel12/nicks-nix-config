@@ -9,7 +9,7 @@ let
       extensions = [ "rust-src" "rust-analysis" ];}
     );
 
-    user = "nicholix";
+    local_user = "nicholix";
 in
 {
   imports = [
@@ -31,8 +31,8 @@ in
   home = {
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
-    username = user;
-    homeDirectory = "/home/${user}";
+    username = local_user;
+    homeDirectory = "/home/${local_user}";
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage

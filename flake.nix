@@ -27,7 +27,7 @@
 
         NicksNixLaptop = lib.nixosSystem {
           inherit system;
-          specialArgs = inputs;
+          specialArgs = { inherit user; };
 
           modules = [
             {

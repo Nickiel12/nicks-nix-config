@@ -1,8 +1,7 @@
-{ config, lib, pkgs, user, home-manager, ... }:
+{ lib, inputs, nixpkgs, home-manager, user, kmonad, ... }:
 
 {
-    home-manager.nixosModules.home-manager {
-        home-manager = {
+    home-manager.nixosModules.home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = { inherit user; };
@@ -30,6 +29,5 @@
                     ../../modules/zsh.nix
                 ];
             };
-        };
-    }
+    };
 }

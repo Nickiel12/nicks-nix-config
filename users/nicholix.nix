@@ -12,6 +12,16 @@ let
     user = "nicholix";
 in
 {
+  imports = [
+      ../../modules/emacs.nix
+      ../../modules/git.nix
+      ../../modules/fusuma.nix
+      ../../modules/vim.nix
+      ../../modules/wezterm.nix
+      ../../modules/xdg.nix
+      ../../modules/zsh.nix
+  ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

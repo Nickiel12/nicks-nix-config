@@ -19,12 +19,13 @@
         inherit system;
         config.allowUnfree = true;
       };
+      lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
         inherit (nixpkgs) lib;
         inherit inputs nixpkgs home-manager user kmonad ;
 
-        NicksNixLaptop = {
+        NicksNixLaptop = lib.nixosSystem {
           inherit system;
           specialArgs = inputs;
 
@@ -36,9 +37,17 @@
             ./hosts/laptop
             ./hosts/configuration.nix
             ./modules/kmonad.nix
-            ./hosts/laptop/home.nix
+            home-manager.nixosModules.home-manager {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit user; };
+                users.${user} = import ./users/${user}.nix;
+                users.nicholix = import ./users/nicholix.nix;
+              };
+            }
           ];
-        }
+        };
       };
    };
 }

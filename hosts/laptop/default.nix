@@ -1,7 +1,9 @@
 { ... }:
 
 {
-  imports = [ (import ./hardware-configuration.nix) ];
+  imports = [ 
+	./hardware-configuration.nix
+  ];
 
   hardware.bluetooth.enable = true;
 

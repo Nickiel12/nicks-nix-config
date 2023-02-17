@@ -29,6 +29,12 @@ in
   programs.direnv.nix-direnv.enable = true;
 
   home = {
+    file = {
+      "awesome" = {
+        source = ../rsrcs/awesome;
+        target = "/home/nicholix/.config/awesome";
+      };
+    };
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
     username = local_user;
@@ -80,5 +86,9 @@ in
     sessionVariables = {
       NIX_SHELL_PRESERVE_PROMPT = 1;
     };
+  };
+  xsession = {
+    enable = true;
+    windowManager.command = "none+awesome-wm";
   };
 }

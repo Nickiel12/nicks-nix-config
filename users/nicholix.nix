@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
     moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
@@ -10,12 +10,20 @@ let
     );
 
     local_user = "nicholix";
+
+    awesome-wm-widgets = pkgs.fetchFromGitHub {
+        owner = "streetturtle";
+        repo = "awesome-wm-widgets";
+        rev = "ef70d16c43c2f566a4fe2955b8d6c08f6c185af8";
+        sha256 = "td9uE+b3DrE+JJ3NCmIkQAuxJLJCGd79J5LZLqBw9KI=";
+     };
 in
 {
   xsession = {
     enable = true;
     windowManager.awesome.enable = true;
   };
+
   imports = [
       ../modules/emacs.nix
       ../modules/git.nix
@@ -32,13 +40,21 @@ in
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
-  home = {
-    file = {
+
+  home.file = {
       "awesome" = {
         source = ../rsrcs/awesome;
-        target = "/home/nicholix/.config/awesome";
+        target = ".config/awesome";
       };
-    };
+    ".config/awesome/cpu-widget.lua".source = "${awesome-wm-widgets}/cpu-widget/cpu-widget.lua";
+    ".config/awesome/ram-widget.lua".source = "${awesome-wm-widgets}/ram-widget/ram-widget.lua";
+    ".config/awesome/batteryarc.lua".source = "${awesome-wm-widgets}/batteryarc-widget/batteryarc.lua";
+    ".config/awesome/awesome-wm-widgets/spaceman.jpg".source = "${awesome-wm-widgets}/batteryarc-widget/spaceman.jpg";
+    ".config/awesome/calendar.lua".source = "${awesome-wm-widgets}/calendar-widget/batteryarc.lua";
+  };
+
+  home = {
+
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
     username = local_user;

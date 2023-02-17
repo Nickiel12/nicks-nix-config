@@ -45,6 +45,7 @@ in
       "awesome" = {
         source = ../rsrcs/awesome;
         target = ".config/awesome";
+        recursive = true;
       };
     ".config/awesome/cpu-widget.lua".source = "${awesome-wm-widgets}/cpu-widget/cpu-widget.lua";
     ".config/awesome/ram-widget.lua".source = "${awesome-wm-widgets}/ram-widget/ram-widget.lua";

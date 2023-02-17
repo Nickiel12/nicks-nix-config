@@ -12,6 +12,10 @@ let
     local_user = "nicholix";
 in
 {
+  xsession = {
+    enable = true;
+    windowManager.awesome.enable = true;
+  };
   imports = [
       ../modules/emacs.nix
       ../modules/git.nix
@@ -86,9 +90,5 @@ in
     sessionVariables = {
       NIX_SHELL_PRESERVE_PROMPT = 1;
     };
-  };
-  xsession = {
-    enable = true;
-    windowManager.command = "none+awesome-wm";
   };
 }

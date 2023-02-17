@@ -10,6 +10,10 @@ let
     );
 in
 {
+  xsession = {
+    enable = true;
+    windowManager.command = "startplasma-x11";
+  };
 
   imports = [  
         ../modules/emacs.nix
@@ -96,8 +100,4 @@ in
     };
   };
 
-  xsession = {
-    enable = true;
-    windowManager.command = "plasma5-session";
-  };
 }

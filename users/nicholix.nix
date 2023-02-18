@@ -21,7 +21,12 @@ in
 {
   xsession = {
     enable = true;
-    windowManager.awesome.enable = true;
+    windowManager.awesome = {
+      enable = true;
+      luaModules = [
+        pkgs.luaPackages.vicious
+      ];
+    };
   };
 
   imports = [

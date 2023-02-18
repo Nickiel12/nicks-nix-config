@@ -30,7 +30,7 @@ menu_conf.init = function(
         { "manual", terminal .. " -e man awesome" },
         { "edit config", editor_cmd .. " " .. awesome.conffile },
         { "restart", awesome.restart },
-        -- { "quit", function() awesome.quit() end },
+        { "quit", function() awesome.quit() end },
     }
 
     mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },

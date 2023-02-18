@@ -57,14 +57,15 @@ beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv
 
 -- scan directory, and optionally filter outputs
 function scandir(directory)
-	local i, fileList, popen = 0, {}, io.popen
-	for filename in popen([[find "]] ..directory.. [[" -type f]]):lines() do
-	    i = i + 1
-	    fileList[i] = filename
-	end
-	return fileList
+    local i, t, popen = 0, {}, io.popen
+    local pfile = popen('ls -a "'..directory..'"')
+    for filename in pfile:lines() do
+        i = i + 1
+        t[i] = filename
+    end
+    pfile:close()
+    return t
 end
-
 -- }}}
 
 -- configuration - edit to your liking

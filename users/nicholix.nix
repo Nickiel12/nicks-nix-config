@@ -42,9 +42,8 @@ in
 
 
   home.file = {
-      "awesome" = {
+      ".config/awesome" = {
         source = ../rsrcs/awesome;
-        target = ".config/awesome";
         recursive = true;
       };
     ".config/awesome/cpu-widget.lua".source = "${awesome-wm-widgets}/cpu-widget/cpu-widget.lua";

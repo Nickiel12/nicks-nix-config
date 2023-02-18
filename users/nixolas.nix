@@ -26,6 +26,7 @@ in
         ../modules/wezterm.nix
         ../modules/xdg.nix
         ../modules/zsh.nix
+        ../modules/rofi.nix
   ];
 
   home.file = {

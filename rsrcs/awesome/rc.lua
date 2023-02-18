@@ -103,7 +103,7 @@ rand_wllppr()
 
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
+terminal = "wezterm"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -138,8 +138,8 @@ root.buttons(gears.table.join(
     awful.button({ }, 5, awful.tag.viewprev)
 ))
 -- }}}
-awful.spawn.with_shell(string.format("%s/.config/autostart.sh", os.getenv("HOME")))
-awful.spawn.with_shell(string.format("%s/.config/polybar/start_polybar.sh", os.getenv("HOME")))
+--awful.spawn.with_shell(string.format("%s/.config/autostart.sh", os.getenv("HOME")))
+--awful.spawn.with_shell(string.format("%s/.config/polybar/start_polybar.sh", os.getenv("HOME")))
 -- XDG autostart
 -- awful.spawn.with_shell(
 --    'if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;' ..

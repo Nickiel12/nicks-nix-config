@@ -8,12 +8,15 @@ let
     ruststable = (nixpkgs.latest.rustChannels.stable.rust.override {
       extensions = [ "rust-src" "rust-analysis" ];}
     );
+
+    awesome-wm-widgets = pkgs.fetchFromGitHub {
+        owner = "streetturtle";
+        repo = "awesome-wm-widgets";
+        rev = "ef70d16c43c2f566a4fe2955b8d6c08f6c185af8";
+        sha256 = "td9uE+b3DrE+JJ3NCmIkQAuxJLJCGd79J5LZLqBw9KI=";
+     };
 in
 {
-  xsession = {
-    enable = true;
-    windowManager.command = "startplasma-x11";
-  };
 
   imports = [  
         ../modules/emacs.nix
@@ -24,7 +27,19 @@ in
         ../modules/xdg.nix
         ../modules/zsh.nix
   ];
-  
+
+  home.file = {
+      ".config/awesome" = {
+        source = ../rsrcs/awesome;
+        recursive = true;
+      };
+    ".config/awesome/cpu-widget.lua".source = "${awesome-wm-widgets}/cpu-widget/cpu-widget.lua";
+    ".config/awesome/ram-widget.lua".source = "${awesome-wm-widgets}/ram-widget/ram-widget.lua";
+    ".config/awesome/batteryarc.lua".source = "${awesome-wm-widgets}/batteryarc-widget/batteryarc.lua";
+    ".config/awesome/awesome-wm-widgets/spaceman.jpg".source = "${awesome-wm-widgets}/batteryarc-widget/spaceman.jpg";
+    ".config/awesome/calendar.lua".source = "${awesome-wm-widgets}/calendar-widget/batteryarc.lua";
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

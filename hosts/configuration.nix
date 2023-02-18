@@ -19,9 +19,11 @@
     xkbOptions = "caps:super";
 
     desktopManager.plasma5.enable = true;
+    displayManager.defaultSession = "plasma";
     windowManager.awesome = {
       enable = true;
       luaModules = with pkgs.luaPackages; [
+        vicious
         luarocks # is the package manager for Lua modules
       ];
     };

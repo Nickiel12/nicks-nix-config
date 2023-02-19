@@ -20,13 +20,14 @@ in
 
   imports = [  
         ../modules/emacs.nix
-        ../modules/git.nix
+        ../modules/flameshot.nix
         ../modules/fusuma.nix
+        ../modules/git.nix
+        ../modules/rofi.nix
         ../modules/vim.nix
         ../modules/wezterm.nix
         ../modules/xdg.nix
         ../modules/zsh.nix
-        ../modules/rofi.nix
   ];
 
   home.file = {

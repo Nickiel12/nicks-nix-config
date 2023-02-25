@@ -67,10 +67,14 @@ in
   
     packages = with pkgs; [
       # utilities
+      bat      # cat with wings (better cat)
+      du-dust  # directory disk-space analyzer
       ffmpeg-full  
       frei0r   # kdenlive video plugins
-      pandoc
       fontpreview
+      gitui    # command line git tui
+      pandoc
+      qmk
 
       texlive.combined.scheme-medium
     

@@ -47,6 +47,29 @@
             }
           ];
         };
+
+        NicksNixDesktop = lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit user; };
+
+          modules = [
+            {
+              networking.hostName = "NicksNixDesktop";
+            }
+            kmonad.nixosModules.default
+            ./hosts/desktop
+            ./hosts/configuration.nix
+            ./modules/kmonad.nix
+            home-manager.nixosModules.home-manager {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit user; };
+                users.${user} = import ./users/${user}.nix;
+              };
+            }
+          ];
+        };
       };
    };
 }

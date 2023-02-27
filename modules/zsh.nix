@@ -35,6 +35,8 @@ in
     ];
 
     shellAliases = {
+      cat = "bat";
+      doom = "~/.emacs.d/bin/doom";
       ls = "exa";
       gust = "/home/nixolas/Documents/Gust/target/debug/gust";
       rm = "rmtrash";

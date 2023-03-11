@@ -52,7 +52,6 @@
 
   nix.settings.auto-optimise-store = true;
   nixpkgs.config.allowUnfree = true;
-  system.autoUpgrade.enable = true;
   nix.gc = {
     automatic = true;
     options = "--delete-generations 8d";

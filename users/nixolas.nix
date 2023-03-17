@@ -69,12 +69,12 @@ in
       # utilities
       bat      # cat with wings (better cat)
       du-dust  # directory disk-space analyzer
-      ffmpeg-full  
+      ffmpeg-full  # ffmpeg for video/audio rendering
       frei0r   # kdenlive video plugins
-      fontpreview
+      fontpreview # utility to preview fonts
       gitui    # command line git tui
-      pandoc
-      qmk
+      pandoc   # utility for converting between document types
+      qmk      # QMK utility for compiling qmk firmware
 
       texlive.combined.scheme-medium
     
@@ -102,7 +102,7 @@ in
       libreoffice   # Office editing
       obsidian      # Markdown and notes
       qalculate-gtk # unit-friendly calculator
-      vscodium      # when vim isn't enough
+      vscodium      # when vim and emacs (somehow) isn't enough
 
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager

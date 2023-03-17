@@ -6,5 +6,6 @@
     package = pkgs.gitAndTools.gitFull;
     userName = "Nickiel12";
     userEmail = "nicholasyoungsumner@gmail.com";
+    extraConfig.pull.rebase = true;
   };
 }

@@ -60,6 +60,7 @@
             ./hosts/desktop
             ./hosts/configuration.nix
             ./modules/kmonad.nix
+            ./modules/steam.nix
             home-manager.nixosModules.home-manager {
               home-manager = {
                 useGlobalPkgs = true;

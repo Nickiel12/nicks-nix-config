@@ -103,6 +103,8 @@ in
       obsidian      # Markdown and notes
       qalculate-gtk # unit-friendly calculator
       vscodium      # when vim and emacs (somehow) isn't enough
+      discord       # because you *always* want your friends around
+      betterdiscordctl # sudo apt upgrade disocrd (betterdiscordctl install)
 
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager

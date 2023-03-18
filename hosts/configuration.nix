@@ -79,7 +79,11 @@
     useXkbConfig = true; # use xkbOptions in tty.
   };
 
-  hardware.opentabletdriver.enable = true;
+  hardware = {
+    opentabletdriver.enable = true;
+    steam-hardware.enable = true;
+  };
+  
 
   sound = {
     enable = false;

@@ -18,7 +18,8 @@ let
 in
 {
 
-  imports = [  
+  imports = [
+        ../modules/discord.nix
         ../modules/emacs.nix
         ../modules/flameshot.nix
         ../modules/fusuma.nix
@@ -103,11 +104,15 @@ in
       obsidian      # Markdown and notes
       qalculate-gtk # unit-friendly calculator
       vscodium      # when vim and emacs (somehow) isn't enough
-      discord       # because you *always* want your friends around
-      betterdiscordctl # sudo apt upgrade disocrd (betterdiscordctl install)
+      handbrake     # dvd ripping
+      dragon        # simple audio player
+
 
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager
+      libsForQt5.kio    # extra file-type click support
+      libsForQt5.kio-extras # even more extra file-type click support
+      libsForQt5.soundkonverter # audio cd ripping
 
       # Kdenlive and deps
       libsForQt5.kdenlive  

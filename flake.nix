@@ -26,7 +26,7 @@
         inherit inputs nixpkgs home-manager user kmonad ;
 
         # Home server
-        Alaska = lib.nixossystem {
+        Alaska = lib.nixosSystem {
           inherit system;
           specialArgs = { inherit user; };
 

@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, lib, pkgs, user, inputs, ... }:
 
 {
@@ -12,10 +8,9 @@
 
   nix.settings.auto-optimise-store = true;
   nixpkgs.config.allowUnfree = true;
-  system.autoUpgrade.enable = true;
   nix.gc = {
     automatic = true;
-    options = "--delete-generations 8d";
+    options = "--delete-generations 20d";
   };
 
   programs.zsh.enable = true;

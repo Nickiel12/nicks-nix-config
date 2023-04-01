@@ -25,6 +25,29 @@
         inherit (nixpkgs) lib;
         inherit inputs nixpkgs home-manager user kmonad ;
 
+        # Home server
+        Alaska = lib.nixossystem {
+          inherit system;
+          specialArgs = { inherit user; };
+
+          modules = [
+            {
+              networking.hostName = "Alaska";
+            }
+            ./hosts/Alaska
+            ./hosts/Alaska/configuration.nix
+            home-manager.nixosModules.home-manager {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit user; };
+                users.${user} = import ./users/${user}.nix;
+              };
+            }
+          ];
+        };
+
+
         NicksNixLaptop = lib.nixosSystem {
           inherit system;
           specialArgs = { inherit user; };

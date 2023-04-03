@@ -9,7 +9,7 @@
     sshd.enable = true;
     openssh.settings = {
       PermitRootLogin = "no";
-      X11Fowarding = true;
+      X11Forwarding = true;
     };
   };
 

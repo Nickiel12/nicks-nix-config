@@ -7,9 +7,9 @@
 
   services = {
     sshd.enable = true;
-    openssh = {
-      settings.PermitRootLogin = "no";
-      forwardX11 = true;
+    openssh.settings = {
+      PermitRootLogin = "no";
+      X11Fowarding = true;
     };
   };
 

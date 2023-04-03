@@ -7,7 +7,10 @@
 
   services = {
     sshd.enable = true;
-    openssh.settings.PermitRootLogin = "no";
+    openssh = {
+      settings.PermitRootLogin = "no";
+      forwardX11 = true;
+    };
   };
 
   systemd.services.sshd.wantedBy = [ "multi-user.target" ];

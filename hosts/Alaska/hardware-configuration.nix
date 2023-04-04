@@ -23,6 +23,11 @@
       fsType = "vfat";
     };
 
+  fileSystems."/Aurora" = 
+    { device = "/dev/disk/by-uuid/9e84f746-f128-4682-896b-0857e77182fd";
+      fsType = "ext4";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/e45edaf8-78f9-4a67-a2ec-97d45a3c7311"; }
     ];

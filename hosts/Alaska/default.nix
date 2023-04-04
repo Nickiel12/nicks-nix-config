@@ -26,4 +26,10 @@
       efiSysMountPoint = "/boot/efi";
     };
   };
+
+  boot.initrd.services.swraid.mdadmConf = builtins.readFile ./rsrcs/mdadm.conf;
+
+  environment.etc."mdadm.conf".text = ''
+    MAILADDR root
+    '';
 }

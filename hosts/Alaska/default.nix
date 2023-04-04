@@ -5,6 +5,10 @@
 {
   imports = [ (import ./hardware-configuration.nix) ];
 
+  environment.systemPackages = [
+    pkgs.mdadm
+  ];
+
   services = {
     sshd.enable = true;
     openssh.settings = {

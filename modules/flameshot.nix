@@ -8,7 +8,7 @@
       General = {
         disabledTrayIcon = false;
         showStartupLaunchMessage = false;
-        imageSavePath = "~/Pictures";
+        savePath = "~/Pictures";
         saveAsFileExtension = ".png";
       };
     };

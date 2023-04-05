@@ -28,6 +28,8 @@
           extraTrustedDomains = [
             "10.0.0.206"
           ];
+          #adminpassFile = "${pkgs.writeText "adminpass" (builtins.readFile ~/nextcloud-admin-password)}";
+          adminpassFile = "/nextcloud/nextcloud-admin-password";
         };
 
         home = "/nextcloud";

@@ -6,22 +6,8 @@
   imports = [ 
     (import ./hardware-configuration.nix)
     (import ./containers/nextcloud.nix)
+    (import ./modules/nginx.nix)
   ];
-
-
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "nicholasyoungsumner@gmail.com";
-  };
-
-  services.nginx = {
-    enable = false;
-    virtualHosts."10.0.0.206" = {
-      addSSL = true;
-      enableACME = true;
-      root = "/var/www/test.com";
-    };
-  };
 
   environment.systemPackages = [
     pkgs.mdadm
@@ -58,6 +44,7 @@
   };
   systemd.services.sshd.wantedBy = [ "multi-user.target" ];
 
+  boot.initrd.services.swraid.mdadmConf = builtins.readFile ./rsrcs/mdadm.conf;
   boot.loader = {
     systemd-boot.enable = true;
     efi = {
@@ -66,12 +53,10 @@
     };
   };
 
-  boot.initrd.services.swraid.mdadmConf = builtins.readFile ./rsrcs/mdadm.conf;
 
   programs.msmtp = {
     enable = true;
   };
-
   environment.etc."mdadm.conf".text = ''
     MAILADDR nicholasyoungsumner@gmail.com
     '';

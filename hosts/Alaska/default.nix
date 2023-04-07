@@ -11,6 +11,7 @@
 
   environment.systemPackages = [
     pkgs.mdadm
+    pkgs.cloudflared
   ];
 
   networking = {
@@ -19,15 +20,17 @@
       internalInterfaces = ["ve-+"];
       externalInterface = "enp2s0"; # Make sure this is actually set to your  internet adapter
       # You can find a list with `ip a` and look for the first identifier after the number (e.g.: 1: enp2s0)
+
       # Lazy IPv6 connectivity for the container
       enableIPv6 = true;
-      forwardPorts = [
-        {
-          sourcePort = 80;
-          proto = "tcp";
-          destination = "192.168.100.11:80";
-        }
-      ];
+
+      #forwardPorts = [
+      #{
+       #   sourcePort = 80;
+        #  proto = "tcp";
+         # destination = "192.168.100.11:80";
+      #}
+      #];
     };
     firewall = {
         enable = true;

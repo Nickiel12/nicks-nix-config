@@ -6,12 +6,17 @@
   containers.nextcloud = {
     autoStart = true;
     privateNetwork = true;
+    # The host address is the address of the parent machine from inside the container
     hostAddress = "192.168.100.10";
+    # The local address field is the "inside the container" address of this machine
+    # Or what it says when you run 'ip a' inside the container
     localAddress = "192.168.100.11";
+    # These are the same as above, but for ipv6
     hostAddress6 = "fc00::1";
     localAddress6 = "fc00::2";
 
     # allowed filepaths and container-internal mount points
+    # I believe "hostPath" is the system-wide, non-conatainer path
      bindMounts = {
       "/Aurora/nextcloud" = {
         hostPath = "/Aurora/nextcloud";
@@ -30,8 +35,7 @@
         package = pkgs.nextcloud25;
         enableBrokenCiphersForSSE = false;
 
-        #nginx.enable = true;
-        #https = true;
+        https = true;
         hostName = "192.168.100.10";
         home = "/Aurora/nextcloud";
 
@@ -41,9 +45,10 @@
         };
 
         config = {
-          #overwriteProtocal = "https";
+          overwriteProtocol = "https";
           extraTrustedDomains = [
-            "10.0.0.206"
+            "10.0.0.184"
+            "files.nickiel.net"
           ];
 
           dbtype = "pgsql";

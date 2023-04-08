@@ -76,6 +76,7 @@ in
       gitui    # command line git tui
       pandoc   # utility for converting between document types
       qmk      # QMK utility for compiling qmk firmware
+      nextcloud-client # Nextcloud private syncing
 
       texlive.combined.scheme-medium
     
@@ -107,7 +108,6 @@ in
       handbrake     # dvd ripping
       dragon        # simple audio player
       obs-studio    # for video recording and virtual camera
-
 
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager

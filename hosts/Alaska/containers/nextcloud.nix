@@ -47,7 +47,7 @@
         config = {
           overwriteProtocol = "https";
           extraTrustedDomains = [
-            "10.0.0.184"
+            "10.0.0.183"
             "files.nickiel.net"
           ];
 
@@ -96,7 +96,7 @@
       };
       # Manually configure nameserver. Using resolved inside the container seems to fail
       # currently
-      environment.etc."resolv.conf".text = "nameserver 8.8.8.8";
+      environment.etc."resolv.conf".text = "nameserver 1.1.1.1";
     };
   };
 }

@@ -15,6 +15,16 @@
   ];
 
   networking = {
+    interfaces."enp2s0".ipv4.addresses = [
+      {
+        address = "10.0.0.184";
+        prefixLength = 24;
+      }
+      {
+        address = "10.0.0.183";
+        prefixLength = 24;
+      }
+    ];
     nat = {
       enable = true;
       internalInterfaces = ["ve-+"];
@@ -23,14 +33,6 @@
 
       # Lazy IPv6 connectivity for the container
       enableIPv6 = true;
-
-      #forwardPorts = [
-      #{
-       #   sourcePort = 80;
-        #  proto = "tcp";
-         # destination = "192.168.100.11:80";
-      #}
-      #];
     };
     firewall = {
         enable = true;

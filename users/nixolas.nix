@@ -106,6 +106,7 @@ in
       vscodium      # when vim and emacs (somehow) isn't enough
       handbrake     # dvd ripping
       dragon        # simple audio player
+      obs-studio    # for video recording and virtual camera
 
 
       libsForQt5.kate   # kate/kwrite

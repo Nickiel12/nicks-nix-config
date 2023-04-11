@@ -6,7 +6,7 @@
   imports = [ 
     (import ./hardware-configuration.nix)
     (import ./containers/nextcloud.nix)
-    (import ./modules/nginx.nix)
+   (import ./modules/nginx.nix)
   ];
 
   environment.systemPackages = [
@@ -27,6 +27,11 @@
         enable = true;
         allowedTCPPorts = [80 443];
       };
+  };
+
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
   };
 
   services = {

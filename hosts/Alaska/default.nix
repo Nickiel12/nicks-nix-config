@@ -5,8 +5,8 @@
 {
   imports = [ 
     (import ./hardware-configuration.nix)
-    (import ./containers/nextcloud.nix)
    (import ./modules/nginx.nix)
+    (import ./modules/nextcloud.nix)
   ];
 
   environment.systemPackages = [

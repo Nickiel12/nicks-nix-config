@@ -1,6 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "nicholasyoungsumner@gmail.com";
+  };
+
   services.nginx = {
     enable = true;
     commonHttpConfig = ''
@@ -19,8 +24,7 @@
 
       "jellyfin.nickiel.net" = {
           forceSSL = true;
-          sslCertificate = "/Aurora/nickiel.net.pem";
-          sslCertificateKey = "/Aurora/nickiel.net.key";
+          enableACME = true;
           locations."/" = {
             proxyPass = "http://127.0.0.1:8096/";
             proxyWebsockets = true;
@@ -28,15 +32,10 @@
           };
       };
 
-      #"files.nickiel.net" = {
-      #      forceSSL = true;
-      #      sslCertificate = "/Aurora/nickiel.net.pem";
-      #      sslCertificateKey = "/Aurora/nickiel.net.key";
-      #      locations."/" = {
-      #        proxyPass = "http://192.168.100.11:80";
-      #        proxyWebsockets = true;
-      #      };
-      #    };
+      "files.nickiel.net" = {
+          forceSSL = true;
+          enableACME = true;
+      };
     };
   };
 }

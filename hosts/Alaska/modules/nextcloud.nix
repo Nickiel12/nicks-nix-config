@@ -1,53 +1,25 @@
-
 { config, lib, pkgs, ... }:
 
-
 {
-  containers.nextcloud = {
-    autoStart = true;
-    privateNetwork = true;
-    # The host address is the address of the parent machine from inside the container
-    hostAddress = "192.168.100.10";
-    # The local address field is the "inside the container" address of this machine
-    # Or what it says when you run 'ip a' inside the container
-    localAddress = "192.168.100.11";
-    # These are the same as above, but for ipv6
-    hostAddress6 = "fc00::1";
-    localAddress6 = "fc00::2";
-
-    # allowed filepaths and container-internal mount points
-    # I believe "hostPath" is the system-wide, non-conatainer path
-     bindMounts = {
-      "/Aurora/nextcloud" = {
-        hostPath = "/Aurora/nextcloud";
-        isReadOnly = false;
-      };
-    };
-
-     # If, when you nix-container root-login and systemctl status nextcloud-setup says the
-     # password files are unreadable, log in as root and `chown nextcloud:nextcloud` the password files
-  config = { config, pkgs, ... }: {
-
-    # A lot of this nextcloud configuration was pulled from this post:
-    # https://jacobneplokh.com/how-to-setup-nextcloud-on-nixos/
       services.nextcloud = {
         enable = true;
         package = pkgs.nextcloud25;
         enableBrokenCiphersForSSE = false;
 
+        nginx.recommendedHttpHeaders = true;
         https = true;
-        hostName = "192.168.100.10";
+        hostName = "files.nickiel.net";
         home = "/Aurora/nextcloud";
 
-        autoUpdateApps = {
-          enable = true;
-          startAt = "05:00:00";
-        };
+        autoUpdateApps.enable = true;
 
         config = {
           overwriteProtocol = "https";
           extraTrustedDomains = [
             "10.0.0.183"
+            "files.nickiel.net"
+          ];
+          trustedProxies = [
             "files.nickiel.net"
           ];
 
@@ -86,17 +58,4 @@
           requires = ["postgresql.service"];
           after = ["postgresql.service"];
       };
-
-
-      # Container nixos state configurations
-      system.stateVersion = "22.05";
-      networking.firewall = {
-        enable = true;
-        allowedTCPPorts = [ 80 ];
-      };
-      # Manually configure nameserver. Using resolved inside the container seems to fail
-      # currently
-      environment.etc."resolv.conf".text = "nameserver 1.1.1.1";
-    };
-  };
 }

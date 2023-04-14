@@ -5,8 +5,9 @@
 {
   imports = [ 
     (import ./hardware-configuration.nix)
-   (import ./modules/nginx.nix)
+    (import ./modules/nginx.nix)
     (import ./modules/nextcloud.nix)
+    (import ./modules/msmtp.nix)
   ];
 
   environment.systemPackages = [
@@ -52,10 +53,6 @@
     };
   };
 
-
-  programs.msmtp = {
-    enable = true;
-  };
   environment.etc."mdadm.conf".text = ''
     MAILADDR nicholasyoungsumner@gmail.com
     '';

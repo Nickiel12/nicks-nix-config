@@ -9,9 +9,11 @@
     };
     kmonad.url = "github:kmonad/kmonad?dir=nix";
 
+    simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
+
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, kmonad }:
+  outputs = inputs@{ self, nixpkgs, home-manager, kmonad, simple-nixos-mailserver, ... }:
     let
       user = "nixolas";
       system = "x86_64-linux";  
@@ -31,6 +33,7 @@
           specialArgs = { inherit user; };
 
           modules = [
+            simple-nixos-mailserver.nixosModule
             {
               networking.hostName = "Alaska";
             }

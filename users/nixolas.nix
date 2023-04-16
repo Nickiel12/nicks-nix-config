@@ -97,15 +97,16 @@ in
       # Gui application
       darktable # RAW processing
       firefox   # Internet access
+      handbrake     # dvd ripping
       inkscape  # Vector drawing
       jellyfin-media-player # plex-like media player client
       kicad     # PCB design
       krita     # Raster drawing
       libreoffice   # Office editing
+      makemkv       # blue-ray + dvd -> mkv
       obsidian      # Markdown and notes
       qalculate-gtk # unit-friendly calculator
       vscodium      # when vim and emacs (somehow) isn't enough
-      handbrake     # dvd ripping
       dragon        # simple audio player
       obs-studio    # for video recording and virtual camera
 

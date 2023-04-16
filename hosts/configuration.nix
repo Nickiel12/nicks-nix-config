@@ -60,7 +60,7 @@
   programs.zsh.enable = true;
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "input" "uinput" ]; 
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "input" "uinput" "cdrom"];
     shell = pkgs.zsh;
     password = "password";
   };

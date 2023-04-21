@@ -8,7 +8,7 @@
       General = {
         disabledTrayIcon = false;
         showStartupLaunchMessage = false;
-        savePath = "~/Pictures";
+        savePath = "/home/nixolas/Pictures/";
         saveAsFileExtension = ".png";
       };
     };

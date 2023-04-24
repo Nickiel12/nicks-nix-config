@@ -66,7 +66,7 @@
   };
 
   fonts.fonts = with pkgs; [
-    nerdfonts
+    (nerdfonts.override { fonts = ["DejaVuSansMono"]; })
     dejavu_fonts
     xkcd-font
   ];

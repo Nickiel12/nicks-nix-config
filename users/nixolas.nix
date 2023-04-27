@@ -96,6 +96,7 @@ in
 
       # Gui application
       darktable # RAW processing
+      dbeaver   # SQL management tool
       firefox   # Internet access
       handbrake     # dvd ripping
       inkscape  # Vector drawing

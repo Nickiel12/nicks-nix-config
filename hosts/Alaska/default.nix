@@ -12,7 +12,13 @@
 
   environment.systemPackages = [
     pkgs.mdadm
+    pkgs.jellyfin-ffmpeg
+    pkgs.hddtemp
+    pkgs.smartmontools
   ];
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
 
   networking = {
     nat = {

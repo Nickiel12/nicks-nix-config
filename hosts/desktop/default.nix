@@ -5,6 +5,10 @@
   imports = [
 	./hardware-configuration.nix
   ];
+
+  networking.hosts = {
+    "10.0.0.183" = [ "files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
+  };
   
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;

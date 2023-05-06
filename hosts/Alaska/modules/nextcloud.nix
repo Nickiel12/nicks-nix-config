@@ -14,6 +14,7 @@
         autoUpdateApps.enable = true;
 
         config = {
+          defaultPhoneRegion = "US";
           overwriteProtocol = "https";
           extraTrustedDomains = [
             "10.0.0.183"

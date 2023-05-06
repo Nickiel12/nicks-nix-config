@@ -28,7 +28,8 @@
           dbuser = "nextcloud";
           dbhost = "/run/postgresql";
           dbname = "nextcloud";
-          dbpassFile = "/Aurora/nextcloud/nextcloud-db-password";
+          database.createLocally = false;
+          #dbpassFile = "/Aurora/nextcloud/nextcloud-db-password";
 
           # This doesn't seem to be working, see this documation:
           # https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/reset_admin_password.html

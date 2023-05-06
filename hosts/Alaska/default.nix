@@ -8,6 +8,7 @@
     (import ./modules/nginx.nix)
     (import ./modules/nextcloud.nix)
     (import ./modules/msmtp.nix)
+    (import ./modules/forgejo.nix)
   ];
 
   environment.systemPackages = [

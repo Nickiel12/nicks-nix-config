@@ -36,6 +36,12 @@
           forceSSL = true;
           enableACME = true;
       };
+
+      "git.nickiel.net" = {
+          forceSSL = true;
+          enableACME = true;
+          locations."/".proxyPass = "http://127.0.0.1:3001";
+      };
     };
   };
 }

@@ -13,6 +13,7 @@
 
         autoUpdateApps.enable = true;
 
+        database.createLocally = false;
         config = {
           defaultPhoneRegion = "US";
           overwriteProtocol = "https";
@@ -28,7 +29,6 @@
           dbuser = "nextcloud";
           dbhost = "/run/postgresql";
           dbname = "nextcloud";
-          database.createLocally = false;
           #dbpassFile = "/Aurora/nextcloud/nextcloud-db-password";
 
           # This doesn't seem to be working, see this documation:

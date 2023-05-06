@@ -10,9 +10,9 @@
 
       #ui.DEFAULT_THEME = "arc-green";
       # Enable this after the first user has been created
-      #service.DISABLE_REGISTRATION = true;
+      service.DISABLE_REGISTRATION = true;
 
-      session.COOKIE_SECURE = true;
+      #session.COOKIE_SECURE = true;
       # external facing ui
       server = {
         ROOT_URL = "https://git.nickiel.net";

@@ -1,10 +1,16 @@
 { config, lib, pkgs, ... }:
 
 {
+  home.file."/Aurora/Forgejo/custom" = {
+    source = ../../../rscs/giteaCustomDir;
+    recursive = true;
+  };
+
   services.gitea = {
     enable = true;
     package = pkgs.forgejo;
     stateDir = "/Aurora/Forgejo";
+    appName = "Nickiel's Repos";
 
     settings = {
 
@@ -19,6 +25,13 @@
         HTTP_PORT = 3001;
         DOMAIN = "git.nickiel.net";
         LANDING_PAGE = "/explore/repos";
+      };
+
+      mailer = {
+        ENABLED = true;
+        MAILER_TYPE = "sendmail";
+        FROM = "noreply@nickiel.net";
+        SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
       };
     };
   };

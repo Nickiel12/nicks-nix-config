@@ -100,7 +100,6 @@ in
       firefox   # Internet access
       handbrake     # dvd ripping
       inkscape  # Vector drawing
-      jellyfin-media-player # plex-like media player client
       kicad     # PCB design
       krita     # Raster drawing
       libreoffice   # Office editing

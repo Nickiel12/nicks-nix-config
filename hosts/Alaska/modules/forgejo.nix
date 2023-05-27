@@ -12,6 +12,11 @@
 
     settings = {
 
+      "ui" = {
+        DEFAULT_THEME = "palenight";
+        THEMES = "auto,palenight,gitea,arc-green";
+      };
+
       #ui.DEFAULT_THEME = "arc-green";
       # Enable this after the first user has been created
       service.DISABLE_REGISTRATION = true;

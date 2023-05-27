@@ -2,11 +2,12 @@
 
 {
 
+  system.activationScripts.copyStuff = "cp -r ${../../../rsrcs/giteaCustomDir}/. /Aurora/Forgejo/custom";
+
   services.gitea = {
     enable = true;
     package = pkgs.forgejo;
     stateDir = "/Aurora/Forgejo";
-    customDir = "${../../../rsrcs/giteaCustomDir}";
     appName = "Nickiel's Repos";
 
     settings = {

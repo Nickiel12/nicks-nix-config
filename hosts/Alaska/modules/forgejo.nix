@@ -1,15 +1,12 @@
 { config, lib, pkgs, ... }:
 
 {
-  file."/Aurora/Forgejo/custom" = {
-    source = ../../../rscs/giteaCustomDir;
-    recursive = true;
-  };
 
   services.gitea = {
     enable = true;
     package = pkgs.forgejo;
     stateDir = "/Aurora/Forgejo";
+    customDir = ../../../rscs/giteaCustomDir;
     appName = "Nickiel's Repos";
 
     settings = {

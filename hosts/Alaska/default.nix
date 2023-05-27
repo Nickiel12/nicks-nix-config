@@ -7,6 +7,7 @@
     (import ./hardware-configuration.nix)
     (import ./modules/nginx.nix)
     (import ./modules/nextcloud.nix)
+    (import ./modules/postgresql.nix)
     (import ./modules/msmtp.nix)
     (import ./modules/forgejo.nix)
   ];

@@ -18,7 +18,6 @@
       devices = [ "nodev" ];
       efiSupport = true;
       enable = true;
-      version = 2;
       useOSProber = false;
       extraEntries = ''
 menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-364F-BE7A' {

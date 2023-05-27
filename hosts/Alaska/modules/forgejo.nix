@@ -6,7 +6,7 @@
     enable = true;
     package = pkgs.forgejo;
     stateDir = "/Aurora/Forgejo";
-    customDir = "${../../rscs/giteaCustomDir}";
+    customDir = "${../../../rsrcs/giteaCustomDir}";
     appName = "Nickiel's Repos";
 
     settings = {

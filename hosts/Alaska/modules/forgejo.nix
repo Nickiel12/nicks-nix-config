@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.file."/Aurora/Forgejo/custom" = {
+  "/Aurora/Forgejo/custom" = {
     source = ../../../rscs/giteaCustomDir;
     recursive = true;
   };

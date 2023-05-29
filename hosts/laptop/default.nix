@@ -7,6 +7,10 @@
 
   hardware.bluetooth.enable = true;
 
+  networking.hosts = {
+    "10.0.0.183" = [ "files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
+  };
+
   time.hardwareClockInLocalTime = true;
 
   boot.loader = {

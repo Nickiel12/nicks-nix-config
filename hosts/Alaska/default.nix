@@ -45,7 +45,7 @@
   services = {
     sshd.enable = true;
     openssh.settings = {
-      passwordAuthentication = false;
+      PasswordAuthentication = false;
       PermitRootLogin = "no";
       X11Forwarding = true;
     };

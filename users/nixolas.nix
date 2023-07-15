@@ -43,6 +43,7 @@ in
     ".config/awesome/calendar.lua".source = "${awesome-wm-widgets}/calendar-widget/batteryarc.lua";
   };
 
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -67,6 +68,7 @@ in
     stateVersion = "22.11";
   
     packages = with pkgs; [
+    # (pkgs.callPackage ./../modules/minecraft-bedrock/minecraft-bedrock-server.nix {}) # the possible minecraft-bedrock-server package for testing
       # utilities
       bat      # cat with wings (better cat)
       du-dust  # directory disk-space analyzer
@@ -81,14 +83,15 @@ in
       texlive.combined.scheme-medium
     
       # commandline utils
-      pfetch
-      fortune
-      rmtrash
-      ripgrep
-      fd
-      neofetch
-      ranger
       exa
+      fd
+      fortune
+      neofetch
+      pfetch
+      ranger
+      ripgrep
+      rmtrash
+      testdisk # file recovery https://itsfoss.com/recover-deleted-files-linux/
       xdotool
       vhs
 

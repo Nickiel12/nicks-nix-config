@@ -52,7 +52,11 @@
   };
   systemd.services.sshd.wantedBy = [ "multi-user.target" ];
 
-  boot.swraid.mdadmConf = builtins.readFile ./rsrcs/mdadm.conf;
+  boot.swraid = {
+    enable = true;
+    mdadmConf = builtins.readFile ./rsrcs/mdadm.conf;
+  };
+
   boot.loader = {
     systemd-boot.enable = true;
     efi = {

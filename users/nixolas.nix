@@ -57,6 +57,11 @@ in
     username = user;
     homeDirectory = "/home/${user}";
 
+    sessionVariables = {
+      CARGO_TARGET_DIR = "$HOME/.target/";
+    };
+
+
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
     # when a new Home Manager release introduces backwards

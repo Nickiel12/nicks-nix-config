@@ -21,7 +21,6 @@ in
   imports = [
         ../modules/discord.nix
         ../modules/emacs.nix
-        ../modules/flameshot.nix
         ../modules/fusuma.nix
         ../modules/git.nix
         ../modules/rofi.nix
@@ -79,6 +78,7 @@ in
       du-dust  # directory disk-space analyzer
       ffmpeg-full  # ffmpeg for video/audio rendering
       frei0r   # kdenlive video plugins
+      flameshot   # screenshot utility
       fontpreview # utility to preview fonts
       gitui    # command line git tui
       pandoc   # utility for converting between document types

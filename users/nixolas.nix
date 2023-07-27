@@ -110,7 +110,7 @@ in
       inkscape  # Vector drawing
       kicad     # PCB design
       krita     # Raster drawing
-      libreoffice   # Office editing
+      libreoffice-fresh   # Office editing
       makemkv       # blue-ray + dvd -> mkv
       obsidian      # Markdown and notes
       qalculate-gtk # unit-friendly calculator

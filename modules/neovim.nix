@@ -1,12 +1,13 @@
-{ config, pkgs, ... }:
-
-let 
-
+{ pkgs, lib, ... }:
+let
 in
 {
-  programs.vim = {
+  programs.nixvim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; 
+    viAlias = true;
+    vimAlias = true;
+    #extraConfigVim = import ./../rsrcs/.vimrc;
+    extraPlugins = with pkgs.vimPlugins;
       let
           moonfly = pkgs.vimUtils.buildVimPlugin {
             name = "moonfly";
@@ -18,21 +19,27 @@ in
             };
           };
         in [
-          vim-airline
-          vim-airline-themes
-          moonfly
+          # Themes and statusbar
+          # vim-airline
+          # vim-airline-themes
+          # moonfly
 
-          coc-rust-analyzer 
+          #QoL features
+          # telescope-nvim
+          # nvim-treesitter
+
+          nvchad
+          nvchad-ui
+
+          # Rust
+          coc-rust-analyzer
           coc-nvim
           rust-vim
 
+          # Language support
           vim-nix
           typescript-vim
           vim-javascript
     ];
-
-    defaultEditor = true;
-    extraConfig = builtins.readFile ../rsrcs/.vimrc;
   };
- 
-} 
+}

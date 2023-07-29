@@ -1,4 +1,4 @@
-{ config, pkgs, user, ... }:
+{ inputs, config, pkgs, user, ... }:
 
 let
     moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
@@ -24,7 +24,7 @@ in
         ../modules/fusuma.nix
         ../modules/git.nix
         ../modules/rofi.nix
-        ../modules/vim.nix
+        ../modules/neovim.nix
         ../modules/wezterm.nix
         ../modules/xdg.nix
         ../modules/zsh.nix

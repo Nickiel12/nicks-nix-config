@@ -2,14 +2,16 @@
   description = "Nick's NixOS Configuration";
 
   inputs = {
+    nixvim.url = "github:nix-community/nixvim";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    kmonad.url = "github:kmonad/kmonad?dir=nix";
+    # dead code?
+    simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
     home-manager = {
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    kmonad.url = "github:kmonad/kmonad?dir=nix";
 
-    simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
 
   };
 
@@ -25,7 +27,7 @@
     in {
       nixosConfigurations = {
         inherit (nixpkgs) lib;
-        inherit inputs nixpkgs home-manager user kmonad ;
+        inherit inputs nixpkgs home-manager user kmonad;
 
         # Home server
         Alaska = lib.nixosSystem {
@@ -49,7 +51,6 @@
             }
           ];
         };
-
 
         NicksNixLaptop = lib.nixosSystem {
           inherit system;
@@ -92,7 +93,12 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { inherit user; };
-                users.${user} = import ./users/${user}.nix;
+                users.${user} = {
+                  imports = [
+                    (import ./users/${user}.nix)
+                    inputs.nixvim.homeManagerModules.nixvim
+                  ];
+                };
               };
             }
           ];

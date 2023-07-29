@@ -12,6 +12,7 @@ filetype plugin indent on
  
 
     " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+    " nvim-treesitter
     " delays and poor user experience.
     set updatetime=300
 
@@ -89,10 +90,10 @@ filetype plugin indent on
     set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 
-colorscheme moonfly
+" colorscheme moonfly
 set number
 
 " Remove moonfly's background color for the terminal color
-highlight Normal ctermbg=NONE
-highlight LineNr ctermbg=NONE
-highlight CocInlayHint ctermbg=NONE
+" highlight Normal ctermbg=NONE
+" highlight LineNr ctermbg=NONE
+" highlight CocInlayHint ctermbg=NONE

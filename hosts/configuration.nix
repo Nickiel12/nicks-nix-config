@@ -65,7 +65,7 @@
     password = "password";
   };
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = ["DejaVuSansMono"]; })
     dejavu_fonts
     xkcd-font

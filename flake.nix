@@ -96,6 +96,7 @@
                 users.${user} = {
                   imports = [
                     (import ./users/${user}.nix)
+                    # Add nixvim to the homemanager
                     inputs.nixvim.homeManagerModules.nixvim
                   ];
                 };

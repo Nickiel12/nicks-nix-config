@@ -12,6 +12,8 @@ in
 pkgs.mkShell {
   buildInputs = with pkgs; [
     ruststable
+    rust-analyzer
+    lldb
   ];
 
   RUST_BACKTRACE = 1;

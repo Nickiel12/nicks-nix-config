@@ -25,7 +25,6 @@ in
     # maps.
 
     plugins = {
-
       telescope = {
         enable = true;
       };
@@ -88,22 +87,10 @@ in
     };
     extraConfigLua = builtins.readFile ./../rsrcs/nvim.lua;
     extraPlugins = with pkgs.vimPlugins;
-      let
-          moonfly = pkgs.vimUtils.buildVimPlugin {
-            name = "moonfly";
-            src = pkgs.fetchFromGitHub {
-              owner = "bluz71";
-              repo = "vim-moonfly-colors";
-              rev = "d51e3ad78654aa479d59adb81a98f179d595bdee";
-              sha256 = "0uHEB8uNQeGpVWuZfyrVAWTyefJMCitTmNpHmKVFOaQ=";
-            };
-          };
-        in [
-          # Themes and statusbar
-          # moonfly
-
+      [
+          monokai-pro-nvim
           nvim-lspconfig
           hop-nvim
-    ];
+      ];
   };
 }

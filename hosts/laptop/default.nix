@@ -8,10 +8,16 @@
   hardware.bluetooth.enable = true;
 
   networking.hosts = {
-    "10.0.0.183" = [ "files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
+    "10.0.0.183" = [ "headscale.nickiel.net" "files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
   };
-
+  services.tailscale.enable = true;
+  networking.firewall = {
+    checkReversePath = "loose";
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ config.services.tailscale.port ];
+  };
   time.hardwareClockInLocalTime = true;
+
 
   boot.loader = {
     efi = {

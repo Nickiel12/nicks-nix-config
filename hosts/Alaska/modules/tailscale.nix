@@ -9,6 +9,9 @@
   # then replace USERNAME with the computer's hostname which you created
   # an "user" account in the first comment
 
+  # use this for android instructions
+  #  https://github.com/juanfont/headscale/blob/main/docs/android-client.md
+
   services.tailscale.enable = true;
   # Defined here to indicate the settings are related
   networking.firewall = {

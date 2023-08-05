@@ -9,6 +9,13 @@
   networking.hosts = {
     "10.0.0.183" = [ "headscale.nickiel.net" "files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
   };
+  services.tailscale.enable = true;
+  networking.firewall = {
+    checkReversePath = "loose";
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ config.services.tailscale.port ];
+  };
+
   
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;

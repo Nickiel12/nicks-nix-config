@@ -22,10 +22,23 @@ in
     };
 
     # https://github.com/pupbrained/nix-config/blob/29af4835f21940af51b86313c451fb572a29874a/pkgs/nixvim.nix#L8
-    # maps.
+    maps.normal = {
+      "<leader>ot" = "<cmd>vs | te<cr>";
+      "<leader>o." = "<cmd>Telescope file_browser<cr>";
+      "<leader>op" = "<cmd>NvimTreeToggle<cr>";
+    };
 
     plugins = {
       telescope = {
+        enable = true;
+      };
+
+      nvim-tree = {
+        enable = true;
+        openOnSetup = true;
+      };
+
+      presence-nvim = {
         enable = true;
       };
 
@@ -88,6 +101,7 @@ in
     extraConfigLua = builtins.readFile ./../rsrcs/nvim.lua;
     extraPlugins = with pkgs.vimPlugins;
       [
+          telescope-file-browser-nvim
           monokai-pro-nvim
           nvim-lspconfig
           hop-nvim

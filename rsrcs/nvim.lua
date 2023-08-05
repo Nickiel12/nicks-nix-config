@@ -125,7 +125,7 @@ hop.setup {
   keys = 'etovxqpdygfblzhckisuran',
 }
 local directions = require('hop.hint').HintDirection
-vim.keymap.set('', '<C-f>', function()
+vim.keymap.set('', '<leader>ff', function()
     hop.hint_patterns({ multi_windows = true, current_line_only = false })
 end, {remap=true})
 
@@ -178,3 +178,6 @@ require("monokai-pro").setup({
 })
 
 vim.cmd.colorscheme "monokai-pro-spectrum"
+
+require("telescope").load_extension "file_browser"
+

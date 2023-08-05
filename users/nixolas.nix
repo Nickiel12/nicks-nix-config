@@ -20,7 +20,7 @@ in
 
   imports = [
         ../modules/discord.nix
-        ../modules/emacs.nix
+        #../modules/emacs.nix
         ../modules/fusuma.nix
         ../modules/git.nix
         ../modules/rofi.nix
@@ -81,6 +81,7 @@ in
       flameshot   # screenshot utility
       fontpreview # utility to preview fonts
       gitui    # command line git tui
+      helvum   # audio sink gui control
       pandoc   # utility for converting between document types
       qmk      # QMK utility for compiling qmk firmware
       nextcloud-client # Nextcloud private syncing

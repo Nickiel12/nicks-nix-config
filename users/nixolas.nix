@@ -23,8 +23,8 @@ in
         #../modules/emacs.nix
         ../modules/fusuma.nix
         ../modules/git.nix
-        ../modules/rofi.nix
         ../modules/neovim.nix
+        ../modules/rofi.nix
         ../modules/wezterm.nix
         ../modules/xdg.nix
         ../modules/zsh.nix

@@ -2,6 +2,12 @@
 let
 in
 {
+
+  home.packages = with pkgs; [
+    # Required clipboard provider
+    xclip
+  ];
+
   programs.nixvim = {
     enable = true;
     viAlias = true;
@@ -9,6 +15,7 @@ in
 
     globals = {
       mapleader = " ";
+      clipboard = "unnamedplus";
     };
 
     options = {

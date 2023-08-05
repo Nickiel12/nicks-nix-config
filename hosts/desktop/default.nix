@@ -26,11 +26,22 @@
       efiSysMountPoint = "/boot";
     };
     grub = {
+      enable = true;
       devices = [ "nodev" ];
       efiSupport = true;
-      enable = true;
-      useOSProber = true;
+      useOSProber = false;
       extraEntries = ''
+        menuentry 'Windows Boot Manager (on /dev/sda2)' --class windows --class os $menuentry_id_option 'osprober-efi-6877-BD74' {
+            insmod part_gpt
+            insmod fat
+            set root='hd0,gpt2'
+            if [ x$feature_platform_search_hint = xy ]; then
+              search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  6877-BD74
+            else
+              search --no-floppy --fs-uuid --set=root 6877-BD74
+            fi
+            chainloader /efi/Microsoft/Boot/bootmgfw.efi
+        }
     '';
     };
   };

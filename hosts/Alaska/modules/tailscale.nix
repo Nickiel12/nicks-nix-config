@@ -1,8 +1,14 @@
 { config, ... }:
 
 {
+  # to add a new headscale "user", run this command
+  # sudo headscale users create elnuhub
+  # then run this command where headscale_url is the http path 
+  # to the server
   # tailscale up --login-server <headscale_url>
-  # run this command to add this node to the server ^
+  # then replace USERNAME with the computer's hostname which you created
+  # an "user" account in the first comment
+
   services.tailscale.enable = true;
   # Defined here to indicate the settings are related
   networking.firewall = {

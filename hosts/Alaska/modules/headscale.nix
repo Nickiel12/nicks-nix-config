@@ -4,6 +4,7 @@ let
   baseDomain = "nickiel.net";
   domain = "headscale.${baseDomain}";
 in {
+  # https://carjorvaz.com/posts/setting-up-headscale-on-nixos/
   services.headscale = {
     enable = true;
     address = "0.0.0.0";

@@ -46,7 +46,13 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { inherit user; };
-                users.${user} = import ./users/${user}.nix;
+                users.${user} = {
+                  imports = [
+                    (import ./users/${user}.nix)
+                    # Add nixvim to the homemanager
+                    inputs.nixvim.homeManagerModules.nixvim
+                  ];
+                };
               };
             }
           ];
@@ -69,7 +75,13 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { inherit user; };
-                users.${user} = import ./users/${user}.nix;
+                users.${user} = {
+                  imports = [
+                    (import ./users/${user}.nix)
+                    # Add nixvim to the homemanager
+                    inputs.nixvim.homeManagerModules.nixvim
+                  ];
+                };
               };
             }
           ];

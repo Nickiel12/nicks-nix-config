@@ -22,6 +22,13 @@
 
     virtualHosts = {
 
+      "default" = {
+        default = true;
+        serverName = null;
+        # https://stackoverflow.com/a/42802777
+        locations."/".return = "444";
+      };
+
       "jellyfin.nickiel.net" = {
           forceSSL = true;
           enableACME = true;
@@ -41,6 +48,15 @@
           forceSSL = true;
           enableACME = true;
           locations."/".proxyPass = "http://127.0.0.1:3001";
+      };
+
+      "headscale.nickiel.net" = {
+        forceSSL = true;
+        enableACME = true;
+        locations."/" = {
+          proxyPass = "http://localhost:${ toString config.services.headscale.port }";
+          proxyWebsockets = true;
+        };
       };
 
     };

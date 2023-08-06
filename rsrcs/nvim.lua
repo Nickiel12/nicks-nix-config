@@ -22,10 +22,10 @@ local sign = function(opts)
   })
 end
 
-sign({name = 'DiagnosticSignError', text = ''})
-sign({name = 'DiagnosticSignWarn', text = ''})
-sign({name = 'DiagnosticSignHint', text = ''})
-sign({name = 'DiagnosticSignInfo', text = ''})
+sign({name = 'DiagnosticSignError', text = ''})
+sign({name = 'DiagnosticSignWarn', text = ''})
+sign({name = 'DiagnosticSignHint', text = '󰋼'})
+sign({name = 'DiagnosticSignInfo', text = '󰋽'})
 
 vim.diagnostic.config({
     virtual_text = false,
@@ -111,7 +111,7 @@ cmp.setup({
               nvim_lsp = 'λ',
               vsnip = '⋗',
               buffer = 'Ω',
-              path = '🖫',
+              path = '',
           }
           item.menu = menu_icon[entry.source.name]
           return item

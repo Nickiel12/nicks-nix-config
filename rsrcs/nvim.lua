@@ -8,7 +8,7 @@ rt.setup({
       -- Hover actions
       vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
       -- Code action groups
-      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+      vim.keymap.set("n", "<leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
     end,
   },
 })
@@ -130,6 +130,10 @@ vim.keymap.set('', '<leader>ff', function()
 end, {remap=true})
 
 
+require("telescope").load_extension "file_browser"
+require("telescope").load_extension("harpoon")
+
+-- Themeing
 require("monokai-pro").setup({
   transparent_background = true,
   terminal_colors = true,
@@ -178,6 +182,3 @@ require("monokai-pro").setup({
 })
 
 vim.cmd.colorscheme "monokai-pro-spectrum"
-
-require("telescope").load_extension "file_browser"
-

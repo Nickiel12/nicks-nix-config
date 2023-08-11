@@ -32,11 +32,16 @@ in
     maps.normal = {
       "<leader>ot" = "<cmd>vs | te<cr>";
       "<leader>o." = "<cmd>Telescope file_browser<cr>";
+      "<leader>."  = "<cmd>Telescope find_file<cr>"; # cwd full sub-dir fuzzy find
+      "<leader>of" = "<cmd>Telescope live_grep<cr>"; # cwd search file
       "<leader>op" = "<cmd>NvimTreeToggle<cr>";
+      "<leader>am" = "<cmd>lua require(\"harpoon.mark\").add_file()<cr>"; # leader + add + mark
+      "<leader>m"  = "<cmd>Telescope harpoon marks<cr>"; # open harpoon marks in telescope
     };
 
     plugins = {
-      telescope = {
+
+      harpoon = {
         enable = true;
       };
 
@@ -45,8 +50,9 @@ in
         openOnSetup = true;
       };
 
-      presence-nvim = {
+      nvim-autopairs = {
         enable = true;
+        checkTs = true;
       };
 
       treesitter = {
@@ -59,9 +65,7 @@ in
           "lua"
         ];
       };
-      treesitter-rainbow = {
-        enable = true;
-      };
+      treesitter-rainbow.enable = true;
       treesitter-refactor = {
         enable = true;
         #highlightCurrentScope.enable = true;
@@ -85,6 +89,7 @@ in
         };
       };
 
+      telescope.enable = true;
       rust-tools.enable = true;
       nvim-cmp.enable = true;
 
@@ -92,13 +97,13 @@ in
       # Read settings  here: https://github.com/mfussenegger/nvim-dap#Usage
       # See :help dap.txt, :help dap-mapping and :help dap-api.
       cmp-dap.enable = true;
-
       cmp-vsnip.enable = true;
       cmp-buffer.enable = true;
       cmp-nvim-lsp-signature-help.enable = true;
       cmp-nvim-lua.enable = true;
       cmp-path.enable = true;
 
+      presence-nvim.enable = true;
       nix.enable = true;
       airline = {
         enable = true;

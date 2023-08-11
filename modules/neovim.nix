@@ -32,7 +32,7 @@ in
     maps.normal = {
       "<leader>ot" = "<cmd>vs | te<cr>";
       "<leader>o." = "<cmd>Telescope file_browser<cr>";
-      "<leader>."  = "<cmd>Telescope find_file<cr>"; # cwd full sub-dir fuzzy find
+      "<leader>."  = "<cmd>Telescope find_files<cr>"; # cwd full sub-dir fuzzy find
       "<leader>of" = "<cmd>Telescope live_grep<cr>"; # cwd search file
       "<leader>op" = "<cmd>NvimTreeToggle<cr>";
       "<leader>am" = "<cmd>lua require(\"harpoon.mark\").add_file()<cr>"; # leader + add + mark
@@ -116,6 +116,7 @@ in
           telescope-file-browser-nvim
           monokai-pro-nvim
           nvim-lspconfig
+          vim-vsnip
           hop-nvim
       ];
   };

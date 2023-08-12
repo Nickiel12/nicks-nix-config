@@ -31,12 +31,15 @@ in
     # https://github.com/pupbrained/nix-config/blob/29af4835f21940af51b86313c451fb572a29874a/pkgs/nixvim.nix#L8
     maps.normal = {
       "<leader>ot" = "<cmd>vs | te<cr>";
+      "<leader>op" = "<cmd>NvimTreeToggle<cr>";
       "<leader>o." = "<cmd>Telescope file_browser<cr>";
       "<leader>."  = "<cmd>Telescope find_files<cr>"; # cwd full sub-dir fuzzy find
       "<leader>of" = "<cmd>Telescope live_grep<cr>"; # cwd search file
-      "<leader>op" = "<cmd>NvimTreeToggle<cr>";
-      "<leader>am" = "<cmd>lua require(\"harpoon.mark\").add_file()<cr>"; # leader + add + mark
+
       "<leader>m"  = "<cmd>Telescope harpoon marks<cr>"; # open harpoon marks in telescope
+
+      "<leader>mr" = "<cmd>lua require(\"harpoon.mark\").rm_file()<cr>"; # leader + mark remove
+      "<leader>ma" = "<cmd>lua require(\"harpoon.mark\").add_file()<cr>"; # leader + mark add
     };
 
     plugins = {

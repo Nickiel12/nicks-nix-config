@@ -35,18 +35,9 @@ in
       "<leader>o." = "<cmd>Telescope file_browser<cr>";
       "<leader>."  = "<cmd>Telescope find_files<cr>"; # cwd full sub-dir fuzzy find
       "<leader>of" = "<cmd>Telescope live_grep<cr>"; # cwd search file
-
-      "<leader>mo"  = "<cmd>Telescope harpoon marks<cr>"; # leacder + marks + open ; open harpoon marks in telescope
-
-      "<leader>mr" = "<cmd>lua require(\"harpoon.mark\").rm_file()<cr>"; # leader + mark + remove
-      "<leader>ma" = "<cmd>lua require(\"harpoon.mark\").add_file()<cr>"; # leader + mark + add
     };
 
     plugins = {
-
-      harpoon = {
-        enable = true;
-      };
 
       nvim-tree = {
         enable = true;

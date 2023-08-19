@@ -75,6 +75,7 @@ in
     # (pkgs.callPackage ./../modules/minecraft-bedrock/minecraft-bedrock-server.nix {}) # the possible minecraft-bedrock-server package for testing
       # utilities
       bat      # cat with wings (better cat)
+      bottom   # system monitor
       du-dust  # directory disk-space analyzer
       ffmpeg-full  # ffmpeg for video/audio rendering
       frei0r   # kdenlive video plugins

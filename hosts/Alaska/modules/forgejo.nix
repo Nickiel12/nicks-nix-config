@@ -1,8 +1,18 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, fetchgit, ... }:
 
+let 
+  palenight = fetchgit {
+    url = "https://git.sainnhe.dev/sainnhe/gitea-themes.git";
+    sparseCheckout = ''
+      dist
+    '';
+    sha256 = pkgs.lib.fakeSha256;
+  };
+in
 {
 
   system.activationScripts.copyStuff = "cp -r ${../../../rsrcs/giteaCustomDir}/. /Aurora/Forgejo/custom";
+  system.activationScripts.copyTheme = "cp ${palenight}/theme-palenight.css /Aurora/Forgejo/custom/css/theme-palenight.css"
 
   services.gitea = {
     enable = true;

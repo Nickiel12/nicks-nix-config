@@ -1,10 +1,9 @@
 { config, lib, pkgs, fetchgit, ... }:
 
 let 
-  palenight = builtins.fetchgit {
+  palenight = builtins.fetchGit {
     url = "https://git.sainnhe.dev/sainnhe/gitea-themes.git";
     rev = "d810451270e22f890fbe29c530bc7b9dd1ae97b4";
-    sha256 = pkgs.lib.fakeSha256;
   };
 in
 {

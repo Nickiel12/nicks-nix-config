@@ -4,16 +4,13 @@ let
   palenight = builtins.fetchGit {
      
     url = "https://git.sainnhe.dev/sainnhe/gitea-themes.git";
-    sparseCheckout = ''
-      dist
-    '';
     rev = "d810451270e22f890fbe29c530bc7b9dd1ae97b4";
   };
 in
 {
 
   system.activationScripts.copyStuff = "cp -r ${../../../rsrcs/giteaCustomDir}/. /Aurora/Forgejo/custom";
-  system.activationScripts.copyTheme = "cp ${palenight}/theme-palenight.css /Aurora/Forgejo/custom/css/theme-palenight.css";
+  system.activationScripts.copyTheme = "cp ${palenight}/dist/theme-palenight.css /Aurora/Forgejo/custom/css/theme-palenight.css";
 
   services.gitea = {
     enable = true;

@@ -1,7 +1,7 @@
 { config, lib, pkgs, fetchgit, ... }:
 
 let 
-  palenight = fetchgit {
+  palenight = builtins.fetchGit {
     url = "https://git.sainnhe.dev/sainnhe/gitea-themes.git";
     sparseCheckout = ''
       dist

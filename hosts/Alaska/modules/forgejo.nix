@@ -8,7 +8,7 @@ let
 in
 {
   system.activationScripts.copyStuff = "cp -r ${../../../rsrcs/giteaCustomDir}/. /Aurora/Forgejo/custom";
-  system.activationScripts.copyTheme = "cp ${palenight}/dist/theme-palenight.css /Aurora/Forgejo/custom/css/";
+  system.activationScripts.copyTheme = "cp ${palenight}/dist/theme-palenight.css /Aurora/Forgejo/custom/public/css/";
 
   services.gitea = {
     enable = true;

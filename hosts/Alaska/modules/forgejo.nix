@@ -2,11 +2,12 @@
 
 let 
   palenight = builtins.fetchGit {
+     
     url = "https://git.sainnhe.dev/sainnhe/gitea-themes.git";
     sparseCheckout = ''
       dist
     '';
-    sha256 = pkgs.lib.fakeSha256;
+    rev = "d810451270e22f890fbe29c530bc7b9dd1ae97b4";
   };
 in
 {

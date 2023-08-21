@@ -119,7 +119,6 @@ in
       # Read settings  here: https://github.com/mfussenegger/nvim-dap#Usage
       # See :help dap.txt, :help dap-mapping and :help dap-api.
       cmp-dap.enable = true;
-      # cmp-vsnip.enable = true;
       cmp-buffer.enable = true;
       cmp-nvim-lsp-signature-help.enable = true;
       cmp-nvim-lua.enable = true;

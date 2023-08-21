@@ -129,6 +129,8 @@ vim.keymap.set('', '<leader>ff', function()
     hop.hint_patterns({ multi_windows = true, current_line_only = false })
 end, {remap=true})
 
+vim.opt.scrolloff = 8;
+
 
 require("telescope").load_extension "file_browser"
 

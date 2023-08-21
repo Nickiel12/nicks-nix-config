@@ -15,7 +15,6 @@ in
 
     globals = {
       mapleader = " ";
-      clipboard = "unnamedplus";
     };
 
     options = {
@@ -35,6 +34,35 @@ in
       "<leader>o." = "<cmd>Telescope file_browser<cr>";
       "<leader>."  = "<cmd>Telescope find_files<cr>"; # cwd full sub-dir fuzzy find
       "<leader>of" = "<cmd>Telescope live_grep<cr>"; # cwd search file
+
+      # keep cursor centered while navigating
+      "<C-d>" = "<C-d>zz";
+      "<C-u>" = "<C-u>zz";
+      "n" = "nzzzv";
+      "N" = "Nzzzv"; 
+
+      # yank to system clipboard
+      "<leader>y" = "\"+y";
+      "<leader>Y" = "\"+Y";
+
+      # perma-delete without putting on any clipboard
+      "<leader>d" = "\"_d";
+    };
+
+    maps.visual = {
+      # moves visual selection up and down lines
+      "J" = ":m '>+1<CR>gv=gv";
+      "K" = ":m '<-2<CR>gv=gv"; 
+
+      # copy to system clipboard
+      "<leader>y" = "\"+y";
+
+      # perma-delete without putting on any clipboard
+      "<leader>d" = "\"_d";
+    };
+
+    maps.visualOnly = {
+      "<leader>p" = "\"_dP"; # leader+p deletes the selection to null, then pastes
     };
 
     plugins = {
@@ -91,7 +119,7 @@ in
       # Read settings  here: https://github.com/mfussenegger/nvim-dap#Usage
       # See :help dap.txt, :help dap-mapping and :help dap-api.
       cmp-dap.enable = true;
-      cmp-vsnip.enable = true;
+      # cmp-vsnip.enable = true;
       cmp-buffer.enable = true;
       cmp-nvim-lsp-signature-help.enable = true;
       cmp-nvim-lua.enable = true;

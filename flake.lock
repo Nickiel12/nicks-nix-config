@@ -161,11 +161,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1693029402,
-        "narHash": "sha256-cuINecgwiBpuckVh4m64VjpJ2MesV0O9ZVubPE7Faks=",
+        "lastModified": 1693029574,
+        "narHash": "sha256-pkrNgRhi9GK4fVuRJ+xzzGgrmW29APNvD2HjfFLjflc=",
         "ref": "refs/heads/main",
-        "rev": "cb4def2aeed8f3959e23e49829c9ec525a44a1f1",
-        "revCount": 22,
+        "rev": "c9ff715dca7ded7bcf8d17e56092bb26465ceb0c",
+        "revCount": 23,
         "type": "git",
         "url": "https://git.nickiel.net/Nickiel/nicks_nextcloud_integrations.git"
       },

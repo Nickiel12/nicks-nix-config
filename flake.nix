@@ -6,7 +6,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     kmonad.url = "github:kmonad/kmonad?dir=nix";
     # dead code?
-    simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
     home-manager = {
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +14,7 @@
 
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, kmonad, simple-nixos-mailserver, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:
     let
       user = "nixolas";
       system = "x86_64-linux";  
@@ -35,7 +34,6 @@
           specialArgs = { inherit user; };
 
           modules = [
-            simple-nixos-mailserver.nixosModule
             {
               networking.hostName = "Alaska";
             }

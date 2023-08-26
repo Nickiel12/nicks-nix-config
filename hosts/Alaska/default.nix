@@ -14,6 +14,10 @@
     (import ./modules/tailscale.nix)
   ];
 
+  networking.hosts = {
+    "100.64.0.1" = ["files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
+  };
+
   environment.systemPackages = [
     pkgs.mdadm
     pkgs.jellyfin-ffmpeg

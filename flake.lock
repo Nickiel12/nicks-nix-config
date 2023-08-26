@@ -161,11 +161,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1693029792,
-        "narHash": "sha256-q03hjM3fKj7wWCxhxJ5Iv5SP/7wsKcyEiCo4ihjK+fg=",
+        "lastModified": 1693060503,
+        "narHash": "sha256-3kyEuc1eCBOB3cN9CjUC7DWI6QxCXpRr/CZyZvNC8p4=",
         "ref": "refs/heads/main",
-        "rev": "3faccc1b999a965b88fbac567fc222243c49eedd",
-        "revCount": 24,
+        "rev": "3edf4aa95ac34de1e8bc66f63a4bcaee95bf241a",
+        "revCount": 25,
         "type": "git",
         "url": "https://git.nickiel.net/Nickiel/nicks_nextcloud_integrations.git"
       },
@@ -240,11 +240,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1692913444,
-        "narHash": "sha256-1SvMQm2DwofNxXVtNWWtIcTh7GctEVrS/Xel/mdc6iY=",
+        "lastModified": 1693003285,
+        "narHash": "sha256-5nm4yrEHKupjn62MibENtfqlP6pWcRTuSKrMiH9bLkc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "18324978d632ffc55ef1d928e81630c620f4f447",
+        "rev": "5690c4271f2998c304a45c91a0aeb8fb69feaea7",
         "type": "github"
       },
       "original": {

@@ -5,6 +5,8 @@
     nixvim.url = "github:nix-community/nixvim";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     kmonad.url = "github:kmonad/kmonad?dir=nix";
+    nicks_nextcloud_integrations.url = "git+https://git.nickiel.net/Nickiel/nicks_nextcloud_integrations.git";
+
     # dead code?
     home-manager = {
       url = github:nix-community/home-manager;
@@ -34,6 +36,7 @@
           specialArgs = { inherit user; };
 
           modules = [
+            inputs.nicks_nextcloud_integrations.nixosModules.default
             {
               networking.hostName = "Alaska";
             }

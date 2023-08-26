@@ -8,6 +8,7 @@
     (import ./modules/forgejo.nix)
     (import ./modules/nginx.nix)
     (import ./modules/nextcloud.nix)
+    (import ./modules/nicks_nextcould_integrations.nix)
     (import ./modules/msmtp.nix)
     (import ./modules/headscale.nix)
     (import ./modules/tailscale.nix)

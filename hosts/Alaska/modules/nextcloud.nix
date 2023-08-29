@@ -5,13 +5,23 @@
         enable = true;
         package = pkgs.nextcloud27;
         enableBrokenCiphersForSSE = false;
-
+        enableImagemagick = true;
         nginx.recommendedHttpHeaders = true;
         https = true;
         hostName = "files.nickiel.net";
         home = "/Aurora/nextcloud";
 
         autoUpdateApps.enable = true;
+
+        extraOptions = {
+          preview_max_x = 2048;
+          preview_max_y = 2048;
+          jpeg_quality = 50;
+          enable_previews = true;
+          enabledPreviewProviders = [
+            "OC\\Preview\\HEIC"
+          ];
+        };
 
         database.createLocally = false;
         config = {

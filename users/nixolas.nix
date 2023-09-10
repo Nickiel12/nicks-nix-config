@@ -86,11 +86,12 @@ in
       pandoc   # utility for converting between document types
       qmk      # QMK utility for compiling qmk firmware
       nextcloud-client # Nextcloud private syncing
+      hddtemp
 
       texlive.combined.scheme-medium
     
       # commandline utils
-      exa
+      eza
       fd
       fortune
       neofetch

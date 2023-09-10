@@ -20,6 +20,9 @@
           enable_previews = true;
           enabledPreviewProviders = [
             "OC\\Preview\\HEIC"
+            "OC\\Preview\\JPEG"
+            "OC\\Preview\\JPG"
+            "OC\\Preview\\PNG"
           ];
         };
 

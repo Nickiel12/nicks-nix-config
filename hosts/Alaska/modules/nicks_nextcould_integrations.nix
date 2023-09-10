@@ -7,8 +7,8 @@
     frequency = 15;
   };
   services.time_tracker = {
-    enable = false;
-    config_path = "/home/nixolas/nextcloud_integrations.toml";
+    enable = true;
+    config_path = "/home/nixolas/nextcloud_testing.toml";
     frequency = 5;
   };
 }

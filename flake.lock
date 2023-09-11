@@ -122,11 +122,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1694375657,
-        "narHash": "sha256-32X8dcty4vPXx+D4yJPQZBo5hJ1NQikALhevGv6elO4=",
+        "lastModified": 1694469544,
+        "narHash": "sha256-eqZng5dZnAUyb7xXyFk5z871GY/++KVv3Gyld5mVh20=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f7848d3e5f15ed02e3f286029697e41ee31662d7",
+        "rev": "5171f5ef654425e09d9c2100f856d887da595437",
         "type": "github"
       },
       "original": {
@@ -161,11 +161,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1694409653,
-        "narHash": "sha256-t5RA5jxa/KwI86/ALLZKoGqA/Jo2VuBGXKzXyXBisrs=",
+        "lastModified": 1694471572,
+        "narHash": "sha256-w4CiWECdnyfHu+GvG2VxAGlmEX0dDTuhGGJACgb2veM=",
         "ref": "refs/heads/main",
-        "rev": "a62d6dcfb81517101a2cd51a6a7a7e4460040cd7",
-        "revCount": 59,
+        "rev": "3c3c30f801649e60dcaa75d0479db209d795fb08",
+        "revCount": 62,
         "type": "git",
         "url": "https://git.nickiel.net/Nickiel/nicks_nextcloud_integrations.git"
       },

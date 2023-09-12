@@ -8,7 +8,7 @@
   };
   services.chrono_track = {
     enable = true;
-    from_address = "NoReply <noreply@nickiel.net>";
+    from_address = ''"NoReply <noreply@nickiel.net>"'';
     config_path = "/home/nixolas/nextcloud_testing.toml";
     frequency = 5;
   };

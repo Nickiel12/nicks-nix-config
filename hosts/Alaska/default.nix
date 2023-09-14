@@ -20,7 +20,7 @@
 
   environment.systemPackages = [
     pkgs.mdadm
-    pkgs.jellyfin-ffmpeg
+    #pkgs.jellyfin-ffmpeg
     pkgs.hddtemp
     pkgs.smartmontools
   ];

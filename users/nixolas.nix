@@ -95,6 +95,7 @@ in
       fd
       fortune
       neofetch
+      pandoc
       pfetch
       ripgrep
       rmtrash

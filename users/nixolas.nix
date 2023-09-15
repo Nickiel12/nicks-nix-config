@@ -96,11 +96,11 @@ in
       fortune
       neofetch
       pfetch
-      ranger
       ripgrep
       rmtrash
       testdisk # file recovery https://itsfoss.com/recover-deleted-files-linux/
       xdotool
+      yazi
       vhs
 
       nodejs # required for coc-nvim

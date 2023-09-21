@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, user, ... }:
+{ inputs, config, pkgs, pkgs-stable, user, ... }:
 
 let
     moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
@@ -26,6 +26,7 @@ in
         ../modules/rofi.nix
         ../modules/wezterm.nix
         ../modules/xdg.nix
+        ../modules/yazi.nix
         ../modules/zsh.nix
   ];
 
@@ -77,48 +78,45 @@ in
       bottom   # system monitor
       du-dust  # directory disk-space analyzer
       ffmpeg-full  # ffmpeg for video/audio rendering
-      frei0r   # kdenlive video plugins
-      flameshot   # screenshot utility
-      fontpreview # utility to preview fonts
+      pkgs-stable.frei0r   # kdenlive video plugins
+      pkgs-stable.flameshot   # screenshot utility
+      pkgs-stable.fontpreview # utility to preview fonts
       gitui    # command line git tui
-      helvum   # audio sink gui control
-      pandoc   # utility for converting between document types
-      qmk      # QMK utility for compiling qmk firmware
+      pkgs-stable.helvum   # audio sink gui control
+      pkgs-stable.pandoc   # utility for converting between document types
+      pkgs-stable.qmk      # QMK utility for compiling qmk firmware
       nextcloud-client # Nextcloud private syncing
       hddtemp
 
-      texlive.combined.scheme-medium
+      pkgs-stable.texlive.combined.scheme-medium
     
       # commandline utils
       eza
       fd
       fortune
       neofetch
-      pandoc
       pfetch
-      ripgrep
       rmtrash
       testdisk # file recovery https://itsfoss.com/recover-deleted-files-linux/
       xdotool
-      yazi
-      vhs
+      pkgs-stable.vhs
 
-      nodejs # required for coc-nvim
+      pkgs-stable.nodejs # required for coc-nvim
 
       # Gui application
-      darktable # RAW processing
-      dbeaver   # SQL management tool
+      pkgs-stable.darktable # RAW processing
+      pkgs-stable.dbeaver   # SQL management tool
       firefox   # Internet access
-      handbrake     # dvd ripping
-      inkscape  # Vector drawing
-      kicad     # PCB design
+      pkgs-stable.handbrake     # dvd ripping
+      pkgs-stable.inkscape  # Vector drawing
+      pkgs-stable.kicad     # PCB design
       krita     # Raster drawing
-      libreoffice-fresh   # Office editing
-      makemkv       # blue-ray + dvd -> mkv
-      obsidian      # Markdown and notes
+      pkgs-stable.libreoffice-fresh   # Office editing
+      pkgs-stable.makemkv       # blue-ray + dvd -> mkv
+      pkgs-stable.obsidian      # Markdown and notes
       qalculate-gtk # unit-friendly calculator
-      vscodium      # when vim and emacs (somehow) isn't enough
-      dragon        # simple audio player
+      pkgs-stable.vscodium      # when vim and emacs (somehow) isn't enough
+      pkgs-stable.dragon        # simple audio player
       obs-studio    # for video recording and virtual camera
 
       libsForQt5.kate   # kate/kwrite
@@ -128,9 +126,9 @@ in
       libsForQt5.soundkonverter # audio cd ripping
 
       # Kdenlive and deps
-      libsForQt5.kdenlive  
-      mediainfo
-      mlt
+      pkgs-stable.libsForQt5.kdenlive  
+      pkgs-stable.mediainfo
+      pkgs-stable.mlt
 
       # Drawing tablet driver
       opentabletdriver
@@ -138,6 +136,7 @@ in
 
     sessionVariables = {
       NIX_SHELL_PRESERVE_PROMPT = 1;
+      EDITOR = "nvim";
     };
   };
 

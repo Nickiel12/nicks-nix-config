@@ -37,18 +37,6 @@ in {
               ../modules/zsh.nix
             ];
           };
-          users.nicholix = {
-            imports = [
-              ../users/nicholix.nix
-              ../modules/emacs.nix
-              ../modules/git.nix
-              ../modules/fusuma.nix
-              ../modules/vim.nix
-              ../modules/wezterm.nix
-              ../modules/xdg.nix
-              ../modules/zsh.nix
-            ]
-          }
         };
       }
     ];

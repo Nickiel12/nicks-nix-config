@@ -21,7 +21,6 @@ in
   imports = [
         ../modules/discord.nix
         #../modules/emacs.nix
-        ../modules/fusuma.nix
         ../modules/git.nix
         ../modules/neovim.nix
         ../modules/rofi.nix

@@ -40,6 +40,7 @@ in
       ls = "eza";
       gust = "/home/nixolas/Documents/Gust/target/debug/gust";
       rm = "rmtrash";
+      open-config = "cd ~/Documents/nicks-nix-config; nvim";
     };
   };
   

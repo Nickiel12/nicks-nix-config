@@ -13,6 +13,15 @@
     enableKwallet = true;
   };
 
+  # Some programs look for session variables to store config files at
+  # (Looking at you home-manager yazi)
+  environment.sessionVariables = rec {
+    XDG_CACHE_HOME  = "$HOME/.cache";
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME   = "$HOME/.local/share";
+    XDG_STATE_HOME  = "$HOME/.local/state";
+  };
+
   services.xserver = {
     enable = true;
     layout = "us";
@@ -83,7 +92,6 @@
     opentabletdriver.enable = true;
     steam-hardware.enable = true;
   };
-  
 
   sound = {
     enable = false;
@@ -98,7 +106,6 @@
     pulse.enable = true;
     #jack.enable = true;
   };
-
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

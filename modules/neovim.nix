@@ -6,6 +6,8 @@ in
   home.packages = with pkgs; [
     # Required clipboard provider
     xclip
+    # Required for find in file
+    ripgrep
   ];
 
   programs.nixvim = {

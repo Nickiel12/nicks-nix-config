@@ -107,7 +107,6 @@ in
       pkgs-stable.darktable # RAW processing
       pkgs-stable.dbeaver   # SQL management tool
       firefox   # Internet access
-      pkgs-stable.handbrake     # dvd ripping
       pkgs-stable.inkscape  # Vector drawing
       pkgs-stable.kicad     # PCB design
       krita     # Raster drawing

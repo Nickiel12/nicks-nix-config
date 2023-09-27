@@ -4,6 +4,10 @@ let
 
 in 
 {
+
+  home.packages = with pkgs; [
+    grub2_light
+  ];
   
   programs.zsh = {
     enable = true; # technically also enabled in user shell
@@ -41,6 +45,7 @@ in
       gust = "/home/nixolas/Documents/Gust/target/debug/gust";
       rm = "rmtrash";
       open-config = "cd ~/Documents/nicks-nix-config; nvim";
+      switch-to-windows = "sudo grub-reboot 1; sudo reboot";
     };
   };
   

@@ -104,7 +104,7 @@
     timewarrior             # timewarrior tracking status (https://timewarrior.net/)
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     time                    # current time
-    battery               # internal battery
+    battery                 # internal battery
     # =========================[ Line #2 ]========================= (now like 3)
     # newline
     # ip                    # ip address and bandwidth usage for a specified network interface
@@ -1621,7 +1621,7 @@
   # Show battery in yellow when it's discharging.
   typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=3
   # Battery pictograms going from low to high level of charge.
-  typeset -g POWERLEVEL9K_BATTERY_STAGES='\uf58d\uf579\uf57a\uf57b\uf57c\uf57d\uf57e\uf57f\uf580\uf581\uf578'
+  typeset -g POWERLEVEL9K_BATTERY_STAGES='\uf008e\uf007a\uf007b\uf007c\uf007d\uf007e\uf007f\uf0080\uf0081\uf0082\uf0079'
   # Don't show the remaining time to charge/discharge.
   typeset -g POWERLEVEL9K_BATTERY_VERBOSE=false
   typeset -g POWERLEVEL9K_BATTERY_BACKGROUND=236

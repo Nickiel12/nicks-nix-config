@@ -29,43 +29,122 @@ in
       tabstop = 4;
     };
 
-    # https://github.com/pupbrained/nix-config/blob/29af4835f21940af51b86313c451fb572a29874a/pkgs/nixvim.nix#L8
-    maps.normal = {
-      "<leader>ot" = "<cmd>vs | te<cr>";
-      "<leader>op" = "<cmd>NvimTreeToggle<cr>";
-      "<leader>o." = "<cmd>Telescope file_browser<cr>";
-      "<leader>."  = "<cmd>Telescope find_files<cr>"; # cwd full sub-dir fuzzy find
-      "<leader>of" = "<cmd>Telescope live_grep<cr>"; # cwd search file
+    keymaps = [
+      # Modes: https://superuser.com/questions/1702308/how-can-i-configure-shortcut-keys-in-all-modes-of-vim
+      # n - normal
+      # i - insert
+      # c - cmd
+      # v - visual select 
+      # x - visual only 
+      # s - selection 
+      # o - oper 
+      # t - terminal 
+      # l - lang
+      {
+        # Open new vertical split and starts a new terminal window
+        mode = "n";
+        key = "<leader>ot";
+        action = "<cmd>vs | te<cr>";
+      }
+      {
+        # toggle the left tree panel
+        mode = "n";
+        key = "<leader>op";
+        action = "<cmd>NvimTreeToggle<cr>";
+      }
+      {
+        # Open cwd filename fuzzy search
+        mode = "n";
+        key = "<leader>o.";
+        action = "<cmd>Telescope file_browser<cr>";
+      }
+      {
+        # Open fuzzy filename recursive search 
+        mode = "n";
+        key = "<leader>.";
+        action = "<cmd>Telescope find_files<cr>";
+      }
+      {
+        # Search file contents of cwd
+        mode = "n";
+        key = "<leader>of";
+        action = "<cmd>Telescope live_grep<cr>";
+      }
+      {
+        # Keep cursor centered while navigating
+        mode = "n";
+        key = "<C-d>";
+        action = "<C-d>zz";
+      }
+      {
+        # Keep cursor centered while navigating
+        mode = "n";
+        key = "<C-u>";
+        action = "<C-u>zz";
+      }
+      {
+        # Keep cursor centered while skipping to search results
+        mode = "n";
+        key = "n";
+        action = "nzzzv";
+      }
+      {
+        # Keep cursor centered while skipping to search results
+        mode = "n";
+        key = "N";
+        action = "Nzzzv";
+      }
+      {
+        # Yank to system clipboard
+        mode = "n";
+        key = "<leader>y";
+        action = "\"+y";
+      }
+      {
+        # Yank to system clipboard
+        mode = "n";
+        key = "<leader>Y";
+        action = "\"+Y";
+      }
+      {
+        # Delete into the void
+        mode = "n";
+        key = "<leader>d";
+        action = "\"_d";
+      }
 
-      # keep cursor centered while navigating
-      "<C-d>" = "<C-d>zz";
-      "<C-u>" = "<C-u>zz";
-      "n" = "nzzzv";
-      "N" = "Nzzzv"; 
+      {
+        # Move visual selection up one row
+        mode = "v";
+        key = "J";
+        action = ":m '>+1<CR>gv=gv";
+      }
+      {
+        # Move visual selection down one row
+        mode = "v";
+        key = "K";
+        action = ":m '<-2<CR>gv=gv";
+      }
+      {
+        # Yank selection to system clipboard
+        mode = "v";
+        key = "<leader>y";
+        action = "\"+y";
+      }
+      {
+        # Delete selection into void
+        mode = "v";
+        key = "<leader>d";
+        action = "\"_d";
+      }
 
-      # yank to system clipboard
-      "<leader>y" = "\"+y";
-      "<leader>Y" = "\"+Y";
-
-      # perma-delete without putting on any clipboard
-      "<leader>d" = "\"_d";
-    };
-
-    maps.visual = {
-      # moves visual selection up and down lines
-      "J" = ":m '>+1<CR>gv=gv";
-      "K" = ":m '<-2<CR>gv=gv"; 
-
-      # copy to system clipboard
-      "<leader>y" = "\"+y";
-
-      # perma-delete without putting on any clipboard
-      "<leader>d" = "\"_d";
-    };
-
-    maps.visualOnly = {
-      "<leader>p" = "\"_dP"; # leader+p deletes the selection to null, then pastes
-    };
+      {
+        # leader+p delete the selection to the void, then paste
+        mode = "x";
+        key = "<leader>p";
+        action = "\"_dP"; 
+      }
+    ];
 
     plugins = {
 

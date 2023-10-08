@@ -10,12 +10,22 @@
     "10.0.0.183" = [ "headscale.nickiel.net" ];
     "100.64.0.1" = ["files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
   };
-  services.tailscale.enable = true;
   networking.firewall = {
     checkReversePath = "loose";
     trustedInterfaces = [ "tailscale0" ];
     allowedUDPPorts = [ config.services.tailscale.port ];
   };
+
+  services = {
+    tailscale.enable = true;
+    sshd.enable = true;
+    openssh.settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+      X11Forwarding = true;
+    };
+  };
+  systemd.services.sshd.wantedBy = [ "multi-user.target" ];
 
   
   services.xserver.videoDrivers = [ "nvidia" ];

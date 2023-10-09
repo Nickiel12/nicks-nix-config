@@ -1,6 +1,11 @@
 { config, lib, pkgs, ...}:
 
 {
+
+  networking.firewall = {
+    allowedTCPPorts = [53];
+    allowedUDPPorts = [53];
+  };
   services.dnsmasq = {
     enable = true;
     alwaysKeepRunning = true;

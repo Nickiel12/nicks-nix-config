@@ -41,8 +41,7 @@
     };
     firewall = {
         enable = true;
-        allowedTCPPorts = [53 80 443 3001 5432]; # port 3001 opened to allow git traffic on the local netword
-        allowedUDPPorts = [53];
+        allowedTCPPorts = [80 443 3001 5432]; # port 3001 opened to allow git traffic on the local netword
       };
   };
 

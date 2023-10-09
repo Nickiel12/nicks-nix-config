@@ -106,17 +106,18 @@ in
       # Gui application
       pkgs-stable.darktable # RAW processing
       pkgs-stable.dbeaver   # SQL management tool
-      firefox   # Internet access
+                  firefox   # Internet access
+                  freerdp   # RDP client
       pkgs-stable.inkscape  # Vector drawing
       pkgs-stable.kicad     # PCB design
-      krita     # Raster drawing
+                  krita     # Raster drawing
       pkgs-stable.libreoffice-fresh   # Office editing
       pkgs-stable.makemkv       # blue-ray + dvd -> mkv
       pkgs-stable.obsidian      # Markdown and notes
-      qalculate-gtk # unit-friendly calculator
+                  qalculate-gtk # unit-friendly calculator
       pkgs-stable.vscodium      # when vim and emacs (somehow) isn't enough
       pkgs-stable.dragon        # simple audio player
-      obs-studio    # for video recording and virtual camera
+                  obs-studio    # for video recording and virtual camera
 
       libsForQt5.kate   # kate/kwrite
       libsForQt5.ark    # kde archive manager

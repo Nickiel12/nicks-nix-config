@@ -3,19 +3,24 @@
 
 {
   imports = [
+    (import ./../../modules/xrdp.nix)
 	./hardware-configuration.nix
   ];
 
-  networking.hosts = {
-    "10.0.0.183" = [ "headscale.nickiel.net" ];
-    "100.64.0.1" = ["files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
-  };
-  networking.firewall = {
-    checkReversePath = "loose";
-    trustedInterfaces = [ "tailscale0" ];
-    allowedUDPPorts = [ config.services.tailscale.port ];
-  };
+  networking = {
+    firewall = {
+      checkReversePath = "loose";
+      trustedInterfaces = [ "tailscale0" ];
+      allowedUDPPorts = [ config.services.tailscale.port ];
+    };
 
+    nameservers = ["10.0.0.183" "1.1.1.1"];
+
+    hosts = {
+      # "10.0.0.183" = [ "headscale.nickiel.net" ];
+      "100.64.0.1" = ["files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
+    };
+  };
   services = {
     tailscale.enable = true;
     sshd.enable = true;

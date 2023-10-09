@@ -1,6 +1,7 @@
 { config, ... }:
 
 { imports = [
+    (import ./../../modules/xrdp.nix)
 	./hardware-configuration.nix
   ];
 
@@ -17,7 +18,6 @@
     allowedUDPPorts = [ config.services.tailscale.port ];
   };
   time.hardwareClockInLocalTime = true;
-
 
   boot.loader = { efi = {
       canTouchEfiVariables = true; efiSysMountPoint = "/boot";

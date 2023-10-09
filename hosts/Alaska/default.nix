@@ -5,6 +5,7 @@
 {
   imports = [ 
     (import ./hardware-configuration.nix)
+    (import ./modules/dnsmasq.nix)
     (import ./modules/forgejo.nix)
     (import ./modules/nginx.nix)
     (import ./modules/nextcloud.nix)
@@ -40,7 +41,8 @@
     };
     firewall = {
         enable = true;
-        allowedTCPPorts = [80 443 3001 5432]; # port 3001 opened to allow git traffic on the local netword
+        allowedTCPPorts = [53 80 443 3001 5432]; # port 3001 opened to allow git traffic on the local netword
+        allowedUDPPorts = [53];
       };
   };
 

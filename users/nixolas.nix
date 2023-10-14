@@ -24,6 +24,7 @@ in
         ../modules/git.nix
         ../modules/neovim.nix
         ../modules/rofi.nix
+        ../modules/tmux.nix
         ../modules/wezterm.nix
         ../modules/xdg.nix
         ../modules/yazi.nix

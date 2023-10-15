@@ -1,6 +1,7 @@
 {  config, ... }:
 
 let
+  tailscale_dns_entries = import ./dns.nix;
   baseDomain = "nickiel.net";
   domain = "headscale.${baseDomain}";
 in {
@@ -13,7 +14,10 @@ in {
     port = 8082;
     settings = {
       server_url = "https://${domain}";
-      dns_config.base_domain = baseDomain;
+      dns_config = {
+        base_domain = baseDomain;
+        extra_records = tailscale_dns_entries;
+      };
     };
   };
   environment.systemPackages = [ config.services.headscale.package ];

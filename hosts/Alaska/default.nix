@@ -13,6 +13,7 @@
     (import ./modules/msmtp.nix)
     (import ./modules/headscale.nix)
     (import ./modules/tailscale.nix)
+    (import ./modules/vaultwarden.nix)
   ];
 
   networking.hosts = {

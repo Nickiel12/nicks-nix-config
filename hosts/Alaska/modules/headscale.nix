@@ -18,7 +18,22 @@ in {
         base_domain = baseDomain;
         extra_records = tailscale_dns_entries;
       };
+      derp = {
+        auto_update_enable = true;
+        update_frequency = "24h";
+      };
     };
   };
   environment.systemPackages = [ config.services.headscale.package ];
+
+  services.nginx.virtualHosts = {
+      "headscale.nickiel.net" = {
+        forceSSL = true;
+        enableACME = true;
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:${ toString config.services.headscale.port }";
+          proxyWebsockets = true;
+        };
+      };
+  };
 }

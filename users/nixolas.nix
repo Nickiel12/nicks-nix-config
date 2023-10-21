@@ -83,6 +83,7 @@ in
       pkgs-stable.flameshot   # screenshot utility
       pkgs-stable.fontpreview # utility to preview fonts
       gitui    # command line git tui
+      pkgs-stable.godot_4
       pkgs-stable.helvum   # audio sink gui control
       pkgs-stable.pandoc   # utility for converting between document types
       pkgs-stable.qmk      # QMK utility for compiling qmk firmware

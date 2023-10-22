@@ -4,7 +4,6 @@
       services.nextcloud = {
         enable = true;
         package = pkgs.nextcloud27;
-        enableBrokenCiphersForSSE = false;
         enableImagemagick = true;
         nginx.recommendedHttpHeaders = true;
         https = true;

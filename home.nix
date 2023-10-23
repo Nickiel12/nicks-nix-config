@@ -86,11 +86,6 @@ let
       # Drawing tablet driver
       opentabletdriver
     ];
-
-      # tmp_pkgs = cli_packages ++ gui_application else cli_packages;
-
-# install_pkgs = builtins.trace ''${osConfig.networking.hostName}'' tmp_pkgs;
-
 in
 {
 
@@ -103,22 +98,10 @@ in
         ./modules/tmux.nix
         ./modules/wezterm.nix
         ./modules/xdg.nix
+        ./modules/hyprland.nix
         ./modules/yazi.nix
         ./modules/zsh.nix
   ];
-
-  home.file = {
-      ".config/awesome" = {
-        source = ./rsrcs/awesome;
-        recursive = true;
-      };
-    ".config/awesome/cpu-widget.lua".source = "${awesome-wm-widgets}/cpu-widget/cpu-widget.lua";
-    ".config/awesome/ram-widget.lua".source = "${awesome-wm-widgets}/ram-widget/ram-widget.lua";
-    ".config/awesome/batteryarc.lua".source = "${awesome-wm-widgets}/batteryarc-widget/batteryarc.lua";
-    ".config/awesome/awesome-wm-widgets/spaceman.jpg".source = "${awesome-wm-widgets}/batteryarc-widget/spaceman.jpg";
-    ".config/awesome/calendar.lua".source = "${awesome-wm-widgets}/calendar-widget/batteryarc.lua";
-  };
-
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -128,6 +111,18 @@ in
   programs.direnv.nix-direnv.enable = true;
 
   home = {
+    file = {
+      ".config/awesome" = {
+        source = ./rsrcs/awesome;
+        recursive = true;
+      };
+      ".config/awesome/cpu-widget.lua".source = "${awesome-wm-widgets}/cpu-widget/cpu-widget.lua";
+      ".config/awesome/ram-widget.lua".source = "${awesome-wm-widgets}/ram-widget/ram-widget.lua";
+      ".config/awesome/batteryarc.lua".source = "${awesome-wm-widgets}/batteryarc-widget/batteryarc.lua";
+      ".config/awesome/awesome-wm-widgets/spaceman.jpg".source = "${awesome-wm-widgets}/batteryarc-widget/spaceman.jpg";
+      ".config/awesome/calendar.lua".source = "${awesome-wm-widgets}/calendar-widget/batteryarc.lua";
+    };
+
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
     username = user;

@@ -32,6 +32,7 @@
         inherit (nixpkgs) lib;
         inherit inputs home-manager user kmonad;
 
+
         # Home server
         Alaska = lib.nixosSystem {
           inherit system;
@@ -60,7 +61,7 @@
                 };
                 users.${user} = {
                   imports = [
-                    (import ./users/${user}.nix)
+                    (import ./home.nix)
                     # Add nixvim to the homemanager
                     inputs.nixvim.homeManagerModules.nixvim
                   ];
@@ -97,7 +98,7 @@
                 };
                 users.${user} = {
                   imports = [
-                    (import ./users/${user}.nix)
+                    (import ./home.nix)
                     # Add nixvim to the homemanager
                     inputs.nixvim.homeManagerModules.nixvim
                   ];
@@ -133,7 +134,7 @@
                 };
                 users.${user} = {
                   imports = [
-                    (import ./users/${user}.nix)
+                    (import ./home.nix)
                     # Add nixvim to the homemanager
                     inputs.nixvim.homeManagerModules.nixvim
                   ];

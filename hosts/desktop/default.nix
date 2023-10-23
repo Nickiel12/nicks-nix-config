@@ -33,7 +33,14 @@
   systemd.services.sshd.wantedBy = [ "multi-user.target" ];
 
   
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver = {
+    videoDrivers = [ "nvidia" ];
+    # xrandr for screen information. <connection>: <resolution> <offset>, <next connection>
+    # Option "nvidiaXineramaInfoOrder" "DFP-0"
+    screenSection = ''
+      Option "metamodes" "DP-2: 2560x1440 +1920+0, DP-4: 1920x1080 +0+360"
+    '';
+  };
   hardware.opengl.enable = true;
 
   # Optionally, you may need to select the appropriate driver version for your specific GPU.

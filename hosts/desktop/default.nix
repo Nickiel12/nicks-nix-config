@@ -32,7 +32,6 @@
   };
   systemd.services.sshd.wantedBy = [ "multi-user.target" ];
 
-  
   services.xserver = {
     videoDrivers = [ "nvidia" ];
     # xrandr for screen information. <connection>: <resolution> <offset>, <next connection>

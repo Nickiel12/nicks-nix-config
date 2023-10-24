@@ -22,6 +22,7 @@
     XDG_STATE_HOME  = "$HOME/.local/state";
   };
 
+  programs.hyprland.enable = true;
 
   services.xserver = {
     enable = true;
@@ -38,8 +39,7 @@
       ];
     };
 
-  programs.hyprland.enable = true;
-   displayManager.sddm.enable = true;
+    displayManager.sddm.enable = true;
 
     libinput = {
       enable = true;

@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{config, pkgs, osConfig, ...}:
 
 let 
 
@@ -21,6 +21,15 @@ in
     # Whether to enable patching wlroots for better Nvidia support
     enableNvidiaPatches = true;
 
+    extraConfig = if (osConfig.networking.hostName == "NicksNixDesktop") then 
+      ''
+      monitor=DP-2, 2560x1440@144, 1920x0, 1
+      monitor=DP-3, 1920x1080@60, 0x360,1
+      ''
+      else ''
+
+      '';
+
     settings = {
       exec-once = [
         "${pkgs.swww}/bin/swww init & sleep 0.5 & ${pkgs.swww}/bin/swww /home/nixolas/Downloads/RecountERD.png"
@@ -42,6 +51,9 @@ in
 
       bind = [
         "$mod, RETURN, exec, wezterm start --always-new-process"
+        "$mod, r, exec, rofi -show run window"
+        "$mod, q, killactive"
+        "$mod_SHIFT, p, exit"
         # "$mod, Q, exec, firefox"
       ];
     };

@@ -9,6 +9,7 @@ in
   programs.wezterm = {
     enable = true;
     package = pkgs.wezterm;
+    enableZshIntegration = true;
 
     colorSchemes = {
       SeeThroughBlack = {
@@ -32,10 +33,12 @@ in
       
     };
 
+    # the "enable_wayland = false" config line forces wezterm to use xwayland instead of wayland
     extraConfig = ''
 local wezterm = require 'wezterm'
 
 return {
+    enable_wayland = false,
     window_background_opacity = 0.8,
     font = wezterm.font_with_fallback {
         'DejaVuSansMono',

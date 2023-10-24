@@ -3,7 +3,10 @@
 {
 
   home.packages = with pkgs; [
-      discord       # because you *always* want your friends around
+    (discord.override {
+      withOpenASAR = true;
+    })       # because you *always* want your friends around
+      webcord
       betterdiscordctl # sudo apt upgrade discord (betterdiscordctl install)
   ];
 

@@ -50,7 +50,7 @@ in
       ];
 
       bind = [
-        "$mod, RETURN, exec, wezterm start --always-new-process"
+        "$mod, RETURN, exec, kitty"
         "$mod, r, exec, rofi -show run window"
         "$mod, q, killactive"
         "$mod_SHIFT, p, exit"

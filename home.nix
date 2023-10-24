@@ -94,6 +94,7 @@ in
         #./modules/emacs.nix
         ./modules/git.nix
         ./modules/neovim.nix
+        ./modules/kitty.nix
         ./modules/rofi.nix
         ./modules/tmux.nix
         ./modules/wezterm.nix

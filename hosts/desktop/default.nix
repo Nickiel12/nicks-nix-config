@@ -49,7 +49,9 @@
   hardware.bluetooth.enable = true;
 
   environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
+    # Resolves jellyfin black screen under hyprland
+    # See also: https://github.com/jellyfin/jellyfin-media-player/issues/165#issuecomment-1030690851
+    QT_QPA_PLATFORM = "xcb";
   };
 
   time.hardwareClockInLocalTime = true;

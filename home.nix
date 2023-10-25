@@ -99,7 +99,7 @@ in
         ./modules/tmux.nix
         ./modules/wezterm.nix
         ./modules/xdg.nix
-        ./modules/hyprland.nix
+        ./modules/hyprland
         ./modules/yazi.nix
         ./modules/zsh.nix
   ];

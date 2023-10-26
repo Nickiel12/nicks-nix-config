@@ -2,6 +2,11 @@
 
 let 
 
+  hostname = osConfig.networking.hostName;
+
+  monitor_config = import ./monitors.nix { hostname = hostname; };
+  workspace_config = import ./workspaces.nix { hostname = hostname; };
+
 in
 {
 
@@ -26,21 +31,30 @@ in
     # Whether to enable patching wlroots for better Nvidia support
     enableNvidiaPatches = true;
 
-    extraConfig = if (osConfig.networking.hostName == "NicksNixDesktop") then 
+    extraConfig = lib.strings.concatStrings [
+      monitor_config
+      # workspace_config
       ''
-      monitor=DP-2, 2560x1440@144, 1920x0, 1
-      monitor=DP-3, 1920x1080@60, 0x360,1
 
-      env = LIBVA_DRIVER_NAME,nvidia
-      env = XDG_SESSION_TYPE,wayland
-      env = GBM_BACKEND,nvidia-drm
-      env = WLR_NO_HARDWARE_CURSORS,1
       ''
-      else ''
-
-      '';
+    ];
 
     settings = {
+
+      workspace = [
+        "1,monitor:DP-2"
+        "3,monitor:DP-2"
+        "5,monitor:DP-2"
+        "7,monitor:DP-2"
+        "9,monitor:DP-2"
+
+        "2,monitor:DP-3"
+        "4,monitor:DP-3"
+        "6,monitor:DP-3"
+        "8,monitor:DP-3"
+        "10,monitor:DP-3"
+      ];
+
       "$mod" = "SUPER";
 
       exec-once = [

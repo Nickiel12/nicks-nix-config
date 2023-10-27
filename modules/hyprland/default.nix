@@ -10,7 +10,7 @@ in
 {
 
   imports = [
-    ./ewwbar.nix
+    ../ewwbar.nix
     ./keybinds.nix
     ./displays.nix
   ];

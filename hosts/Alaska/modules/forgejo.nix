@@ -27,6 +27,8 @@ in
       # Enable this after the first user has been created
       service.DISABLE_REGISTRATION = true;
 
+      security.DISABLE_GIT_HOOKS = false;
+
       #session.COOKIE_SECURE = true;
       # external facing ui
       server = {

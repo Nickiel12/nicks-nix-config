@@ -6,6 +6,11 @@
 
 {
 
+  # max cores used per derivation
+  nix.settings.cores = 8;
+  # max derivations that can be built at once
+  # nix.settings.max-jobs = 2;
+
   networking.networkmanager.enable = true;
 
   security.pam.services.kwallet = {

@@ -5,7 +5,6 @@ let
   hostname = osConfig.networking.hostName;
 
   monitor_config = import ./monitors.nix { hostname = hostname; };
-  workspace_config = import ./workspaces.nix { hostname = hostname; };
 
 in
 {
@@ -13,6 +12,7 @@ in
   imports = [
     ./ewwbar.nix
     ./keybinds.nix
+    ./displays.nix
   ];
   
   home.packages = with pkgs; [
@@ -33,27 +33,12 @@ in
 
     extraConfig = lib.strings.concatStrings [
       monitor_config
-      # workspace_config
       ''
 
       ''
     ];
 
     settings = {
-
-      workspace = [
-        "1,monitor:DP-2"
-        "3,monitor:DP-2"
-        "5,monitor:DP-2"
-        "7,monitor:DP-2"
-        "9,monitor:DP-2"
-
-        "2,monitor:DP-3"
-        "4,monitor:DP-3"
-        "6,monitor:DP-3"
-        "8,monitor:DP-3"
-        "10,monitor:DP-3"
-      ];
 
       "$mod" = "SUPER";
 

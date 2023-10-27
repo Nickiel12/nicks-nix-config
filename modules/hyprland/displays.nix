@@ -1,23 +1,26 @@
-{ hostname ? "undefined" }:
+{ osConfig, ...}:
 
-let 
-  monitor_config = if (hostname == "NicksNixDesktop") then 
-      ''
-      monitor=DP-2, 2560x1440@144, 1920x0, 1
-      monitor=DP-3, 1920x1080@60, 0x360,1
+let
 
-      env = LIBVA_DRIVER_NAME,nvidia
-      env = XDG_SESSION_TYPE,wayland
-      env = GBM_BACKEND,nvidia-drm
-      env = WLR_NO_HARDWARE_CURSORS,1
+  hostname = osConfig.networking.hostName;
 
+in
+{
+  wayland.windowManager.hyprland.settings = {
+      workspace = if (hostname == "NicksNixDesktop") then [
+        "1,monitor:DP-2"
+        "3,monitor:DP-2"
+        "5,monitor:DP-2"
+        "7,monitor:DP-2"
+        "9,monitor:DP-2"
 
-      ''
-      else if (hostname == "NicksNixLaptop") then ''
+        "2,monitor:DP-3"
+        "4,monitor:DP-3"
+        "6,monitor:DP-3"
+        "8,monitor:DP-3"
+        "10,monitor:DP-3"
+      ] else [
 
-      '' else ''
-
-      '';
-
-in monitor_config
-
+      ];
+  };
+}

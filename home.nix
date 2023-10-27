@@ -68,6 +68,7 @@ let
       pkgs-stable.makemkv       # blue-ray + dvd -> mkv
       pkgs-stable.obsidian      # Markdown and notes
                   qalculate-gtk # unit-friendly calculator
+                  qlcplus       # LED xlr control program
       pkgs-stable.vscodium      # when vim and emacs (somehow) isn't enough
       pkgs-stable.dragon        # simple audio player
                   obs-studio    # for video recording and virtual camera

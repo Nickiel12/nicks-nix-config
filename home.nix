@@ -30,6 +30,7 @@ let
       ffmpeg-full  # ffmpeg for video/audio rendering
       pkgs-stable.fontpreview # utility to preview fonts
       gitui    # command line git tui
+      hugo
       pkgs-stable.pandoc   # utility for converting between document types
       pkgs-stable.qmk      # QMK utility for compiling qmk firmware
       nextcloud-client     # Nextcloud private syncing

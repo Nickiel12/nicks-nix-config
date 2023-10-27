@@ -50,6 +50,12 @@
           locations."/".proxyPass = "http://127.0.0.1:3001";
       };
 
+      "staticpages.nickiel.net" = {
+        forceSSL = true;
+        enableACME = true;
+        root = "/Aurora/StaticSites/static_pages/public";
+      };
+
     };
   };
 }

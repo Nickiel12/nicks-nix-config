@@ -40,7 +40,7 @@ in
 
       mailer = {
         ENABLED = true;
-        MAILER_TYPE = "sendmail";
+        PROTOCOL = "sendmail";
         FROM = "noreply@nickiel.net";
         SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
       };

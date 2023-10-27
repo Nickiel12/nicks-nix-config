@@ -19,6 +19,7 @@ in
     '';
 
     initExtra = ''
+      [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
 
@@ -40,7 +41,6 @@ in
 
     shellAliases = {
       cat = "bat";
-      doom = "~/.emacs.d/bin/doom";
       ls = "eza";
       gust = "/home/nixolas/Documents/Gust/target/debug/gust";
       rm = "rmtrash";

@@ -150,7 +150,7 @@
   "date '+%H:%M %b %d, %Y'")
 
 (defwindow bar
-  :monitor 0
+  :monitor 1
   :exclusive true
   :windowtype "dock"
   :geometry (geometry :x "0%"

@@ -4,16 +4,18 @@
 
 {
   imports = [ 
+    ./modules/backup_script.nix
+
     ./hardware-configuration.nix
-    (import ./modules/dnsmasq.nix)
-    (import ./modules/forgejo.nix)
-    (import ./modules/nginx.nix)
-    (import ./modules/nextcloud.nix)
-    (import ./modules/nicks_nextcould_integrations.nix)
-    (import ./modules/msmtp.nix)
-    (import ./modules/headscale.nix)
-    (import ./modules/tailscale.nix)
-    (import ./modules/vaultwarden.nix)
+    ./modules/dnsmasq.nix
+    ./modules/forgejo.nix
+    ./modules/nginx.nix
+    ./modules/nextcloud.nix
+    ./modules/nicks_nextcould_integrations.nix
+    ./modules/msmtp.nix
+    ./modules/headscale.nix
+    ./modules/tailscale.nix
+    ./modules/vaultwarden.nix
   ];
 
   networking.hosts = {

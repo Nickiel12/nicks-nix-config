@@ -18,6 +18,21 @@
     ./modules/vaultwarden.nix
   ];
 
+  programs.alaska_backup_script = {
+    enable = true;
+    run_nightly = false;
+    tmp_mount_point = /Aurora/backup_drive_mount_point;
+    backup1_drive_label = "AlaskaBackup";
+
+    nextcloud = {
+      root_dir = /Aurora/nextcloud;
+      db_server = "127.0.0.1";
+      db_name = "nextcloud";
+      db_user = "nextcloud";
+      db_passfile = /Aurora/nextcloud/nextcloud_db_password;
+    };
+  };
+
   networking.hosts = {
     "100.64.0.1" = ["files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
   };
@@ -27,6 +42,7 @@
     #pkgs.jellyfin-ffmpeg
     pkgs.hddtemp
     pkgs.smartmontools
+    pkgs.screen
   ];
 
   services.xserver.videoDrivers = [ "nvidia" ];

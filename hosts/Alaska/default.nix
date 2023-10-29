@@ -4,7 +4,7 @@
 
 {
   imports = [ 
-    (import ./hardware-configuration.nix)
+    ./hardware-configuration.nix
     (import ./modules/dnsmasq.nix)
     (import ./modules/forgejo.nix)
     (import ./modules/nginx.nix)

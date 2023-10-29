@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/usr/bin/env bash
+#
 function clamp {
 	min=$1
 	max=$2

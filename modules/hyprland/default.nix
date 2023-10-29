@@ -56,8 +56,8 @@ in
 
       general = {
         gaps_in = 5;
-        gaps_out = 10;
-        border_size = 1.7;
+        gaps_out = 8;
+        border_size = 2.0;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
       };
   
@@ -75,7 +75,7 @@ in
 
       # https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
-        shadow_offset = "0 5";
+        shadow_offset = "5 5";
         rounding = 5;
         "col.shadow" = "rgba(00000099)";
       };

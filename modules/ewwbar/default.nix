@@ -7,6 +7,7 @@ in
   
   home.packages = with pkgs; [
     playerctl
+    pw-volume
     alsa-utils
     socat
     jq

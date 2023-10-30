@@ -51,7 +51,7 @@
 			:space-evenly false
 			:spacing "10"
 			(_volume :volume volume)
-			(_battery :status {EWW_BATTERY.BAT0.status} :battery {EWW_BATTERY.BAT0.capacity}))
+			(_battery :status {EWW_BATTERY == "" ? "" : EWW_BATTERY.BAT0.status} :battery {EWW_BATTERY == "" ? "" : EWW_BATTERY.BAT0.capacity}))
 			(_network :strength net-strength :name net-name)
 		(sep)
 		(buttons)))
@@ -90,11 +90,11 @@
 (defwidget _battery [status battery]
 	(box
 		:hexpand false
-		:class {battery < 20 ? "alert" : "regular"} 
+		:class {status == "" ? "regular" : battery < 20 ? "alert" : "regular"} 
 		(revealer-on-hover
 			:toggle battery-visible
 			:togglename "battery-visible"
-			(label :text {status == 'Charging' ? "󰂄" :
+			(label :text {status == 'Charging' || status == "" ? "󰚥" :
 				battery < 20 ? "󰁻" :
 					battery < 40 ? "󰁽" :
 						battery < 60 ? "󰁿" :
@@ -144,7 +144,7 @@
     {music != "" ? "🎵${music}" : ""}))
 
 (defpoll volume :interval "1s"
-  "scripts/getvol")
+  "pw-volume status | jq '.percentage'")
 
 (defpoll time :interval "10s"
   "date '+%H:%M %b %d, %Y'")

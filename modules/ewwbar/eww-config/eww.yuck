@@ -1,45 +1,45 @@
 (defwidget bar []
   (centerbox :orientation "h"
-    (workspaces :names active-workspaces :current-idx current-workspace)
+    (workspaces :current-idx current-workspace)
     (music)
     (info)))
 
-(deflisten active-workspaces :initial "[]" "bash ./scripts/get-workspaces")
 (deflisten current-workspace :initial "1" "bash ./scripts/get-active-workspace")
-(defwidget workspaces [names current-idx]
+(defwidget workspaces [current-idx]
 	(box
 		:halign "start"
 		:hexpand false
+        :class "bar-main"
 		:space-evenly true
 		:spacing "12"
 		:css "* {margin-left: 20px; margin-right: 20px;}"
 		(box
-			:class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "1" ? "active-workspace" : "regular"}
-			(label :text {names =~ `"1"` ? "" : ""}))
+			:class {current-idx == "1" ? "active-workspace" : "regular"}
+			(label :text ""))
 		(box
-			:class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "2" ? "active-workspace" : "regular"}
-			(label :text {names =~ `"2"` ? "" : ""}))
+			:class {current-idx == "2" ? "active-workspace" : "regular"}
+			(label :text ""))
 		(box
-			:class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "3" ? "active-workspace" : "regular"}
-			(label :text {names =~ `"3"` ? "" : ""}))
+			:class {current-idx == "3" ? "active-workspace" : "regular"}
+			(label :text ""))
 		(box
-			:class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "4" ? "active-workspace" : "regular"}
-			(label :text {names =~ `"4"` ? "" : ""}))
+			:class {current-idx == "4" ? "active-workspace" : "regular"}
+			(label :text ""))
 		(box
-			:class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "5" ? "active-workspace" : "regular"}
-			(label :text {names =~ `"5"` ? "" : ""}))
+			:class {current-idx == "5" ? "active-workspace" : "regular"}
+			(label :text ""))
 		(box
-			:class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "6" ? "active-workspace" : "regular"}
-			(label :text {names =~ `"6"` ? "" : ""}))
+			:class {current-idx == "6" ? "active-workspace" : "regular"}
+			(label :text ""))
 		(box
-			:class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "7" ? "active-workspace" : "regular"}
-			(label :text {names =~ `"7"` ? "" : ""}))
+			:class {current-idx == "7" ? "active-workspace" : "regular"}
+			(label :text ""))
 		(box
-			:class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "8" ? "active-workspace" : "regular"}
-			(label :text {names =~ `"8"` ? "" : ""}))
+			:class {current-idx == "8" ? "active-workspace" : "regular"}
+			(label :text ""))
 		(box
-			:class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "9" ? "active-workspace" : "regular"}
-			(label :text {names =~ `"9"` ? "" : ""}))))
+			:class {current-idx == "9" ? "active-workspace" : "regular"}
+			(label :text ""))))
 
 (defwidget info []
 	(box

@@ -4,11 +4,19 @@
 
 //Global Styles
 .bar-main {
-	color: #b0b4bc;
-	margin: 15px;
-	padding: 10px;
-	margin-bottom: 0px;
-	padding-bottom: 0px;
+	background-color: rgba(30, 30, 30, 0.9);
+    color: #FFFFFF;
+	border-radius: 10;
+	padding-left: 10px;
+	padding-right: 10px;
+
+    // font: 12px;
+
+	// color: #b0b4bc;
+	// margin: 15px;
+	// padding: 10px;
+	// margin-bottom: 0px;
+	// padding-bottom: 0px;
 }
 
 .bar-section {
@@ -32,11 +40,19 @@
 
 .regular {
 	color: #b0b4bc;
-	padding: 5px;
+	padding: 8px;
 }
 
 .active-workspace {
 	background-color: rgba(150, 150, 150, 0.4);
+	border-radius: 10;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.side-stuff {
+	background-color: rgba(20, 20, 20, 0.9);
+    color: #FFFFFF;
 	border-radius: 10;
 	padding-left: 10px;
 	padding-right: 10px;

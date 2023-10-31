@@ -73,17 +73,20 @@
 
 (defvar volume-visible false)
 (defwidget _volume [volume]
-	(box
-		:hexpand false
-		:class {volume > 100 ? "alert" : "regular"}
-		(revealer-on-hover
-			:toggle volume-visible
-			:togglename "volume-visible"
-			(label :text {volume <= 0 ? "󰝟 " :
-				volume < 33 ? "󰕿 " :
-					volume < 66 ? "󰖀 " :
-						volume < 99 ? "󰕾 " : "󱄡 "})
-			(label :text "${volume}%"))))
+    (eventbox
+        :onscroll "./scripts/volume {} ${EWW_EXECUTABLE}"
+        :onclick "./scripts/volume toggle ${EWW_EXECUTABLE}"
+        (box
+            :hexpand false
+            :class {volume > 100 ? "alert" : "regular"}
+            (revealer-on-hover
+                :toggle volume-visible
+                :togglename "volume-visible"
+                (label :text {volume <= 0 ? "󰝟 " :
+                    volume < 33 ? "󰕿 " :
+                        volume < 66 ? "󰖀 " :
+                            volume < 99 ? "󰕾 " : "󱄡 "})
+                (label :text "${volume}%")))))
 
 
 (defvar battery-visible false)
@@ -144,19 +147,9 @@
     {music != "" ? "🎵${music}" : ""}))
 
 (defpoll volume :interval "1s"
-  "pw-volume status | jq '.percentage'")
+    {"pw-volume status | jq '.percentage // 0'" ?: 500})
 
 (defpoll time :interval "10s"
   "date '+%H:%M %b %d, %Y'")
 
-(defwindow bar
-  :monitor 1
-  :exclusive true
-  :windowtype "dock"
-  :geometry (geometry :x "0%"
-                      :y "0%"
-                      :width "90%"
-                      :height "10px"
-                      :anchor "top center")
-  :reserve (struts :side "top" :distance "4%")
-  (bar))
+(include "windows.yuck")

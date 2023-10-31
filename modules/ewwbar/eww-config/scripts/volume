@@ -1,0 +1,12 @@
+#!/bin/sh 
+
+case $1 in
+    "*") command="";;
+    "up") command="change +2%";;
+    "down") command="change -1.5%";;
+    "toggle") command="mute toggle";;
+esac
+
+[ -n "$command" ] && pw-volume $command
+
+$2 update volume=$(pw-volume status | jq '.percentage // 0')

@@ -1,0 +1,7 @@
+
+(defwidget center-clock []
+(label :class "center-clock"
+        :orientation "h"
+        :halign "center"
+       :text {formattime(EWW_TIME, "%H:%M")})
+)

@@ -1,0 +1,32 @@
+.volume-osd {
+    min-width: 25rem;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 0.3rem;
+    background-color: $light_bkgrnd;
+}
+
+.volume-scale trough {
+    background-color: rgba(74, 139, 173, 1);
+    border-radius: 0.2rem;
+    min-height: 0.4rem;
+}
+
+.volume-scale trough highlight {
+    background-color: rgba(163, 255, 180, 1);
+    border-radius: 0.2rem;
+    min-height: 0.4rem;
+}
+
+.volume-icon {
+    margin-left: 0.75rem;
+    font-size: 1.5rem;
+
+    &.less {
+        color: rgba(150, 0, 0, 1);
+    };
+
+    &.more {
+        color: rgba(0, 150, 0, 1);
+    };
+}

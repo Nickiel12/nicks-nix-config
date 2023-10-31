@@ -27,6 +27,13 @@ in
       ",XF86AudioLowerVolume, exec, pw-volume change -1%; ${pkgs.eww}/bin/eww update volume=$(pw-volume status | jq '.percentage // 10')"
     ];
 
+    # listen even when locked
+    bindl = [
+      ",XF86AudioPlay, exec, playerctl play-pause"
+      ",XF86AudioNext, exec, playerctl next"
+      ",XF86AudioNext, exec, playerctl previous"
+    ];
+
     bind = [
       ",XF86AudioMute, exec, pw-volume mute toggle"
 

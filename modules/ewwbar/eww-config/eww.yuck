@@ -1,8 +1,10 @@
 (defwidget bar []
   (centerbox :orientation "h"
     (workspaces :current-idx current-workspace)
-    (music)
-    (info)))
+    ;; (music)
+    (center-clock)
+    (info)
+    ))
 
 (deflisten current-workspace :initial "1" "bash ./scripts/get-active-workspace")
 (defwidget workspaces [current-idx]
@@ -78,7 +80,7 @@
         :onclick "./scripts/volume toggle ${EWW_EXECUTABLE}"
         (box
             :hexpand false
-            :class {volume > 100 ? "alert" : "regular"}
+            :class {(volume ?: 90) > 100 ? "alert" : "regular"}
             (revealer-on-hover
                 :toggle volume-visible
                 :togglename "volume-visible"
@@ -86,7 +88,10 @@
                     volume < 33 ? "󰕿 " :
                         volume < 66 ? "󰖀 " :
                             volume < 99 ? "󰕾 " : "󱄡 "})
-                (label :text "${volume}%")))))
+                (label :text "${volume ?: "??"}%")
+            )
+            (volume_scale)
+        )))
 
 
 (defvar battery-visible false)
@@ -147,9 +152,11 @@
     {music != "" ? "🎵${music}" : ""}))
 
 (defpoll volume :interval "1s"
-    {"pw-volume status | jq '.percentage // 0'" ?: 500})
-
-(defpoll time :interval "10s"
-  "date '+%H:%M %b %d, %Y'")
+    {"pw-volume status | jq '.percentage // -1'" ?: 500})
 
 (include "windows.yuck")
+(include "./modules/center-clock.yuck")
+
+(defvar open_vol_osd false)
+(defvar ANIM_DURATION "500ms")
+(include "./modules/volume-osd.yuck")

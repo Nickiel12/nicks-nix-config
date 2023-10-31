@@ -2,21 +2,19 @@
 	all: unset; //Unsets everything so you can style everything from scratch
 }
 
+$bkgrnd: rgba(20, 20, 20, 0.9);
+$light_bkgrnd: rgba(60, 60, 60, 0.8);
+
+@import "./modules/center-clock.scss"
+@import "./modules/volume-osd.scss"
+
 //Global Styles
 .bar-main {
-	background-color: rgba(30, 30, 30, 0.9);
+	background-color: $bkgrnd;
     color: #FFFFFF;
 	border-radius: 10;
 	padding-left: 10px;
 	padding-right: 10px;
-
-    // font: 12px;
-
-	// color: #b0b4bc;
-	// margin: 15px;
-	// padding: 10px;
-	// margin-bottom: 0px;
-	// padding-bottom: 0px;
 }
 
 .bar-section {
@@ -26,11 +24,6 @@
 
 .sep {
 	color: rgba(200, 200, 200, 0.5);
-}
-
-.time {
-	font-weight: bold;
-	padding-right: 20px;
 }
 
 .alert {
@@ -51,9 +44,12 @@
 }
 
 .side-stuff {
-	background-color: rgba(20, 20, 20, 0.9);
+	background-color: $bkgrnd;
     color: #FFFFFF;
 	border-radius: 10;
 	padding-left: 10px;
 	padding-right: 10px;
+    font-size: 1.2rem;
 }
+
+

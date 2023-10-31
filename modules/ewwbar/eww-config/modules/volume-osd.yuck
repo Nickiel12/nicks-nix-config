@@ -1,0 +1,25 @@
+(defwindow vol_osd
+    :monitor 1 
+    :exclusive: false
+    :stacking "overlay" 
+    :geometry (geometry :anchor "top center")
+    (volume_osd))
+
+(defwidget volume_osd []
+    (revealer :transition "slidedown" 
+              :reveal {open_vol_osd == true ? true : false} 
+              :duration { ANIM_DURATION }
+        (box :orientation "h"
+             :class "volume-osd"
+             :space-evenly false
+             (volume_scale))))
+
+(defwidget volume_scale []
+    (overlay :hexpand true 
+        (scale :min 0 
+                :max 100
+                :active {volume != -1}
+                :value {volume == "-1" ? 0 : volume}
+                :class "volume-scale")))
+
+

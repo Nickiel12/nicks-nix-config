@@ -12,6 +12,7 @@ in
     # theme = "colbalt-neon";
 
     settings = {
+      allow_remote_control = true;
       shell = "zsh";
       background_blur = "4";
       background_opacity = "0.8";

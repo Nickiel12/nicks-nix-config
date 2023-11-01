@@ -7,12 +7,13 @@ $light_bkgrnd: rgba(60, 60, 60, 0.8);
 
 @import "./modules/center-clock.scss"
 @import "./modules/volume-osd.scss"
+@import "./dashboard/dashboard.scss"
 
 //Global Styles
 .bar-main {
 	background-color: $bkgrnd;
     color: #FFFFFF;
-	border-radius: 10;
+	border-radius: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -38,7 +39,7 @@ $light_bkgrnd: rgba(60, 60, 60, 0.8);
 
 .active-workspace {
 	background-color: rgba(150, 150, 150, 0.4);
-	border-radius: 10;
+	border-radius: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -46,7 +47,7 @@ $light_bkgrnd: rgba(60, 60, 60, 0.8);
 .side-stuff {
 	background-color: $bkgrnd;
     color: #FFFFFF;
-	border-radius: 10;
+	border-radius: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
     font-size: 1.2rem;

@@ -1,0 +1,79 @@
+
+
+(defwidget logout []
+    (box :class "dash_window"
+         :vexpand "false"
+         :hexpand "false"
+            (button :class "btn_logout"
+                    :onclick "hyprctl dispatch exit"
+                    "󰍃")))
+
+(defwidget restart []
+    (box :class "dash_window"
+         :vexpand "false"
+         :hexpand "false"
+            (button :class "btn_restart"
+                    :onclick "systemctl reboot"
+                    "󰜉")))
+
+(defwidget shutdown []
+    (box :class "dash_window"
+         :vexpand "false"
+         :hexpand "false"
+            (button :class "btn_shutdown"
+                    :onclick "systemctl poweroff"
+                    "󰐥")))
+
+(defwidget reboot_windows []
+    (box :class "dash_window"
+         :vexpand "false"
+         :hexpand "false"
+            (button :class "btn_switch_windows"
+                    :onclick "kitty @ launch"
+                    ;; :onclick "kitty --session /home/nixolas/.config/eww/scripts/switch-to-windows-kitty.conf -T switch-to-windows-elevation"
+                    "")))
+
+;; Set up prompt window for sudo password
+;; that trigglers on reboot_windows, 
+;; and runs the windows command
+
+
+(defwindow logout
+    :stacking "bg"
+    :focusable "false"
+    :monitor 0
+    :geometry (geometry :x 1400
+                        :y 200
+                        :width 75 
+                        :height 75)
+    (logout))
+
+(defwindow restart 
+    :stacking "bg"
+    :focusable "false"
+    :monitor 0
+    :geometry (geometry :x 1400
+                        :y 280
+                        :width 75 
+                        :height 75)
+    (restart))
+
+(defwindow shutdown 
+    :stacking "bg"
+    :focusable "false"
+    :monitor 0
+    :geometry (geometry :x 1400
+                        :y 360
+                        :width 75 
+                        :height 75)
+    (shutdown))
+
+(defwindow reboot_windows 
+    :stacking "bg"
+    :focusable "false"
+    :monitor 0
+    :geometry (geometry :x 1400
+                        :y 440
+                        :width 75 
+                        :height 75)
+    (reboot_windows))

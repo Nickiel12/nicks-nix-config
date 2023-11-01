@@ -1,0 +1,25 @@
+.dash_window {
+    background-color: $bkgrnd;
+    border-radius: 16px;
+}
+
+.btn_logout, .btn_restart, .btn_shutdown, .btn_switch_windows {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.btn_logout {
+    color: #7a49a5;
+}
+
+.btn_restart {
+    color: #ffa500;
+}
+
+.btn_shutdown {
+    color: #4a8bad;
+}
+
+.btn_switch_windows {
+    color: #0dc5ff;
+}

@@ -160,3 +160,4 @@
 (defvar open_vol_osd false)
 (defvar ANIM_DURATION "500ms")
 (include "./modules/volume-osd.yuck")
+(include "./dashboard/dashboard.yuck")

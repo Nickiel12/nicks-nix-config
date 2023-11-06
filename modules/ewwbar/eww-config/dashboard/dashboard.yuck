@@ -1,4 +1,22 @@
 
+(defwidget elevate_to_windows []
+    (revealer :transition "slideup"
+              :reveal { show_elevation_prompt }
+              :duration { "0ms" } ;; needs to be close to the default timeout, because the timeout is broken
+        (box :class "input_popup"
+             :vexpand "false"
+             :hexpand "false"
+             :orientation "v"
+             :spacing 2
+            (label :class "input_popup_label"
+                   :text "Elevation Required"
+                   :xalign 0.5)
+            (box :class "input_popup_input_box"
+                (input :class "input_popup_input"
+                       :password true 
+                       :timeout "1000ms" ;; this does nothing :(
+                       :onaccept "eww update show_elevation_prompt=false;eww close elevate_to_windows; echo \"{}\" | sudo -S grub-reboot 1 && systemctl reboot")
+                   ))))
 
 (defwidget logout []
     (box :class "dash_window"
@@ -29,8 +47,7 @@
          :vexpand "false"
          :hexpand "false"
             (button :class "btn_switch_windows"
-                    :onclick "kitty @ launch"
-                    ;; :onclick "kitty --session /home/nixolas/.config/eww/scripts/switch-to-windows-kitty.conf -T switch-to-windows-elevation"
+                    :onclick "eww open elevate_to_windows; eww update show_elevation_prompt=true"
                     "")))
 
 ;; Set up prompt window for sudo password
@@ -77,3 +94,12 @@
                         :width 75 
                         :height 75)
     (reboot_windows))
+
+(defwindow elevate_to_windows 
+    :monitor 0
+    :exclusive false 
+    :stacking "overlay"
+    :focusable true 
+    :geometry (geometry :anchor "center center")
+    (elevate_to_windows)
+)

@@ -58,6 +58,7 @@ let
                   firefox   # Internet access
                   freerdp   # RDP client
       pkgs-stable.flameshot   # screenshot utility
+      pkgs-stable.grim pkgs-stable.slurp pkgs-stable.wl-clipboard  # DIY wayland screenshots
       pkgs-stable.frei0r   # kdenlive video plugins
       pkgs-stable.godot_4
       pkgs-stable.helvum   # audio sink gui control

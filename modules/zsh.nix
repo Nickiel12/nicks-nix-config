@@ -46,6 +46,7 @@ in
       rm = "rmtrash";
       open-config = "cd ~/Documents/nicks-nix-config; nvim";
       switch-to-windows = "sudo grub-reboot 1; sudo reboot";
+      screenshot = "grim -d \"$(slurp -d)\" - | wl-copy -t image/png";
     };
   };
   

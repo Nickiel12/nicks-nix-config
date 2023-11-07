@@ -6,11 +6,12 @@ in
 {
   
   home.packages = with pkgs; [
+    alsa-utils
+    gcal
+    jq
     playerctl
     pw-volume
-    alsa-utils
     socat
-    jq
   ];
 
   programs.eww = {

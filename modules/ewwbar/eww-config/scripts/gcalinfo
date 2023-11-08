@@ -1,0 +1,11 @@
+; ~/.gcal/astronomical
+; %( = moonrise %) moonset  +XX-XX == lat long,    ,-X:XX time-offset from UTC
+; gcal --resource-file=<thisfile> -H no -ox   
+; -H no == no highlight     -ox don't show date on every line 
+0 Moonrise %(+47.20-122.24,-8:00
+0 Moonset %)+47.20-122.24,-8:00
+0 Moonphase %O
+; %o = sunrise %) sunset  +XX-XX == lat long,    ,-X:XX time-offset from UTC
+0 Sunrise %o+47.20-122.24,-8:00
+0 Sunset %s+47.20-122.244,-8:00
+

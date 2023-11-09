@@ -1,5 +1,5 @@
 
-{ inputs, config, osConfig, pkgs, pkgs-stable, user, ... }:
+{ inputs, config, osConfig, pkgs, pkgs-stable, ewwtilities, user, ... }:
 
 let
     moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
@@ -28,6 +28,7 @@ let
       bottom   # system monitor
       du-dust  # directory disk-space analyzer
       ffmpeg-full  # ffmpeg for video/audio rendering
+      ewwtilities.packages.${pkgs.system}.ewwtilities
       pkgs-stable.fontpreview # utility to preview fonts
       gitui    # command line git tui
       hugo

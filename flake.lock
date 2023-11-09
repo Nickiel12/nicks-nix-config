@@ -29,11 +29,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1699573349,
-        "narHash": "sha256-0CzRNiuL5VKAdxnmSOm4cmlbPC708BB/vsjJO1QJEKA=",
+        "lastModified": 1699573877,
+        "narHash": "sha256-IqkscWI/VOZs5AlUUcmfnYmyPuv+FIaTxw+VYb7ZxQM=",
         "ref": "refs/heads/main",
-        "rev": "d56a6701457acdcee6ea3db456a0456579b582f4",
-        "revCount": 10,
+        "rev": "e40bfb1a06ae1279b193b5bb4e4ac509af0c3ed8",
+        "revCount": 11,
         "type": "git",
         "url": "https://git.nickiel.net/Nickiel/Ewwtilities.git"
       },

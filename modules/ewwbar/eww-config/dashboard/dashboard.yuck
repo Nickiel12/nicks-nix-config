@@ -18,6 +18,14 @@
                        :onaccept "eww update show_elevation_prompt=false;eww close elevate_to_windows; echo \"{}\" | sudo -S grub-reboot 1 && systemctl reboot")
                    ))))
 
+(defpoll clock_gradient :interval "5m"
+    {"gcal --resource-file=/home/nixolas/.config/eww/scripts/gcalinfo -H no | ewwtilities calendar-background"})
+
+(defwidget dash_clock_bg []
+    (box :class "dash_clock_bg"
+         :style "background-image: ${clock_gradient}"
+    ))
+
 (defwidget dash_clock []
     (box :class "dash_clock"
          :orientation "v"
@@ -75,6 +83,17 @@
                         :width 400
                         :height 150)
     (dash_clock)
+)
+
+(defwindow dash_clock_bg
+    :stacking "bg"
+    :focusable "false"
+    :monitor 0
+    :geometry (geometry :x 760
+                        :y 200
+                        :width 400
+                        :height 150)
+    (dash_clock_bg)
 )
 
 (defwindow logout

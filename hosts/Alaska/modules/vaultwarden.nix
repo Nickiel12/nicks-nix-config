@@ -23,7 +23,7 @@ in
 
       # You can enable this in the admin portal
       # USE_SENDMAIL = true; # is broken rn :`(
-      SENDMAIL_COMMAND = "${pkgs.msmtp}/bin/sendmail";
+      SENDMAIL_COMMAND = "${pkgs.lib.makeBinPath [ pkgs.msmtp ]}/bin/sendmail";
 
       WEB_VAULT_FOLDER = "${pkgs.vaultwarden.webvault}/share/vaultwarden/vault";
       WEB_VAULT_ENABLED = true;

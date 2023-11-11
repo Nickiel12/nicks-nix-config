@@ -6,6 +6,8 @@
 .dash_clock {
     // background-image: linear-gradient(45deg, #7d7d7d, #262626 30%, #262626 60%, #10384a);
     border-radius: 16px;
+    background-repeat: no-repeat;
+    background-size: 400px 150px;
 }
 
 .dash_clock_bg {
@@ -15,10 +17,28 @@
 
 .dash_clock_time {
     font-size: 30px;
+    text-shadow:
+    -1px -1px 0 #000,
+     0   -1px 0 #000,
+     1px -1px 0 #000,
+     1px  0   0 #000,
+     1px  1px 0 #000,
+     0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000;
 }
 
 .dash_clock_date {
     font-size: 20px;
+    text-shadow:
+    -1px -1px 0 #000,
+     0   -1px 0 #000,
+     1px -1px 0 #000,
+     1px  0   0 #000,
+     1px  1px 0 #000,
+     0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000;
 }
 
 .btn_logout, .btn_restart, .btn_shutdown, .btn_switch_windows {

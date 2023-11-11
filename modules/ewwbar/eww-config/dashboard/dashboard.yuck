@@ -23,11 +23,13 @@
 
 (defwidget dash_clock_bg []
     (box :class "dash_clock_bg"
+         ;; :style "background-image: ${clock_gradient}"
          :style "background-image: ${clock_gradient}"
     ))
 
 (defwidget dash_clock []
     (box :class "dash_clock"
+         :style "background-image: url('images/dash_clock_bg.png');"
          :orientation "v"
          :vexpand "false"
          :hexpand "false"
@@ -38,7 +40,7 @@
          (label :class "dash_clock_date"
                 :halign "center"
                 :text {formattime(EWW_TIME, "%B, %d %Y")})
-        (box :vexpand "true")
+        ;; (box :vexpand "true")
                 ))
 
 (defwidget logout []

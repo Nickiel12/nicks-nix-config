@@ -8,7 +8,6 @@
   hardware.bluetooth.enable = true;
 
   networking.hosts = { 
-    "10.0.0.183" = [ "headscale.nickiel.net" ]; 
     "100.64.0.1" = ["files.nickiel.net" "git.nickiel.net" "nickiel.net" 
     "jellyfin.nickiel.net" ];
   };

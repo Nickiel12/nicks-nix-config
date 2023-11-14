@@ -41,6 +41,40 @@
     -1px  0   0 #000;
 }
 
+.music_controls {
+    margin: 10px;
+}
+.album_art {
+    background-size: 140px;
+	min-height: 140px;
+	min-width: 140px;
+	margin: 20px;
+	border-radius: 14px;
+}
+.music_title {
+    font-size: 20px;
+}
+.music_artist {
+    font-size: 15px;
+}
+.music_button {
+    font-size: 32px;
+    font-weight: bold;
+}
+.music_bar scale trough highlight {
+	all: unset;
+	background-color: #B48EAD;
+	border-radius: 8px;
+}
+.music_bar scale trough {
+	all: unset;
+	background-color: #3A404C;
+	border-radius: 8px;
+	min-height: 20px;
+	min-width: 200px;
+	margin : 10px 0px 0px 0px;
+}
+
 .btn_logout, .btn_restart, .btn_shutdown, .btn_switch_windows {
     font-size: 40px;
     font-weight: bold;

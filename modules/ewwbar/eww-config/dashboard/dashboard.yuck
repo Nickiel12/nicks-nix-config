@@ -68,11 +68,11 @@
               :spacing 10 
               :space-evenly "false"
               :vexpand "false"
-              :hexpand "false" 
+              :hexpand "true" 
              (label :class "music_title"
                     :halign "center"
                     :wrap "true"
-                    :limit-width 20
+                    :limit-width 30
                     :text music_title
                     )
              (label :class "music_artist"
@@ -94,10 +94,68 @@
             )
             (box :class "music_bar" :halign "center" :vexpand "false" :hexpand "false" 
 				(scale :min 0 :active "true" :max 100 :value music_percentage)
-            )
+            ))))
+
+(defwidget dash_computer_status []
+    (box :class "dash_window" 
+         :orientation "v"
+         :space-evenly "false"
+         :hexpand "false"
+         :vexpand "false"
+         (box :class "arc_container"
+              :hexpand "false"
+              :width 200
+              :height 200
+              :valign "center"
+              :halign "center"
+               (circular-progress :class "res_cpu"
+                                  :value {EWW_CPU.avg}
+                                  :thickness 5
+                        (box :orientation "v"
+                             :halign "center"
+                             :valign "center"
+                             :vexpand "false"
+                            (label :class "small_circle_text" :text "CPU")
+                            (label :class "small_circle_text" :text "${round(EWW_CPU.avg, 2)}%")
+                    ))
         )
-    )
-)
+         (box :orientation "h"
+              :vexpand "true"
+              :valign "center"
+              (box :class "arc_container"
+                   :width 125
+                   :height 125
+                   :valign "center"
+                   :halign "center"
+                   (circular-progress :class "res_mem"
+                                      :value {EWW_RAM.used_mem_perc}
+                                      :thickness 5
+                        (box :orientation "v"
+                             :halign "center"
+                             :valign "center"
+                             :vexpand "false"
+                            (label :class "small_circle_text" :text "RAM")
+                            (label :class "small_circle_text" :text "${round(EWW_RAM.used_mem_perc, 2)}%")
+                    )
+                )
+              )
+              (box :class "arc_container"
+                   :width 125
+                   :height 125
+                   :valign "center"
+                   :halign "center"
+                   (circular-progress :class "res_hdd"
+                                      :value {EWW_DISK["/"].used_perc}
+                                      :thickness 5
+                        (box :orientation "v"
+                             :halign "center"
+                             :valign "center"
+                             :vexpand "false"
+                            (label :class "small_circle_text" :text "Disk")
+                            (label :class "small_circle_text" :text "${round(EWW_DISK["/"].used_perc, 2)}%")
+                    ))
+                ))))
+
 
 (defwidget logout []
     (box :class "dash_window"
@@ -136,9 +194,9 @@
     :stacking "bg"
     :focusable "false"
     :monitor 0
-    :geometry (geometry :x 760
-                        :y 200
-                        :width 400
+    :geometry (geometry :x 710
+                        :y 300
+                        :width 500
                         :height 150)
     (dash_clock)
 )
@@ -147,9 +205,9 @@
     :stacking "bg"
     :focusable "false"
     :monitor 0
-    :geometry (geometry :x 760
-                        :y 200
-                        :width 400
+    :geometry (geometry :x 710
+                        :y 300
+                        :width 500
                         :height 150)
     (dash_clock_bg)
 )
@@ -158,19 +216,30 @@
     :stacking "bg"
     :focusable "false"
     :monitor 0
-    :geometry (geometry :x 760
-                        :y 575
-                        :width 400
+    :geometry (geometry :x 710
+                        :y 475
+                        :width 500
                         :height 150)
     (dash_music_state)
+)
+
+(defwindow dash_computer_status
+    :stacking "bg"
+    :focusable "false"
+    :monitor 0
+    :geometry (geometry :x 450 
+                        :y 300
+                        :width 250
+                        :height 350)
+    (dash_computer_status)
 )
 
 (defwindow logout
     :stacking "bg"
     :focusable "false"
     :monitor 0
-    :geometry (geometry :x 1400
-                        :y 200
+    :geometry (geometry :x 1220
+                        :y 300
                         :width 75 
                         :height 75)
     (logout))
@@ -179,8 +248,8 @@
     :stacking "bg"
     :focusable "false"
     :monitor 0
-    :geometry (geometry :x 1400
-                        :y 280
+    :geometry (geometry :x 1220
+                        :y 395
                         :width 75 
                         :height 75)
     (restart))
@@ -189,8 +258,8 @@
     :stacking "bg"
     :focusable "false"
     :monitor 0
-    :geometry (geometry :x 1400
-                        :y 360
+    :geometry (geometry :x 1220
+                        :y 485
                         :width 75 
                         :height 75)
     (shutdown))
@@ -199,8 +268,8 @@
     :stacking "bg"
     :focusable "false"
     :monitor 0
-    :geometry (geometry :x 1400
-                        :y 440
+    :geometry (geometry :x 1220
+                        :y 580
                         :width 75 
                         :height 75)
     (reboot_windows))

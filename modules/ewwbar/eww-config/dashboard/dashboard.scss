@@ -7,7 +7,7 @@
     // background-image: linear-gradient(45deg, #7d7d7d, #262626 30%, #262626 60%, #10384a);
     border-radius: 16px;
     background-repeat: no-repeat;
-    background-size: 400px 150px;
+    background-size: 500px 150px;
 }
 
 .dash_clock_bg {
@@ -70,9 +70,27 @@
 	all: unset;
 	background-color: #3A404C;
 	border-radius: 8px;
-	min-height: 20px;
-	min-width: 200px;
+	min-height: 10px;
+	min-width: 210px;
 	margin : 10px 0px 0px 0px;
+}
+
+.arc_container {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.res_cpu {
+    color: #FD5B85;
+    background-color: #7e2d42;
+}
+.res_mem {
+    color: #B1A6EE;
+    background-color: #585376;
+}
+.res_hdd {
+    color: #67D4F1;
+    background-color: #336a78;
 }
 
 .btn_logout, .btn_restart, .btn_shutdown, .btn_switch_windows {

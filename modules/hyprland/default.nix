@@ -44,8 +44,9 @@ in
 
       exec-once = [
         "${pkgs.swww}/bin/swww init & sleep 0.5 & ${pkgs.swww}/bin/swww /home/nixolas/Downloads/RecountERD.png"
-        "eww open bar;eww open logout;eww open restart;eww open shutdown;eww open reboot_windows"
+        "eww open-many bar logout restart shutdown reboot_windows dash_music dash_computer_status"
         "eww open dash_clock_bg;eww open dash_clock" # the order here matters
+        
       ];
 
       input = {

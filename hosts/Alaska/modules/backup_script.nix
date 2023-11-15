@@ -125,7 +125,7 @@ in
           nextcloud-occ maintenance:mode --off
 
           echo "Unmounting the external drive"
-          umount ${cfg.tmp_mount_point}
+          umount ${builtins.toString cfg.tmp_mount_point}
 
           echo "Job completed"
           # "

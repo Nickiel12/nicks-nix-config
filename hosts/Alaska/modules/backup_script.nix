@@ -119,7 +119,8 @@ in
           echo "Backing up the nextcloud files"
           # -a archive | -v verbose
           rsync -av ${builtins.toString cfg.nextcloud.root_dir} \
-            ${builtins.toString cfg.tmp_mount_point}/nextcloud
+            ${builtins.toString cfg.tmp_mount_point}/nextcloud \
+            --exclude '*/appdata_*' --exclude "*/files_trashbin/*" --exclude "*/files_versions/*"
 
           echo "Get nextcloud out of maintenance mode so that normal operations can resume"
           nextcloud-occ maintenance:mode --off

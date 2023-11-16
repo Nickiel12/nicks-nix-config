@@ -22,6 +22,8 @@
             "OC\\Preview\\JPEG"
             "OC\\Preview\\JPG"
             "OC\\Preview\\PNG"
+            "OC\\Preview\\MP4"
+            "OC\\Preview\\MOVIE"
           ];
         };
 

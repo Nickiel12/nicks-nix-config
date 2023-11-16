@@ -74,4 +74,15 @@
           requires = ["postgresql.service"];
           after = ["postgresql.service"];
       };
+
+      systemd.services.nextcloud-preview = {
+        description = "Generate previews for all images that haven't been rendered";
+        path = with pkgs; [
+          config.services.nextcloud.occ
+        ];
+        script = ''
+          nextcloud-occ preview:pre-generate
+        '';
+        startAt = "01:00:00";
+      };
 }

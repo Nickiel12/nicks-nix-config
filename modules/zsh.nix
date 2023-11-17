@@ -47,6 +47,7 @@ in
       open-config = "cd ~/Documents/nicks-nix-config; nvim";
       switch-to-windows = "sudo grub-reboot 1; sudo reboot";
       screenshot = "grim -g \"$(slurp -d)\" - | wl-copy -t image/png";
+      move-to-alaska = "ssh nixolas@100.64.0.1";
     };
   };
   

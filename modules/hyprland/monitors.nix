@@ -4,7 +4,7 @@
 let 
   monitor_config = if (hostname == "NicksNixDesktop") then 
       ''
-      monitor=DP-4, 2560x1440@144, 1920x0, 1
+      monitor=DP-3, 2560x1440@144, 1920x0, 1
       monitor=DP-2, 1920x1080@60, 0x360,1
 
       env = LIBVA_DRIVER_NAME,nvidia

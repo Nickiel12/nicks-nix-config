@@ -58,20 +58,18 @@
 		:spacing "12"
 		:css "* {margin-left: 20px; margin-right: 20px;}"
 		(box
-			:class {current-idx == "1" ? "active-workspace" : "regular"}
+			:class {current-idx == "2" ? "active-workspace" : "regular"}
 			(label :text ""))
 		(box
-			:class {current-idx == "3" ? "active-workspace" : "regular"}
+			:class {current-idx == "4" ? "active-workspace" : "regular"}
 			(label :text ""))
 		(box
-			:class {current-idx == "5" ? "active-workspace" : "regular"}
+			:class {current-idx == "6" ? "active-workspace" : "regular"}
 			(label :text ""))
 		(box
-			:class {current-idx == "7" ? "active-workspace" : "regular"}
+			:class {current-idx == "8" ? "active-workspace" : "regular"}
 			(label :text ""))
-		(box
-			:class {current-idx == "9" ? "active-workspace" : "regular"}
-			(label :text ""))))
+			))
 
 (defwidget bar_right []
   (centerbox :orientation "h"
@@ -89,16 +87,19 @@
 		:spacing "12"
 		:css "* {margin-left: 20px; margin-right: 20px;}"
 		(box
-			:class {current-idx == "2" ? "active-workspace" : "regular"}
+			:class {current-idx == "1" ? "active-workspace" : "regular"}
 			(label :text ""))
 		(box
-			:class {current-idx == "4" ? "active-workspace" : "regular"}
+			:class {current-idx == "3" ? "active-workspace" : "regular"}
 			(label :text ""))
 		(box
-			:class {current-idx == "6" ? "active-workspace" : "regular"}
+			:class {current-idx == "5" ? "active-workspace" : "regular"}
 			(label :text ""))
 		(box
-			:class {current-idx == "8" ? "active-workspace" : "regular"}
+			:class {current-idx == "7" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "9" ? "active-workspace" : "regular"}
 			(label :text ""))))
 
 (defwindow full_screen_bar

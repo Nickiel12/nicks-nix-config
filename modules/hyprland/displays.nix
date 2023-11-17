@@ -19,7 +19,7 @@ in
       "3,monitor:DP-3"
       "5,monitor:DP-3"
       "7,monitor:DP-3"
-      "9,monitor:DP-2"
+      "9,monitor:DP-3"
 
       "2,monitor:DP-2,default:true"
       "4,monitor:DP-2"

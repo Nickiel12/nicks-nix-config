@@ -1,47 +1,4 @@
-(defwidget bar []
-  (centerbox :orientation "h"
-    (workspaces :current-idx current-workspace)
-    ;; (music)
-    (center-clock)
-    (info)
-    ))
 
-(deflisten current-workspace :initial "1" "bash ./scripts/get-active-workspace")
-(defwidget workspaces [current-idx]
-	(box
-		:halign "start"
-		:hexpand false
-        :class "bar-main"
-		:space-evenly true
-		:spacing "12"
-		:css "* {margin-left: 20px; margin-right: 20px;}"
-		(box
-			:class {current-idx == "1" ? "active-workspace" : "regular"}
-			(label :text ""))
-		(box
-			:class {current-idx == "2" ? "active-workspace" : "regular"}
-			(label :text ""))
-		(box
-			:class {current-idx == "3" ? "active-workspace" : "regular"}
-			(label :text ""))
-		(box
-			:class {current-idx == "4" ? "active-workspace" : "regular"}
-			(label :text ""))
-		(box
-			:class {current-idx == "5" ? "active-workspace" : "regular"}
-			(label :text ""))
-		(box
-			:class {current-idx == "6" ? "active-workspace" : "regular"}
-			(label :text ""))
-		(box
-			:class {current-idx == "7" ? "active-workspace" : "regular"}
-			(label :text ""))
-		(box
-			:class {current-idx == "8" ? "active-workspace" : "regular"}
-			(label :text ""))
-		(box
-			:class {current-idx == "9" ? "active-workspace" : "regular"}
-			(label :text ""))))
 
 (defwidget info []
 	(box
@@ -154,7 +111,7 @@
 (defpoll volume :interval "1s"
     {"pw-volume status | jaq '.percentage // -1'" ?: 500})
 
-(include "windows.yuck")
+(include "status_bars.yuck")
 (include "./modules/center-clock.yuck")
 
 (defvar open_vol_osd false)

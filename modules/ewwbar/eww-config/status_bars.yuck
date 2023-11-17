@@ -1,0 +1,138 @@
+(defwidget bar_full []
+  (centerbox :orientation "h"
+    (full_workspaces :current-idx current-workspace)
+    (center-clock)
+    (info)
+))
+
+(deflisten current-workspace :initial "1" "bash ./scripts/get-active-workspace")
+(defwidget full_workspaces [current-idx]
+	(box
+		:halign "start"
+		:hexpand false
+        :class "bar-main"
+		:space-evenly true
+		:spacing "12"
+		:css "* {margin-left: 20px; margin-right: 20px;}"
+		(box
+			:class {current-idx == "1" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "2" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "3" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "4" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "5" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "6" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "7" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "8" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "9" ? "active-workspace" : "regular"}
+			(label :text ""))))
+
+(defwidget bar_left []
+  (centerbox :orientation "h"
+    (left_screen_workspaces :current-idx current-workspace)
+    (center-clock)
+    (info)
+))
+
+(defwidget left_screen_workspaces [current-idx]
+	(box
+		:halign "start"
+		:hexpand false
+        :class "bar-main"
+		:space-evenly true
+		:spacing "12"
+		:css "* {margin-left: 20px; margin-right: 20px;}"
+		(box
+			:class {current-idx == "1" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "3" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "5" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "7" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "9" ? "active-workspace" : "regular"}
+			(label :text ""))))
+
+(defwidget bar_right []
+  (centerbox :orientation "h"
+    (right_screen_workspaces :current-idx current-workspace)
+    (center-clock)
+    (info)
+))
+
+(defwidget right_screen_workspaces [current-idx]
+	(box
+		:halign "start"
+		:hexpand false
+        :class "bar-main"
+		:space-evenly true
+		:spacing "12"
+		:css "* {margin-left: 20px; margin-right: 20px;}"
+		(box
+			:class {current-idx == "2" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "4" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "6" ? "active-workspace" : "regular"}
+			(label :text ""))
+		(box
+			:class {current-idx == "8" ? "active-workspace" : "regular"}
+			(label :text ""))))
+
+(defwindow full_screen_bar
+  :monitor 0
+  :exclusive true
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "90%"
+                      :height "10px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "4%")
+  (bar_full))
+
+(defwindow left_screen_bar
+  :monitor 0
+  :exclusive true
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "90%"
+                      :height "10px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "4%")
+  (bar_left))
+
+(defwindow right_screen_bar
+  :monitor 1
+  :exclusive true
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "90%"
+                      :height "10px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "4%")
+(bar_right))

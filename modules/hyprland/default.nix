@@ -6,6 +6,9 @@ let
 
   monitor_config = import ./monitors.nix { hostname = hostname; };
 
+  two_monitor_hosts = [
+    "NicksNixDesktop"
+  ];
 in
 {
 
@@ -44,10 +47,13 @@ in
 
       exec-once = [
         "${pkgs.swww}/bin/swww init & sleep 0.5 & ${pkgs.swww}/bin/swww /home/nixolas/Downloads/RecountERD.png"
-        "eww open-many bar logout restart shutdown reboot_windows dash_music dash_computer_status"
+        "eww open-many logout restart shutdown reboot_windows dash_music dash_computer_status"
         "eww open dash_clock_bg;eww open dash_clock" # the order here matters
-        
-      ];
+    ] ++ pkgs.lib.optionals (builtins.elem hostname two_monitor_hosts ) [
+        "eww open-many left_screen_bar right_screen_bar"
+    ] ++ pkgs.lib.optionals (! builtins.elem hostname two_monitor_hosts ) [
+        "eww open full_screen_bar"
+    ];
 
       input = {
         kb_layout = "us";

@@ -24,6 +24,7 @@ in
       "3,monitor:DP-2"
       "5,monitor:DP-2"
       "7,monitor:DP-2"
+      "9,monitor:DP-2"
     ] else [
 
     ];

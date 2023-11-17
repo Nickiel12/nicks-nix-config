@@ -51,7 +51,7 @@ in
     ] ++
       # Change workspace
       (map (n:
-        "$mod,${n},workspace,name:${n}"
+        "$mod,${n}, exec, ewwtilities workspace-selector ${n}"
       ) workspaces) ++
       # Move window to workspace
       (map (n:

@@ -152,7 +152,7 @@
     {music != "" ? "🎵${music}" : ""}))
 
 (defpoll volume :interval "1s"
-    {"pw-volume status | jq '.percentage // -1'" ?: 500})
+    {"pw-volume status | jaq '.percentage // -1'" ?: 500})
 
 (include "windows.yuck")
 (include "./modules/center-clock.yuck")

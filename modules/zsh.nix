@@ -42,6 +42,7 @@ in
     shellAliases = {
       cat = "bat";
       ls = "eza";
+      jq = "jaq";
       gust = "/home/nixolas/Documents/Gust/target/debug/gust";
       rm = "rmtrash";
       open-config = "cd ~/Documents/nicks-nix-config; nvim";

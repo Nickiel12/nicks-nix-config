@@ -23,8 +23,8 @@ in
     # binde, will repeat when held
     #https://wiki.hyprland.org/Configuring/Binds/#bind-flags
     binde = [
-      ",XF86AudioRaiseVolume, exec, pw-volume change +1%; ${pkgs.eww}/bin/eww update volume=$(pw-volume status | jq '.percentage // 10')"
-      ",XF86AudioLowerVolume, exec, pw-volume change -1%; ${pkgs.eww}/bin/eww update volume=$(pw-volume status | jq '.percentage // 10')"
+      ",XF86AudioRaiseVolume, exec, pw-volume change +1%; ${pkgs.eww}/bin/eww update volume=$(pw-volume status | jaq '.percentage // 10')"
+      ",XF86AudioLowerVolume, exec, pw-volume change -1%; ${pkgs.eww}/bin/eww update volume=$(pw-volume status | jaq '.percentage // 10')"
     ];
 
     # listen even when locked

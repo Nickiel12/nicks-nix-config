@@ -39,6 +39,12 @@
           };
       };
 
+      "iot.nickiel.net" = {
+        locations."/turn_computer_on" = {
+          proxyPass = "http://10.0.184/turn_computer_on";
+        };
+      };
+
       "files.nickiel.net" = {
           forceSSL = true;
           enableACME = true;

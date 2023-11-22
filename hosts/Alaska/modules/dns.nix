@@ -14,4 +14,9 @@
       type = "A";
       value = "100.64.0.1";
     }
+    {
+      name = "iot.nickiel.net";
+      type = "A";
+      value = "100.64.0.1";
+    }
   ]

@@ -56,6 +56,7 @@ let
       # Gui application
       pkgs-stable.darktable # RAW processing
       pkgs-stable.dbeaver   # SQL management tool
+      pkgs-stable.dragon        # simple audio player
                   firefox   # Internet access
                   freerdp   # RDP client
       pkgs-stable.flameshot   # screenshot utility
@@ -71,8 +72,8 @@ let
       pkgs-stable.obsidian      # Markdown and notes
                   qalculate-gtk # unit-friendly calculator
                   qlcplus       # LED xlr control program
+      signal-desktop            # secure messaging service
       pkgs-stable.vscodium      # when vim and emacs (somehow) isn't enough
-      pkgs-stable.dragon        # simple audio player
                   obs-studio    # for video recording and virtual camera
 
 

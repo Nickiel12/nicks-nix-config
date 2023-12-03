@@ -6,6 +6,7 @@ let
     rustpkgs = import pkgs {
       overlays = [ moz_overlay ];
     };
+
     ruststable = (rustpkgs.latest.rustChannels.stable.rust.override {
       extensions = [ "rust-src" "rust-analysis" ];}
     );
@@ -62,7 +63,6 @@ let
                   krita     # Raster drawing
       pkgs-stable.libreoffice-fresh   # Office editing
       makemkv       # blue-ray + dvd -> mkv
-      pkgs-stable.obsidian      # Markdown and notes
                   qalculate-gtk # unit-friendly calculator
                   qlcplus       # LED xlr control program
       signal-desktop            # secure messaging service

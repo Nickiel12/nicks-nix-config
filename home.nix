@@ -14,13 +14,6 @@ let
       "Alaska"
     ];
 
-    awesome-wm-widgets = pkgs.fetchFromGitHub {
-        owner = "streetturtle";
-        repo = "awesome-wm-widgets";
-        rev = "ef70d16c43c2f566a4fe2955b8d6c08f6c185af8";
-        sha256 = "td9uE+b3DrE+JJ3NCmIkQAuxJLJCGd79J5LZLqBw9KI=";
-     };
-
      install_packages = with pkgs; [
     # (pkgs.callPackage ./modules/minecraft-bedrock/minecraft-bedrock-server.nix {}) # the possible minecraft-bedrock-server package for testing
       # utilities
@@ -117,17 +110,6 @@ in
   programs.direnv.nix-direnv.enable = true;
 
   home = {
-    file = {
-      ".config/awesome" = {
-        source = ./rsrcs/awesome;
-        recursive = true;
-      };
-      ".config/awesome/cpu-widget.lua".source = "${awesome-wm-widgets}/cpu-widget/cpu-widget.lua";
-      ".config/awesome/ram-widget.lua".source = "${awesome-wm-widgets}/ram-widget/ram-widget.lua";
-      ".config/awesome/batteryarc.lua".source = "${awesome-wm-widgets}/batteryarc-widget/batteryarc.lua";
-      ".config/awesome/awesome-wm-widgets/spaceman.jpg".source = "${awesome-wm-widgets}/batteryarc-widget/spaceman.jpg";
-      ".config/awesome/calendar.lua".source = "${awesome-wm-widgets}/calendar-widget/batteryarc.lua";
-    };
 
     # Home Manager needs a bit of information about you and the
     # paths it should manage.

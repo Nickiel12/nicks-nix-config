@@ -11,7 +11,8 @@
     firewall = {
       checkReversePath = "loose";
       trustedInterfaces = [ "tailscale0" ];
-      allowedUDPPorts = [ config.services.tailscale.port ];
+      allowedUDPPorts = [ config.services.tailscale.port 11100];
+      allowedTCPPorts = [ 11100 ];
     };
 
     nameservers = ["10.0.0.183" "1.1.1.1"];

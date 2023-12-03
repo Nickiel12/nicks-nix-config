@@ -11,6 +11,7 @@ let
       env = XDG_SESSION_TYPE,wayland
       env = GBM_BACKEND,nvidia-drm
       env = WLR_NO_HARDWARE_CURSORS,1
+      env = SIGNAL_USE_WAYLAND,1
       ''
       else if (hostname == "NicksNixLaptop") then ''
 

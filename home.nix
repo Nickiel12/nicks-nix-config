@@ -61,7 +61,7 @@ let
       pkgs-stable.kicad     # PCB design
                   krita     # Raster drawing
       pkgs-stable.libreoffice-fresh   # Office editing
-      pkgs-stable.makemkv       # blue-ray + dvd -> mkv
+      makemkv       # blue-ray + dvd -> mkv
       pkgs-stable.obsidian      # Markdown and notes
                   qalculate-gtk # unit-friendly calculator
                   qlcplus       # LED xlr control program

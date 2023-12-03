@@ -1,5 +1,5 @@
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, headscale, ... }:
 
 
 {
@@ -33,6 +33,7 @@
     };
   };
 
+  # headscale dns is handled by dnsmasq
   networking.hosts = {
     "100.64.0.1" = ["files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
   };

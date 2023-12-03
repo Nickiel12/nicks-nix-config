@@ -5,11 +5,14 @@
     utils.url = "github:numtide/flake-utils";
     nixvim.url = "github:nix-community/nixvim";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/release-23.05";
+    nixpkgs-stable = {
+      url = "github:NixOS/nixpkgs/release-23.05";
+    };
     kmonad.url = "github:kmonad/kmonad?dir=nix";
 
     headscale = {
-      url = "github:kradalby/headscale/bbb4c357268998fd02780b7f8f2013f76e3ab80a";
+      # url = "github:kradalby/headscale/bbb4c357268998fd02780b7f8f2013f76e3ab80a";
+      url = "github:juanfont/headscale/b01f1f1867136d9b2d7b1392776eb363b482c525";
       # url = "github:juanfont/headscale"; # Real repo
       inputs."flake-utils".follows = "utils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,14 +43,6 @@
       user = "nixolas";
       system = "x86_64-linux";  
 
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [
-          headscale.overlay
-        ];
-        config.allowUnfree = true;
-      };
-
       pkgs-stable = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
@@ -63,7 +58,7 @@
         Alaska = lib.nixosSystem {
           inherit system;
           specialArgs = { 
-            inherit user pkgs pkgs-stable;
+            inherit user headscale pkgs-stable;
           };
 
           modules = [
@@ -95,7 +90,7 @@
         NicksNixLaptop = lib.nixosSystem {
           inherit system;
           specialArgs = { 
-            inherit user pkgs;
+            inherit user;
           };
 
           modules = [

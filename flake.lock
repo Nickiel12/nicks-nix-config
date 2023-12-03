@@ -162,17 +162,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1701336075,
-        "narHash": "sha256-1AN5KGL42BwBNkJMjS2ZDcd/CT/AtH1BkT+azHMI5NY=",
-        "owner": "kradalby",
+        "lastModified": 1683878976,
+        "narHash": "sha256-nqmTqe3F3Oh8rnJH0clwACD/0RpqmfOMXNubr3C8rEc=",
+        "owner": "juanfont",
         "repo": "headscale",
-        "rev": "bbb4c357268998fd02780b7f8f2013f76e3ab80a",
+        "rev": "b01f1f1867136d9b2d7b1392776eb363b482c525",
         "type": "github"
       },
       "original": {
-        "owner": "kradalby",
+        "owner": "juanfont",
         "repo": "headscale",
-        "rev": "bbb4c357268998fd02780b7f8f2013f76e3ab80a",
+        "rev": "b01f1f1867136d9b2d7b1392776eb363b482c525",
         "type": "github"
       }
     },

@@ -2,10 +2,18 @@
   description = "Nick's NixOS Configuration";
 
   inputs = {
+    utils.url = "github:numtide/flake-utils";
     nixvim.url = "github:nix-community/nixvim";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/release-23.05";
     kmonad.url = "github:kmonad/kmonad?dir=nix";
+
+    headscale = {
+      url = "github:kradalby/headscale/bbb4c357268998fd02780b7f8f2013f76e3ab80a";
+      # url = "github:juanfont/headscale"; # Real repo
+      inputs."flake-utils".follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nicks_nextcloud_integrations.url = "git+https://git.nickiel.net/Nickiel/nicks_nextcloud_integrations.git";
     ewwtilities.url = "git+https://git.nickiel.net/Nickiel/Ewwtilities.git";
@@ -18,12 +26,29 @@
 
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, ewwtilities, kmonad, ... }:
+  outputs = inputs@{
+    self,
+    nixpkgs,
+    nixpkgs-stable,
+    headscale,
+    home-manager,
+    ewwtilities,
+    kmonad,
+    ... 
+  }:
     let
       user = "nixolas";
       system = "x86_64-linux";  
 
       pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          headscale.overlay
+        ];
+        config.allowUnfree = true;
+      };
+
+      pkgs-stable = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
       };
@@ -31,16 +56,14 @@
       lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
-        inherit (nixpkgs) lib;
-        inherit inputs home-manager user kmonad;
+        inherit lib;
 
 
         # Home server
         Alaska = lib.nixosSystem {
           inherit system;
           specialArgs = { 
-            inherit user;
-            pkgs-stable = inputs.nixpkgs-stable;
+            inherit user pkgs pkgs-stable;
           };
 
           modules = [
@@ -55,11 +78,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities;
-                  pkgs-stable = import inputs.nixpkgs {
-                    inherit system;
-                    config.allowUnfree = true;
-                  };
+                  inherit user ewwtilities pkgs-stable;
                 };
                 users.${user} = {
                   imports = [
@@ -76,7 +95,7 @@
         NicksNixLaptop = lib.nixosSystem {
           inherit system;
           specialArgs = { 
-            inherit user;
+            inherit user pkgs;
           };
 
           modules = [
@@ -92,11 +111,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities;
-                  pkgs-stable = import inputs.nixpkgs {
-                    inherit system;
-                    config.allowUnfree = true;
-                  };
+                  inherit user ewwtilities pkgs-stable;
                 };
                 users.${user} = {
                   imports = [
@@ -128,11 +143,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities;
-                  pkgs-stable = import inputs.nixpkgs {
-                    inherit system;
-                    config.allowUnfree = true;
-                  };
+                  inherit user ewwtilities pkgs-stable;
                 };
                 users.${user} = {
                   imports = [

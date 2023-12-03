@@ -3,10 +3,10 @@
 
 let
     moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
-    nixpkgs = import <nixpkgs> {
+    rustpkgs = import pkgs {
       overlays = [ moz_overlay ];
     };
-    ruststable = (nixpkgs.latest.rustChannels.stable.rust.override {
+    ruststable = (rustpkgs.latest.rustChannels.stable.rust.override {
       extensions = [ "rust-src" "rust-analysis" ];}
     );
 

@@ -2,7 +2,7 @@
 
 {
   services.status_cloud = {
-    enable = true;
+    enable = false;
     config_path = "/home/nixolas/nextcloud_integrations.toml";
     frequency = 15;
   };

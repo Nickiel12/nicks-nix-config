@@ -104,7 +104,7 @@ in
           mkdir -p ${builtins.toString cfg.tmp_mount_point}
 
           echo "Mounting the external backup drive"
-          mount /dev/disk/by-label/${cfg.backup1_drive_label} ${builtins.toString cfg.tmp_mount_point}
+          mount /dev/disk/by-label/${cfg.backup1_drive_label} ${builtins.toString cfg.tmp_mount_point} -t ntfs3
 
           echo "Puttin nextcloud into maintenance mode so that changes cannot happen during the backup"
           nextcloud-occ maintenance:mode --on

@@ -55,7 +55,13 @@ in
         "eww open full_screen_bar"
     ];
 
-      input = {
+      input = if (hostname == "NicksNixLaptop") then
+      {
+        kb_layout = "us";
+        sensitivity = 0.0;
+        accel_profile = "linear";
+        touchpad.disable_while_typing = true;
+      } else {
         kb_layout = "us";
         sensitivity = -0.85;
         accel_profile = "adaptive";

@@ -58,7 +58,7 @@ in
       input = if (hostname == "NicksNixLaptop") then
       {
         kb_layout = "us";
-        sensitivity = 0.0;
+        sensitivity = 0.3;
         accel_profile = "linear";
         touchpad.disable_while_typing = true;
       } else {

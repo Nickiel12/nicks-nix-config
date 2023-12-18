@@ -59,7 +59,7 @@
   boot.loader.systemd-boot.configurationLimit = 5;
 
   nix.settings.auto-optimise-store = true;
-  nixpkgs.config.allowUnfree = true;
+  config.allowUnfree = true;
   nix.gc = {
     automatic = true;
     options = "--delete-generations 8d";

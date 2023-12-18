@@ -1,4 +1,4 @@
-{ config,  ... }:
+{ config, user,  ... }:
 
 
 {
@@ -6,6 +6,9 @@
     (import ./../../modules/xrdp.nix)
 	./hardware-configuration.nix
   ];
+
+  programs.adb.enable = true;
+  users.users.${user}.extraGroups = [ "adbusers" ];
 
   networking = {
     firewall = {

@@ -1,9 +1,13 @@
-{ config, ... }:
+{ config, user, ... }:
 
-{ imports = [
+{ 
+  imports = [
     (import ./../../modules/xrdp.nix)
 	./hardware-configuration.nix
   ];
+
+  programs.adb.enable = true;
+  users.users.${user}.extraGroups = [ "adbusers" ];
 
   hardware.bluetooth.enable = true;
 

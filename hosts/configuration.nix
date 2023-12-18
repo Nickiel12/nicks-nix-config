@@ -18,6 +18,10 @@
     enableKwallet = true;
   };
 
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
+
   # Some programs look for session variables to store config files at
   # (Looking at you home-manager yazi)
   environment.sessionVariables = rec {

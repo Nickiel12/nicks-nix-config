@@ -59,7 +59,7 @@
   boot.loader.systemd-boot.configurationLimit = 5;
 
   nix.settings.auto-optimise-store = true;
-  config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true; # required for discord
   nix.gc = {
     automatic = true;
     options = "--delete-generations 8d";

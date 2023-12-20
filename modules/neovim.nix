@@ -137,6 +137,7 @@ in
         key = "<leader>d";
         action = "\"_d";
       }
+
       {
         # leader+p delete the selection to the void, then paste
         mode = "x";
@@ -147,16 +148,10 @@ in
 
     plugins = {
 
-      lsp.enable = true;
-
-      lsp.servers = {
-        gopls.enable = true;
-      };
-
       nvim-tree = {
         enable = true;
         openOnSetup = true;
-      }; 
+      };
 
       nvim-autopairs = {
         enable = true;
@@ -171,10 +166,15 @@ in
           "rust"
           "toml"
           "lua"
-          "go"
         ];
       };
       rainbow-delimiters.enable = true;
+      treesitter-refactor = {
+        enable = true;
+        #highlightCurrentScope.enable = true;
+        navigation.enable = true;
+        smartRename.enable = true;
+      };
 
       comment-nvim = {
         enable = true;
@@ -200,11 +200,9 @@ in
       # Read settings  here: https://github.com/mfussenegger/nvim-dap#Usage
       # See :help dap.txt, :help dap-mapping and :help dap-api.
       cmp-dap.enable = true;
-      # method signature with current arguement hints)
+      cmp-buffer.enable = true;
       cmp-nvim-lsp-signature-help.enable = true;
-      # lua source autocomplete
       cmp-nvim-lua.enable = true;
-      # filesystem paths
       cmp-path.enable = true;
 
       presence-nvim.enable = true;

@@ -126,6 +126,16 @@ in
         action = ":m '<-2<CR>gv=gv";
       }
       {
+        mode = "v";
+        key = ">";
+        action = ">gv";
+      }
+      {
+        mode = "v";
+        key = "<";
+        action = "<gv";
+      }
+      {
         # Yank selection to system clipboard
         mode = "v";
         key = "<leader>y";

@@ -32,6 +32,8 @@ in
     # Whether to enable hyprland-session.target on hyprland startup
     systemd.enable = true;
 
+    # Whether to enable patching wlroots for better Nvidia support
+    enableNvidiaPatches = true;
     extraConfig = lib.strings.concatStrings [
       monitor_config
       ''

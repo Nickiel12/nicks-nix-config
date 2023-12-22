@@ -25,108 +25,82 @@ vim.keymap.set("n", "<leader>y", "\"+y");
 vim.keymap.set("v", "<leader>y", "\"+y");
 vim.keymap.set("n", "<leader>Y", "\"+Y");
 
+vim.keymap.set("v", ">", ">gv");
+vim.keymap.set("v", "<", "<gv");
+
 vim.keymap.set("n", "<leader>d", "\"_d");
 vim.keymap.set("v", "<leader>d", "\"_d");
 
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-require("monokai-pro").setup({  
-    transparent_background = false,
-    terminal_colors = true,
-    devicons = true, -- highlight the icons of `nvim-web-devicons`
-    styles = {
-      comment = { italic = true },
-      keyword = { italic = true }, -- any other keyword
-      type = { italic = true }, -- (preferred) int, long, char, etc
-      storageclass = { italic = true }, -- static, register, volatile, etc
-      structure = { italic = true }, -- struct, union, enum, etc
-      parameter = { italic = true }, -- parameter pass in function
-      annotation = { italic = true },
-      tag_attribute = { italic = true }, -- attribute of tag in reactjs
-    },
-    filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
-    -- Enable this will disable filter option
-    day_night = {
-      enable = false, -- turn off by default
-      day_filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
-      night_filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
-    },
-    inc_search = "background", -- underline | background
-    background_clear = {
-      -- "float_win",
-      "toggleterm",
-      "telescope",
-      -- "which-key",
-      "renamer",
-      "notify",
-      -- "nvim-tree",
-      -- "neo-tree",
-      -- "bufferline", -- better used if background of `neo-tree` or `nvim-tree` is cleared
-    },-- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree", "nvim-tree", "bufferline"
-    plugins = {
-      bufferline = {
-        underline_selected = false,
-        underline_visible = false,
-      },
-      indent_blankline = {
-        context_highlight = "default", -- default | pro
-        context_start_underline = false,
-      },
-    },
-    ---@param c Colorscheme
-    override = function(c) end,
+-- Use a protected call so we don't error out on first use
+local status_ok, lazy = pcall(require, 'lazy')
+if not status_ok then
+  return
+end
+
+lazy.setup({
+  spec = {
+    -- Colorscheme:
+    -- The colorscheme should be available when starting Neovim.
+        {
+            'tanvirtin/monokai.nvim', lazy = false,
+            priority = 1000, -- make sure to load this before all the other start plugins
+        },
+
+     -- Treesitter
+        { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+
+    -- Autopair
+        {
+          'windwp/nvim-autopairs',
+          event = 'InsertEnter',
+          config = function()
+            require('nvim-autopairs').setup{}
+          end
+        },
+
+        -- init.lua:
+        {
+        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    -- or                              , branch = '0.1.x',
+          dependencies = { 'nvim-lua/plenary.nvim' }
+        }
+
+      -- LSP
+        { 'neovim/nvim-lspconfig' },
+
+        -- Autocomplete
+        {
+          'hrsh7th/nvim-cmp',
+          -- load cmp on InsertEnter
+          event = 'InsertEnter',
+          -- these dependencies will only be loaded when cmp loads
+          -- dependencies are always lazy-loaded unless specified otherwise
+          dependencies = {
+            'L3MON4D3/LuaSnip',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-buffer',
+            'saadparwaiz1/cmp_luasnip',
+          },
+        },
+        
+    }
 })
--- lua
-vim.cmd([[colorscheme monokai-pro]])
 
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+vim.cmd([[colorscheme monokai_pro]])
 
-    use {
-      "loctvl842/monokai-pro.nvim",
-      config = function()
-        require("monokai-pro").setup()
-      end
-    }
-
-    use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-    }
-
-  use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,}
-  use("nvim-treesitter/playground")
-  use("nvim-treesitter/nvim-treesitter-context");
-
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
-
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
-
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
-	  }
-  }
-
-end)
 

@@ -42,7 +42,7 @@ let
       rmtrash
       testdisk # file recovery https://itsfoss.com/recover-deleted-files-linux/
       xdotool
-      pkgs-stable.vhs
+      #pkgs-stable.vhs
 
       pkgs-stable.nodejs # required for coc-nvim
 
@@ -74,7 +74,7 @@ let
       libsForQt5.ark    # kde archive manager
       libsForQt5.kio    # extra file-type click support
       libsForQt5.kio-extras # even more extra file-type click support
-      libsForQt5.soundkonverter # audio cd ripping
+      # libsForQt5.soundkonverter # audio cd ripping
 
       # Kdenlive and deps
       pkgs-stable.libsForQt5.kdenlive  

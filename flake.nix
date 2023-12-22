@@ -4,9 +4,13 @@
   inputs = {
     utils.url = "github:numtide/flake-utils";
     nixvim.url = "github:nix-community/nixvim";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+      # url = "github:NixOS/nixpkgs/b477b25191fc94ce764428520b83b6b64366e3c8";
+    };
+
     nixpkgs-stable = {
-      url = "github:NixOS/nixpkgs/release-23.05";
+      url = "github:NixOS/nixpkgs/release-23.11";
     };
     kmonad.url = "github:kmonad/kmonad?dir=nix";
 

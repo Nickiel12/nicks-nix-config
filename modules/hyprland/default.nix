@@ -33,7 +33,7 @@ in
     systemd.enable = true;
 
     # Whether to enable patching wlroots for better Nvidia support
-    enableNvidiaPatches = true;
+    # enableNvidiaPatches = true;
     extraConfig = lib.strings.concatStrings [
       monitor_config
       ''

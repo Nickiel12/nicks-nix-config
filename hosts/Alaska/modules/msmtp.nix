@@ -12,7 +12,7 @@
         tls = true;
         tls_starttls = true;
         auth = true;
-        from = "noreply@nickiel.net";
+        from = "nickiel.is.a.dev@gmail.com";
         user = "nickiel.is.a.dev";
         passwordeval = "cat /Aurora/mail.password";
       };

@@ -32,8 +32,39 @@ in
       '';
     };
 
+    forgejo = {
+      enable = lib.mkEnableOption (lib.mdDoc "Back up Forgejo instance");
+
+      backups_dir = lib.mkOption {
+        type = lib.types.path;
+        default = "/Aurora/Backups/Forgejo";
+        description = lib.mdDoc ''
+          The path where Gitea/Forgejo backups are dumped
+        '';
+      };
+      save_old_count = lib.mkOption {
+        type = lib.types.int;
+        default = 3;
+        description = lib.mdDoc ''
+          The number of backups to save before deleting the oldest
+        '';
+      };
+    };
+
+    vaultwarden = {
+      enable = lib.mkEnableOption (lib.mdDoc "Back up vault warden instance");
+
+      backup_dir = lib.mkOption {
+        type = lib.types.path;
+        default = "/Aurora/Backups/Vaultwarden";
+        description = lib.mdDoc ''
+          The path where vaultwarden backups are put
+        '';
+      };
+    };
 
     nextcloud = {
+      enable = lib.mkEnableOption (lib.mkDoc "Back up nextcloud instance");
       root_dir = lib.mkOption {
         type = lib.types.path;
         default = /Aurora/nextcloud;
@@ -93,6 +124,7 @@ in
       path = with pkgs; [
         config.services.nextcloud.occ 
         config.services.postgresql.package
+        config.services.gitea.package
         rsync
         mount 
         umount
@@ -106,24 +138,57 @@ in
           echo "Mounting the external backup drive"
           mount /dev/disk/by-label/${cfg.backup1_drive_label} ${builtins.toString cfg.tmp_mount_point} -t ntfs3
 
-          echo "Puttin nextcloud into maintenance mode so that changes cannot happen during the backup"
-          nextcloud-occ maintenance:mode --on
+          #------ BEGIN NEXTCLOUD
+          if [ "${cfg.nextcloud.enable}" = true ]; then 
+            echo "Putting nextcloud into maintenance mode so that changes cannot happen during the backup"
+            nextcloud-occ maintenance:mode --on
 
-          echo "Backing up the nextcloud database"
-          password='cat ${builtins.toString cfg.nextcloud.db_passfile}'
-          PGPASSWORD="$password" pg_dump \
-          ${builtins.toString cfg.nextcloud.db_name} -h ${builtins.toString cfg.nextcloud.db_server} \
-          -U ${builtins.toString cfg.nextcloud.db_user} \
-          -f ${builtins.toString cfg.tmp_mount_point}/nextcloud-sqlbkp_`date +"%Y%m%d"`.bak
+            echo "Backing up the nextcloud database"
+            mkdir -p ${builtins.toString cfg.tmp_mount_point}/nextcloud/db_backups
+            password='cat ${builtins.toString cfg.nextcloud.db_passfile}'
+            PGPASSWORD="$password" pg_dump \
+            ${builtins.toString cfg.nextcloud.db_name} -h ${builtins.toString cfg.nextcloud.db_server} \
+            -U ${builtins.toString cfg.nextcloud.db_user} \
+            -f ${builtins.toString cfg.tmp_mount_point}/nextcloud/db_backups/nextcloud-sqlbkp_`date +"%Y%m%d"`.bak
 
-          echo "Backing up the nextcloud files"
-          # -a archive | -v verbose
-          rsync -av ${builtins.toString cfg.nextcloud.root_dir} \
-            ${builtins.toString cfg.tmp_mount_point}/nextcloud \
-            --exclude '*/appdata_*' --exclude "*/files_trashbin/*" --exclude "*/files_versions/*"
+            echo "Backing up the nextcloud files"
+            # -a archive | -v verbose
+            rsync -av ${builtins.toString cfg.nextcloud.root_dir} \
+              ${builtins.toString cfg.tmp_mount_point}/nextcloud \
+              --exclude '*/appdata_*' --exclude "*/files_trashbin/*" --exclude "*/files_versions/*"
 
-          echo "Get nextcloud out of maintenance mode so that normal operations can resume"
-          nextcloud-occ maintenance:mode --off
+            echo "Ending nextcloud maintenance mode so that normal operations can resume"
+            nextcloud-occ maintenance:mode --off
+          fi
+          #---- END NEXTCLOUD
+
+          #---- BEGIN FORGEJO
+          if [ "${cfg.forgejo.enable}" = true ]; then
+            echo "deleting old Forgejo backups"
+            find ${builtins.toString cfg.tmp_mount_point}/Forgejo -type f -printf '%T+ %p\n'\
+              | sort | head -n -${builtins.toString cfg.forgejo.save_old_count}\
+              | awk '{print $2}'\
+              | xargs rm
+
+            echo "Copying Forgejo backup"
+            cp `find ${builtins.toString cfg.forgejo.backups_dir} -type f -printf '%T+ %p\n'\
+              | grep *.${builtins.toString config.services.gitea.type}
+              | sort | head -n 1 | awk '{print $2}'` ${builtins.toString cfg.tmp_mount_point}/Forgejo
+                    
+            echo "Clearing old Forgejo backups"
+            find ${builtins.toString cfg.forgejo.backups_dir} -type f -printf '%T+ %p\n'\
+              | sort | head -n -${builtins.toString cfg.forgejo.save_old_count}\
+              | awk '{print $2}'\
+              | xargs rm
+            fi
+          #----- END FORGEJO
+
+          #----- BEGIN VAULTWARDEN
+          if [ "${cfg.vaultwarden.enable}" = true]; then
+            rsync -av ${cfg.vaultwarden.backup_dir} ${builtins.toString cfg.tmp_mount_point}/Vaultwarden
+
+          fi
+          #----- END VAULTWARDEN
 
           echo "Unmounting the external drive"
           umount ${builtins.toString cfg.tmp_mount_point}
@@ -131,7 +196,7 @@ in
           echo "Job completed"
           # "
       '';
-      startAt = "Sun 14:00:00";
+      startAt = "Sun 02:00:00"; # equvalent of OnCalendar
 
       # serviceConfig = {
         # Type = "oneshot";

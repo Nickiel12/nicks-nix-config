@@ -17,6 +17,13 @@ in
     customDir = "/Aurora/Forgejo/custom";
     appName = "Nickiel's Repos";
 
+    dump = {
+      enable = true;
+      backupDir = "/Aurora/Backups/Forgejo";
+      # file = "gitea-backup.zip";
+      interval = "01:25";
+    };
+
     settings = {
 
       "ui" = {

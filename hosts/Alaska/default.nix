@@ -24,7 +24,19 @@
     tmp_mount_point = /Aurora/backup_drive_mount_point;
     backup1_drive_label = "AlaskaBackup";
 
+    vaultwarden = {
+      enable = false;
+      backup_dir = "/Aurora/Backups/Vaultwarden";
+    };
+
+    forgejo = {
+      enable = true;
+      backups_dir = "/Aurora/Backups/Forgejo";
+      save_old_count = 5;
+    };
+
     nextcloud = {
+      enable = false;
       root_dir = /Aurora/nextcloud;
       db_server = "127.0.0.1";
       db_name = "nextcloud";

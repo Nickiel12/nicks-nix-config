@@ -139,7 +139,7 @@ in
           mount /dev/disk/by-label/${cfg.backup1_drive_label} ${builtins.toString cfg.tmp_mount_point} -t ntfs3
 
           #------ BEGIN NEXTCLOUD
-          if [ "${cfg.nextcloud.enable}" = true ]; then 
+          if [ "${builtins.toString cfg.nextcloud.enable}" = true ]; then 
             echo "Putting nextcloud into maintenance mode so that changes cannot happen during the backup"
             nextcloud-occ maintenance:mode --on
 
@@ -163,7 +163,7 @@ in
           #---- END NEXTCLOUD
 
           #---- BEGIN FORGEJO
-          if [ "${cfg.forgejo.enable}" = true ]; then
+          if [ "${builtins.toString cfg.forgejo.enable}" = true ]; then
             echo "deleting old Forgejo backups"
             find ${builtins.toString cfg.tmp_mount_point}/Forgejo -type f -printf '%T+ %p\n'\
               | sort | head -n -${builtins.toString cfg.forgejo.save_old_count}\
@@ -184,7 +184,7 @@ in
           #----- END FORGEJO
 
           #----- BEGIN VAULTWARDEN
-          if [ "${cfg.vaultwarden.enable}" = true]; then
+          if [ "${builtins.toString cfg.vaultwarden.enable}" = true]; then
             rsync -av ${cfg.vaultwarden.backup_dir} ${builtins.toString cfg.tmp_mount_point}/Vaultwarden
 
           fi

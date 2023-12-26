@@ -14,7 +14,7 @@ in
     enable = true;
     package = pkgs.forgejo;
     stateDir = "/Aurora/Forgejo";
-    customDir = "/Aurora/Forgejo/custom"
+    customDir = "/Aurora/Forgejo/custom";
     appName = "Nickiel's Repos";
 
     settings = {

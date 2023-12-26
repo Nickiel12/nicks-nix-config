@@ -90,14 +90,15 @@ in
   imports = [
         ./modules/discord.nix
         #./modules/emacs.nix
+        ./modules/fusuma.nix
         ./modules/git.nix
-        ./modules/neovim.nix
+        ./modules/hyprland
         ./modules/kitty.nix
+        ./modules/neovim.nix
         ./modules/rofi.nix
         ./modules/tmux.nix
         ./modules/wezterm.nix
         ./modules/xdg.nix
-        ./modules/hyprland
         ./modules/yazi.nix
         ./modules/zsh.nix
   ];
@@ -105,9 +106,10 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 
   home = {
 

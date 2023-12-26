@@ -5,23 +5,6 @@
 { config, lib, pkgs, user, inputs, ... }:
 
 {
-
-  # max cores used per derivation
-  nix.settings.cores = 8;
-  # max derivations that can be built at once
-  # nix.settings.max-jobs = 2;
-
-  networking.networkmanager.enable = true;
-
-  security.pam.services.kwallet = {
-    name = "kdewallet";
-    enableKwallet = true;
-  };
-
-  services.udev.packages = [
-    pkgs.android-udev-rules
-  ];
-
   # Some programs look for session variables to store config files at
   # (Looking at you home-manager yazi)
   environment.sessionVariables = rec {
@@ -59,20 +42,20 @@
     };
   };
 
-  boot.supportedFilesystems = [ "nfts" ];
-  boot.loader.systemd-boot.configurationLimit = 5;
-
-  nix.settings.auto-optimise-store = true;
-  nixpkgs.config.allowUnfree = true; # required for discord
-  nix.gc = {
-    automatic = true;
-    options = "--delete-generations 8d";
-  };
-
+  # Android Debugging interface
+  programs.adb.enable = true;
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
   programs.zsh.enable = true;
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "input" "uinput" "cdrom"];
+    extraGroups = [ 
+      "wheel" "video"
+      "audio" "networkmanager"
+      "lp" "scanner"
+      "input" "uinput"
+      "cdrom" "adbusers"];
     shell = pkgs.zsh;
     password = "password";
   };
@@ -83,17 +66,38 @@
     xkcd-font
   ];
 
-  time.timeZone = "America/Los_Angeles";
-
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    useXkbConfig = true; # use xkbOptions in tty.
+  boot = {
+    supportedFilesystems = [ "nfts" ];
+    loader.systemd-boot.configurationLimit = 5;
   };
 
+
+  networking.networkmanager.enable = true;
+
   hardware = {
+    bluetooth.enable = true;
     opentabletdriver.enable = true;
     steam-hardware.enable = true;
+  };
+
+  security = {
+    rtkit.enable = true;
+    pam.services.kwallet = {
+      name = "kdewallet";
+      enableKwallet = true;
+    };
+  };
+
+  services = {
+  # Enable CUPS to print documents.
+    printing.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      #jack.enable = true;
+    };
   };
 
   sound = {
@@ -101,19 +105,28 @@
     mediaKeys.enable = true;
   };
 
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    #jack.enable = true;
+  time.timeZone = "America/Los_Angeles";
+  time.hardwareClockInLocalTime = true;
+
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "Lat2-Terminus16";
+    useXkbConfig = true; # use xkbOptions in tty.
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
+  nixpkgs.config.allowUnfree = true;
   nix = {
+    gc = {
+      automatic = true;
+      options = "--delete-generations 20d";
+    };
+    settings = {
+      auto-optimise-store = true;
+      # max cores used per derivation
+      cores = 8;
+      # max derivations that can be built at once
+      # nix.settings.max-jobs = 2;
+    };
     package = pkgs.nixVersions.stable;
     extraOptions = "experimental-features = nix-command flakes";
   };

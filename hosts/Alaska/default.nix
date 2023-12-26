@@ -5,7 +5,7 @@
 {
   imports = [ 
     ./modules/backup_script.nix
-
+    ./configuration.nix
     ./hardware-configuration.nix
     ./modules/dnsmasq.nix
     ./modules/forgejo.nix

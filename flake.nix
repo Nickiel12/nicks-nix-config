@@ -29,8 +29,6 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-
   };
 
   outputs = inputs@{
@@ -55,23 +53,20 @@
       lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
-        inherit lib;
-
 
         # Home server
         Alaska = lib.nixosSystem {
           inherit system;
           specialArgs = { 
-            inherit user headscale pkgs-stable;
+            inherit user headscale;
           };
 
           modules = [
-            inputs.nicks_nextcloud_integrations.nixosModules.default
             {
               networking.hostName = "Alaska";
             }
+            inputs.nicks_nextcloud_integrations.nixosModules.default
             ./hosts/Alaska
-            ./hosts/Alaska/configuration.nix
             home-manager.nixosModules.home-manager {
               home-manager = {
                 useGlobalPkgs = true;

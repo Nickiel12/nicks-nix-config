@@ -6,21 +6,16 @@
 	./hardware-configuration.nix
   ];
 
-  programs.adb.enable = true;
-  users.users.${user}.extraGroups = [ "adbusers" ];
-
-  hardware.bluetooth.enable = true;
-
   networking.hosts = { 
     "100.64.0.1" = ["files.nickiel.net" "git.nickiel.net" "nickiel.net" 
     "jellyfin.nickiel.net" ];
   };
   # tailscale set --exit-node <SEVERNAME> to route through an exit node
-  services.tailscale.enable = true; networking.firewall = {
+  services.tailscale.enable = true;
+  networking.firewall = {
     checkReversePath = "loose"; trustedInterfaces = [ "tailscale0" ]; 
     allowedUDPPorts = [ config.services.tailscale.port ];
   };
-  time.hardwareClockInLocalTime = true;
 
   boot.loader = { efi = {
       canTouchEfiVariables = true; efiSysMountPoint = "/boot";

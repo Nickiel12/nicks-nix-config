@@ -7,9 +7,6 @@
 	./hardware-configuration.nix
   ];
 
-  programs.adb.enable = true;
-  users.users.${user}.extraGroups = [ "adbusers" ];
-
   networking = {
     firewall = {
       checkReversePath = "loose";
@@ -58,7 +55,6 @@
     QT_QPA_PLATFORM = "xcb";
   };
 
-  time.hardwareClockInLocalTime = true;
 
   boot.loader = {
     efi = {
@@ -85,6 +81,4 @@
     '';
     };
   };
-
-  boot.supportedFilesystems = [ "ntfs" ];
 }

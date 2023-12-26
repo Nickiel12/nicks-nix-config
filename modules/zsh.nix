@@ -43,12 +43,14 @@ in
       cat = "bat";
       ls = "eza";
       jq = "jaq";
-      gust = "/home/nixolas/Documents/Gust/target/debug/gust";
+      # gust = "/home/nixolas/Documents/Gust/target/debug/gust";
       rm = "rmtrash";
       open-config = "cd ~/Documents/nicks-nix-config; nvim";
       switch-to-windows = "sudo grub-reboot 1; sudo reboot";
       screenshot = "grim -g \"$(slurp -d)\" - | wl-copy -t image/png";
       move-to-alaska = "ssh nixolas@100.64.0.1";
+      rebuild-shutdown = "sudo nixos-rebuild switch --flake .# && shutdown now";
+      rebuild-exit = "sudo nixos-rebuild switch --flake .# && exit";
     };
   };
   

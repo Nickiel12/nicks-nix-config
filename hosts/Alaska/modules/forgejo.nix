@@ -14,6 +14,7 @@ in
     enable = true;
     package = pkgs.forgejo;
     stateDir = "/Aurora/Forgejo";
+    customDir = "/Aurora/Forgejo/custom"
     appName = "Nickiel's Repos";
 
     settings = {
@@ -29,7 +30,7 @@ in
 
       security.DISABLE_GIT_HOOKS = false;
 
-      #session.COOKIE_SECURE = true;
+      session.COOKIE_SECURE = true;
       # external facing ui
       server = {
         ROOT_URL = "https://git.nickiel.net";
@@ -41,7 +42,7 @@ in
       mailer = {
         ENABLED = true;
         PROTOCOL = "sendmail";
-        FROM = "noreply@nickiel.net";
+        FROM = "nickiel.is.a.dev@gmail.com";
         SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
       };
     };

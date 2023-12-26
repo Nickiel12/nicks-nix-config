@@ -172,7 +172,7 @@ in
 
             echo "Copying Forgejo backup"
             cp `find ${builtins.toString cfg.forgejo.backups_dir} -type f -printf '%T+ %p\n'\
-              | grep *.${builtins.toString config.services.gitea.type}
+              | grep *.${builtins.toString config.services.gitea.dump.type}
               | sort | head -n 1 | awk '{print $2}'` ${builtins.toString cfg.tmp_mount_point}/Forgejo
                     
             echo "Clearing old Forgejo backups"

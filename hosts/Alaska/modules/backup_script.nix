@@ -147,9 +147,9 @@ in
             mkdir -p ${builtins.toString cfg.tmp_mount_point}/nextcloud/db_backups
             password='cat ${builtins.toString cfg.nextcloud.db_passfile}'
             PGPASSWORD="$password" pg_dump \
-            ${builtins.toString cfg.nextcloud.db_name} -h ${builtins.toString cfg.nextcloud.db_server} \
-            -U ${builtins.toString cfg.nextcloud.db_user} \
-            -f ${builtins.toString cfg.tmp_mount_point}/nextcloud/db_backups/nextcloud-sqlbkp_`date +"%Y%m%d"`.bak
+              ${builtins.toString cfg.nextcloud.db_name} -h ${builtins.toString cfg.nextcloud.db_server} \
+              -U ${builtins.toString cfg.nextcloud.db_user} \
+              -f ${builtins.toString cfg.tmp_mount_point}/nextcloud/db_backups/nextcloud-sqlbkp_`date +"%Y%m%d"`.bak
 
             echo "Backing up the nextcloud files"
             # -a archive | -v verbose

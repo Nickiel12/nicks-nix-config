@@ -122,6 +122,7 @@ in
       description = "Alaska Nightly Backup Service";
       onFailure = [ "alaska_backup_script_onfail.service" ];
       path = with pkgs; [
+        gawk
         config.services.nextcloud.occ 
         config.services.postgresql.package
         config.services.gitea.package
@@ -139,7 +140,7 @@ in
           mount /dev/disk/by-label/${cfg.backup1_drive_label} ${builtins.toString cfg.tmp_mount_point} -t ntfs3
 
           #------ BEGIN NEXTCLOUD
-          if [ "${builtins.toString cfg.nextcloud.enable}" = true ]; then 
+          if [ "${builtins.toString cfg.nextcloud.enable}" = "1" ]; then 
             echo "Putting nextcloud into maintenance mode so that changes cannot happen during the backup"
             nextcloud-occ maintenance:mode --on
 
@@ -163,29 +164,30 @@ in
           #---- END NEXTCLOUD
 
           #---- BEGIN FORGEJO
-          if [ "${builtins.toString cfg.forgejo.enable}" = true ]; then
+          if [ "${builtins.toString cfg.forgejo.enable}" = "1" ]; then
             echo "deleting old Forgejo backups"
-            find ${builtins.toString cfg.tmp_mount_point}/Forgejo -type f -printf '%T+ %p\n'\
-              | sort | head -n -${builtins.toString cfg.forgejo.save_old_count}\
-              | awk '{print $2}'\
-              | xargs rm
+            find ${builtins.toString cfg.tmp_mount_point}/Forgejo -type f -printf '%T+ %p\n' \
+              | sort | head -n -${builtins.toString cfg.forgejo.save_old_count} \
+              | gawk '{print $2}' \
+              | xargs rm || true
 
             echo "Copying Forgejo backup"
-            cp `find ${builtins.toString cfg.forgejo.backups_dir} -type f -printf '%T+ %p\n'\
-              | grep *.${builtins.toString config.services.gitea.dump.type}
-              | sort | head -n 1 | awk '{print $2}'` ${builtins.toString cfg.tmp_mount_point}/Forgejo
+            latest_backup=$(find ${builtins.toString cfg.forgejo.backups_dir} -type f -printf '%T+ %p\n' \
+              | grep .${builtins.toString config.services.gitea.dump.type} \
+              | sort | head -n 1 | gawk '{print $2}')
+            cp "$latest_backup" ${builtins.toString cfg.tmp_mount_point}/Forgejo
                     
             echo "Clearing old Forgejo backups"
             find ${builtins.toString cfg.forgejo.backups_dir} -type f -printf '%T+ %p\n'\
               | sort | head -n -${builtins.toString cfg.forgejo.save_old_count}\
-              | awk '{print $2}'\
-              | xargs rm
+              | gawk '{print $2}'\
+              | xargs rm || true
             fi
           #----- END FORGEJO
 
           #----- BEGIN VAULTWARDEN
-          if [ "${builtins.toString cfg.vaultwarden.enable}" = true]; then
-            rsync -av ${cfg.vaultwarden.backup_dir} ${builtins.toString cfg.tmp_mount_point}/Vaultwarden
+          if [ "${builtins.toString cfg.vaultwarden.enable}" = "1" ]; then
+            rsync -av ${cfg.vaultwarden.backup_dir} ${builtins.toString cfg.tmp_mount_point}
 
           fi
           #----- END VAULTWARDEN

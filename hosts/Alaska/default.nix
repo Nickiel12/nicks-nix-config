@@ -25,7 +25,7 @@
     backup1_drive_label = "AlaskaBackup";
 
     vaultwarden = {
-      enable = false;
+      enable = true;
       backup_dir = "/Aurora/Backups/Vaultwarden";
     };
 
@@ -36,7 +36,7 @@
     };
 
     nextcloud = {
-      enable = false;
+      enable = true;
       root_dir = /Aurora/nextcloud;
       db_server = "127.0.0.1";
       db_name = "nextcloud";

@@ -27,6 +27,7 @@ let
       gitui    # command line git tui
       hugo
       pkgs-stable.pandoc   # utility for converting between document types
+      protonvpn-cli
       pkgs-stable.qmk      # QMK utility for compiling qmk firmware
       nextcloud-client     # Nextcloud private syncing
       hddtemp
@@ -49,7 +50,7 @@ let
     ] ++ pkgs.lib.optionals (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) [
       # Gui application
       pkgs-stable.darktable # RAW processing
-      pkgs-stable.dbeaver   # SQL management tool
+      dbeaver   # SQL management tool
       pkgs-stable.dragon        # simple audio player
                   firefox   # Internet access
                   freerdp   # RDP client
@@ -68,6 +69,7 @@ let
       signal-desktop            # secure messaging service
       pkgs-stable.vscodium      # when vim and emacs (somehow) isn't enough
                   obs-studio    # for video recording and virtual camera
+      protonvpn-gui
 
 
       libsForQt5.kate   # kate/kwrite

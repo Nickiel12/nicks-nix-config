@@ -158,6 +158,17 @@ in
 
     plugins = {
 
+      lsp = {
+        enable = true;
+        servers = {
+          gopls = {
+            enable = true;
+            installLanguageServer = true;
+          };
+          html.enable = true;
+        };
+      };
+
       nvim-tree = {
         enable = true;
         openOnSetup = true;

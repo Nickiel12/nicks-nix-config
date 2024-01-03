@@ -22,6 +22,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    erosanix = {
+      url = "github:emmanuelrosa/erosanix";
+    };
+
     nicks_nextcloud_integrations.url = "git+https://git.nickiel.net/Nickiel/nicks_nextcloud_integrations.git";
     ewwtilities.url = "git+https://git.nickiel.net/Nickiel/Ewwtilities.git";
 
@@ -65,6 +69,7 @@
             {
               networking.hostName = "Alaska";
             }
+            inputs.erosanix.nixosModules.protonvpn
             inputs.nicks_nextcloud_integrations.nixosModules.default
             ./hosts/Alaska
             home-manager.nixosModules.home-manager {
@@ -127,6 +132,7 @@
             {
               networking.hostName = "NicksNixDesktop";
             }
+            inputs.erosanix.nixosModules.protonvpn
             kmonad.nixosModules.default
             ./hosts/desktop
             ./hosts/configuration.nix

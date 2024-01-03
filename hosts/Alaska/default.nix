@@ -56,6 +56,7 @@
     pkgs.hddtemp
     pkgs.smartmontools
     pkgs.screen
+    pkgs.wiregaurd-tools
   ];
 
   services.xserver.videoDrivers = [ "nvidia" ];

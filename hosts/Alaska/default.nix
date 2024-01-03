@@ -9,11 +9,12 @@
     ./hardware-configuration.nix
     ./modules/dnsmasq.nix
     ./modules/forgejo.nix
+    ./modules/headscale.nix
+    ./modules/msmtp.nix
     ./modules/nginx.nix
     ./modules/nextcloud.nix
     ./modules/nicks_nextcould_integrations.nix
-    ./modules/msmtp.nix
-    ./modules/headscale.nix
+    ./modules/protonvpn.nix
     ./modules/tailscale.nix
     ./modules/vaultwarden.nix
   ];
@@ -56,7 +57,7 @@
     pkgs.hddtemp
     pkgs.smartmontools
     pkgs.screen
-    pkgs.wiregaurd-tools
+    pkgs.wireguard-tools
   ];
 
   services.xserver.videoDrivers = [ "nvidia" ];

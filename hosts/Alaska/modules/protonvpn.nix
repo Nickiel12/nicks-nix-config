@@ -46,10 +46,6 @@ in
           # iifname "tailscale0" ip daddr != 100.64.0.1 nftrace set 1;
           iifname "tailscale0" ip daddr != 100.64.0.0/16 mark set 51820;
         }
-        chain postrouting {
-          type nat hook postrouting priority srcnat; policy accept;
-          iifname "tailscale0" oifname "protonvpn" ip daddr != 100.64.0.0/16 masquerade;
-        }
       }
       EOF
 

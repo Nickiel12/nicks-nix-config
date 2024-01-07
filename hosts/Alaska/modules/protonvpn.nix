@@ -6,7 +6,6 @@ in
   networking.firewall = {
     allowedUDPPorts = [
       53
-      config.services.protonvpn.interface.port
     ];
     allowedTCPPorts = [
       53
@@ -15,7 +14,6 @@ in
 
   networking.wg-quick.interfaces."protonvpn" = {
     autostart = false;
-    #dns = [ 10.2.0.1 ];
     privateKeyFile = "/home/nixolas/.passfiles/protonvpn";
     address = [ "10.2.0.2/32" ];
     listenPort = 51820;
@@ -30,18 +28,48 @@ in
 
     # This allows the wireguard server to route your traffic to the internet and hence be like a VPN
     postUp = ''
-      # ${pkgs.iptables}/bin/iptables -A FORWARD -i wg0 -j ACCEPT
-      # ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 10.0.0.1/24 -o eth0 -j MASQUERADE
-      # ${pkgs.iptables}/bin/ip6tables -A FORWARD -i wg0 -j ACCEPT
-      # ${pkgs.iptables}/bin/ip6tables -t nat -A POSTROUTING -s fdc9:281f:04d7:9ee9::1/64 -o eth0 -j MASQUERADE
+      ${pkgs.nftables}/bin/nft -f - <<EOF 
+      add table ip tailscale-wg;
+      add chain ip tailscale-wg preraw;
+      flush chain ip tailscale-wg preraw;
+      delete chain ip tailscale-wg preraw;
+
+      table ip tailscale-wg {
+        chain preraw {
+          type filter hook prerouting priority raw; policy accept;
+
+          # ip daddr 100.64.0.1 dport != 22 nftrace set 1;
+          iifname "tailscale0" ip daddr != 100.64.0.1 nftrace set 1;
+          iifname "tailscale0" ip daddr != 100.64.0.0/16 mark set 51820;
+          iifname "protonvpn" mark set 51820;
+        }
+        chain postrouting {
+          type nat hook postrouting priority srcnat; policy accept;
+          iifname "tailscale0" ip daddr != 100.64.0.1 masquerade;
+        }
+      }
+      EOF
+      # table inet tailscale-wg { for ipv4 + ipv6
+      ${pkgs.iproute2}/bin/ip -4 rule del not fwmark 51820 table 51820
+      # ${pkgs.iproute2}/bin/ip -6 rule del not fwmark 51820 table 51820
+
+      ${pkgs.iproute2}/bin/ip -4 rule add fwmark 51820 table 51820
+      # ${pkgs.iproute2}/bin/ip -6 rule add fwmark 51820 table 51820
+
     '';
 
     # Undo the above
     preDown = ''
-      # ${pkgs.iptables}/bin/iptables -D FORWARD -i wg0 -j ACCEPT
-      # ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 10.0.0.1/24 -o eth0 -j MASQUERADE
-      # ${pkgs.iptables}/bin/ip6tables -D FORWARD -i wg0 -j ACCEPT
-      # ${pkgs.iptables}/bin/ip6tables -t nat -D POSTROUTING -s fdc9:281f:04d7:9ee9::1/64 -o eth0 -j MASQUERADE
+      ${pkgs.nftables}/bin/nft -f - <<EOF
+      add table ip tailscale-wg;
+
+      add chain ip tailscale-wg preraw;
+      flush chain ip tailscale-wg preraw;
+      delete chain ip tailscale-wg preraw;
+
+      delete table ip tailscale-wg;
+      EOF
+
     '';
   };
 

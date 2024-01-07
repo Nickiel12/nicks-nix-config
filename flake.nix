@@ -65,7 +65,6 @@
             {
               networking.hostName = "Alaska";
             }
-            inputs.erosanix.nixosModules.protonvpn
             inputs.nicks_nextcloud_integrations.nixosModules.default
             ./hosts/Alaska
             home-manager.nixosModules.home-manager {
@@ -128,7 +127,6 @@
             {
               networking.hostName = "NicksNixDesktop";
             }
-            inputs.erosanix.nixosModules.protonvpn
             kmonad.nixosModules.default
             ./hosts/desktop
             ./hosts/configuration.nix

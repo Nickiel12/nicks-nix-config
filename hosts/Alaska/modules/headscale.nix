@@ -5,6 +5,9 @@ let
   baseDomain = "nickiel.net";
   domain = "headscale.${baseDomain}";
 in {
+  # headscale routes list
+  # headscale routes enable -r NUMBER
+  # to enable exit node to be used
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
   boot.kernel.sysctl."net.ipv6.conf.all.forwarding" = 1;
 

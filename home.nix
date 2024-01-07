@@ -38,6 +38,7 @@ let
       fd
       fortune
       neofetch
+      nftables
       pfetch
       rmtrash
       testdisk # file recovery https://itsfoss.com/recover-deleted-files-linux/

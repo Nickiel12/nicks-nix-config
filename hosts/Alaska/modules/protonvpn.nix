@@ -34,10 +34,6 @@ in
       flush chain ip tailscale-wg preraw;
       delete chain ip tailscale-wg preraw;
 
-      add chain ip tailscale-wg postrouting;
-      flush chain ip tailscale-wg postrouting;
-      delete chain ip tailscale-wg postrouting;
-
       table ip tailscale-wg {
         chain preraw {
           type filter hook prerouting priority raw; policy accept;
@@ -68,10 +64,6 @@ in
       add chain ip tailscale-wg preraw;
       flush chain ip tailscale-wg preraw;
       delete chain ip tailscale-wg preraw;
-
-      add chain ip tailscale-wg postrouting;
-      flush chain ip tailscale-wg postrouting;
-      delete chain ip tailscale-wg postrouting;
 
       delete table ip tailscale-wg;
       EOF

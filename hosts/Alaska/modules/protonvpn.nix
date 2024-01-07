@@ -39,16 +39,19 @@ in
           type filter hook prerouting priority raw; policy accept;
 
           # ip daddr 100.64.0.1 dport != 22 nftrace set 1;
-          iifname "tailscale0" ip daddr != 100.64.0.1 nftrace set 1;
+          # iifname "tailscale0" ip daddr != 100.64.0.1 nftrace set 1;
           iifname "tailscale0" ip daddr != 100.64.0.0/16 mark set 51820;
-          iifname "protonvpn" mark set 51820;
         }
         chain postrouting {
           type nat hook postrouting priority srcnat; policy accept;
-          iifname "tailscale0" ip daddr != 100.64.0.1 masquerade;
+          iifname "tailscale0" oifname "protonvpn" ip daddr != 100.64.0.1 masquerade;
         }
       }
       EOF
+
+      ${pkgs.wireguard-tools}/bin/wg set protonvpn fwmark off
+
+      # ${pkgs.iproute2}/bin/ip route add default via 10.2.0.2 dev tailscale0 table 51820
       # table inet tailscale-wg { for ipv4 + ipv6
       ${pkgs.iproute2}/bin/ip -4 rule del not fwmark 51820 table 51820
       # ${pkgs.iproute2}/bin/ip -6 rule del not fwmark 51820 table 51820

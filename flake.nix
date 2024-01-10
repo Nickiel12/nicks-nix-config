@@ -40,7 +40,7 @@
     home-manager,
     ewwtilities,
     kmonad,
-    atuin
+    atuin,
     ... 
   }:
     let

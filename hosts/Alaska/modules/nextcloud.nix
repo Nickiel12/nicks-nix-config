@@ -29,16 +29,6 @@
 
         database.createLocally = false;
         config = {
-          defaultPhoneRegion = "US";
-          overwriteProtocol = "https";
-          extraTrustedDomains = [
-            "10.0.0.183"
-            "files.nickiel.net"
-          ];
-          trustedProxies = [
-            "files.nickiel.net"
-          ];
-
           dbtype = "pgsql";
           dbuser = "nextcloud";
           dbhost = "/run/postgresql";
@@ -49,6 +39,17 @@
           # https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/reset_admin_password.html
           adminpassFile = "/Aurora/nextcloud/nextcloud-admin-password";
           adminuser = "admin";
+        };
+        extraOption = {
+          defaultPhoneRegion = "US";
+          overwriteProtocol = "https";
+          extraTrustedDomains = [
+            "10.0.0.183"
+            "files.nickiel.net"
+          ];
+          trustedProxies = [
+            "files.nickiel.net"
+          ];
         };
       };
 

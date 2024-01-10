@@ -4,6 +4,7 @@
 
 {
   imports = [ 
+    ./modules/atuin.nix
     ./modules/backup_script.nix
     ./configuration.nix
     ./hardware-configuration.nix

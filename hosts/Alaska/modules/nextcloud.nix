@@ -40,7 +40,7 @@
           adminpassFile = "/Aurora/nextcloud/nextcloud-admin-password";
           adminuser = "admin";
         };
-        extraOption = {
+        extraOptions = {
           defaultPhoneRegion = "US";
           overwriteProtocol = "https";
           extraTrustedDomains = [

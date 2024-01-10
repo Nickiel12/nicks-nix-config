@@ -8,7 +8,7 @@ in
     openFirewall = true;
     port = 8910;
     host = "127.0.0.1";
-    openRegistration = true;
+    openRegistration = false;
     database = {
       createLocally = true;
     };

@@ -89,6 +89,7 @@ in
 {
 
   imports = [
+        ./modules/atuin.nix
         ./modules/discord.nix
         #./modules/emacs.nix
         ./modules/fusuma.nix

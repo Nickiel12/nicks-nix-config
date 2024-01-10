@@ -14,7 +14,10 @@
     };
     kmonad.url = "github:kmonad/kmonad?dir=nix";
 
-    atuin.url = "github:atuinsh/atuin";
+    atuin = {
+      url = "github:atuinsh/atuin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     headscale = {
       # url = "github:kradalby/headscale/bbb4c357268998fd02780b7f8f2013f76e3ab80a";
       url = "github:juanfont/headscale/6049ec758ca46b5c6ee7abba4f3d472fb1e2ffa6";

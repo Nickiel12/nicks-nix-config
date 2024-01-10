@@ -1,6 +1,7 @@
-{config, pkgs, atuin, ...}:
+{osConfig, config, pkgs, atuin, ...}:
 
 let
+  hostname = osConfig.networking.hostName;
 in
 {
   programs.atuin = {
@@ -13,7 +14,8 @@ in
     settings = {
       auto_sync = true;
       sync_frequency = "20m";
-      sync_address = "https://atuin.nickiel.net";
+      sync_address = if (hostname == "Alaska") then "http://127.0.0.1:8910"
+      else "https://atuin.nickiel.net";
       # filter_mode = "global" | "host" | "session" | "directory"
       inline_height = 40;
       show_preview = true;

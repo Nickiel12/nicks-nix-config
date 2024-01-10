@@ -19,4 +19,9 @@
       type = "A";
       value = "100.64.0.1";
     }
+    {
+      name = "atuin.nickiel.net";
+      type = "A";
+      value = "100.64.0.1";
+    }
   ]

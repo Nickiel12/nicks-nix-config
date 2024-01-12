@@ -188,11 +188,7 @@ in
         enable = true;
         folding = true;
         indent = true;
-        ensureInstalled = [
-          "rust"
-          "toml"
-          "lua"
-        ];
+        ensureInstalled = "all";
       };
       rainbow-delimiters.enable = true;
       treesitter-refactor = {

@@ -165,7 +165,12 @@ in
             enable = true;
             installLanguageServer = true;
           };
+          templ = {
+            enable = true;
+            installLanguageServer = true;
+          };
           html.enable = true;
+          tsserver.enable = true;
         };
       };
 

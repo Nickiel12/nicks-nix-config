@@ -188,7 +188,14 @@ in
         enable = true;
         folding = true;
         indent = true;
-        ensureInstalled = "all";
+        ensureInstalled = [
+          "rust"
+          "toml"
+          "templ"
+          "go"
+          "html"
+          "json"
+        ];
       };
       rainbow-delimiters.enable = true;
       treesitter-refactor = {

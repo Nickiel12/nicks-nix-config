@@ -16,8 +16,8 @@ in
       sync_frequency = "20m";
       sync_address = if (hostname == "Alaska") then "http://127.0.0.1:8910"
       else "https://atuin.nickiel.net";
-      # filter_mode = "global" | "host" | "session" | "directory"
-      inline_height = 40;
+      filter_mode = "session"; #"global" | "host" | "session" | "directory"
+      inline_height = 10;
       show_preview = true;
       show_help = true;
       exit_mode = "return-query";

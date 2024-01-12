@@ -11,7 +11,8 @@ in
         # ${pkgs.nftables}/bin/nft -f - <<EOF
 
         # EOF
-        ${pkgs.nftables}/bin/nft insert rule filter nixos-fw ip saddr 100.64.0.0-100.64.255.255 iifname "enp2s0" counter
+        # Already handled by tailscale in ts-input
+        # ${pkgs.nftables}/bin/nft insert rule filter nixos-fw ip saddr 100.64.0.0-100.64.255.255 iifname "enp2s0" counter jump nixos-fw-log-refuse
       '';
-  }
+  };
 }

@@ -9,6 +9,7 @@
     ./configuration.nix
     ./hardware-configuration.nix
     ./modules/dnsmasq.nix
+    ./modules/firewall.nix
     ./modules/forgejo.nix
     ./modules/headscale.nix
     ./modules/msmtp.nix
@@ -74,10 +75,6 @@
       # Lazy IPv6 connectivity for the container
       enableIPv6 = true;
     };
-    firewall = {
-        enable = true;
-        allowedTCPPorts = [80 443 3001 5432]; # port 3001 opened to allow git traffic on the local netword
-      };
   };
 
   services.jellyfin = {

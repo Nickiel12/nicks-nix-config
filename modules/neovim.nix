@@ -19,6 +19,10 @@ in
       mapleader = " ";
     };
 
+    filetype.extension = {
+      templ = "templ";
+    };
+
     options = {
       autoindent = true;
       expandtab = true;
@@ -167,6 +171,7 @@ in
           };
           templ = {
             enable = true;
+            autostart = true;
             installLanguageServer = true;
           };
           html.enable = true;

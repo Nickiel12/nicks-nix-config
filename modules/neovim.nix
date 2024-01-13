@@ -176,6 +176,7 @@ in
           };
           html.enable = true;
           tsserver.enable = true;
+          cssls.enable = true;
         };
       };
 
@@ -184,6 +185,7 @@ in
         openOnSetup = true;
       };
 
+      ts-autotag.enable = true;
       nvim-autopairs = {
         enable = true;
         checkTs = true;
@@ -200,6 +202,7 @@ in
           "go"
           "html"
           "json"
+          "css"
         ];
       };
       rainbow-delimiters.enable = true;

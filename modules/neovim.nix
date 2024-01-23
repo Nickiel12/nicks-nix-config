@@ -249,7 +249,7 @@ in
       nix.enable = true;
       airline = {
         enable = true;
-        powerline = true;
+        powerlineFonts = true;
       };
     };
     extraConfigLua = builtins.readFile ./../rsrcs/nvim.lua;

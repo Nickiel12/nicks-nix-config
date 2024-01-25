@@ -66,7 +66,7 @@ let
       pkgs-stable.libreoffice-fresh   # Office editing
       makemkv       # blue-ray + dvd -> mkv
                   qalculate-gtk # unit-friendly calculator
-                  qlcplus       # LED xlr control program
+      pkgs-stable.qlcplus       # LED xlr control program
       signal-desktop            # secure messaging service
       pkgs-stable.vscodium      # when vim and emacs (somehow) isn't enough
                   obs-studio    # for video recording and virtual camera

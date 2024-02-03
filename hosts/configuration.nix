@@ -19,8 +19,8 @@
 
   services.xserver = {
     enable = true;
-    layout = "us";
-    xkbOptions = "caps:super";
+    xkb.layout = "us";
+    xkb.options = "caps:super";
 
     desktopManager.plasma5.enable = true;
     displayManager.defaultSession = "plasma";

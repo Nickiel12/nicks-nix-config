@@ -12,7 +12,7 @@
 
         autoUpdateApps.enable = true;
 
-        extraOptions = {
+        settings = {
           preview_max_x = 2048;
           preview_max_y = 2048;
           jpeg_quality = 50;
@@ -24,6 +24,15 @@
             "OC\\Preview\\PNG"
             "OC\\Preview\\MP4"
             "OC\\Preview\\MOVIE"
+          ];
+          defaultPhoneRegion = "US";
+          overwriteProtocol = "https";
+          extraTrustedDomains = [
+            "10.0.0.183"
+            "files.nickiel.net"
+          ];
+          trustedProxies = [
+            "files.nickiel.net"
           ];
         };
 
@@ -39,17 +48,6 @@
           # https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/reset_admin_password.html
           adminpassFile = "/Aurora/nextcloud/nextcloud-admin-password";
           adminuser = "admin";
-        };
-        extraOptions = {
-          defaultPhoneRegion = "US";
-          overwriteProtocol = "https";
-          extraTrustedDomains = [
-            "10.0.0.183"
-            "files.nickiel.net"
-          ];
-          trustedProxies = [
-            "files.nickiel.net"
-          ];
         };
       };
 

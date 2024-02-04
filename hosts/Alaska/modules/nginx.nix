@@ -44,8 +44,11 @@
           "/" = {
             root = "/Aurora/StaticSites/iot";
           };
-          "/turn_computer_on" = {
-            proxyPass = "http://10.0.184/turn_computer_on";
+          "/groovy_green_machine" = {
+            proxyPass = "http://10.0.184/";
+            extraConfig = ''
+              rewrite ^/groovy_green_machine(/.*)$ $1 break;
+            '';
           };
         };
       };

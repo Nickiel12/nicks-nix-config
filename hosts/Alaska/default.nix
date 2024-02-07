@@ -19,6 +19,7 @@
     ./modules/protonvpn.nix
     ./modules/tailscale.nix
     ./modules/vaultwarden.nix
+    ./modules/vsftpd.nix
   ];
 
   programs.alaska_backup_script = {

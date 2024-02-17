@@ -14,12 +14,11 @@ in
   system.activationScripts.copyStuff = "cp -r ${../../../rsrcs/giteaCustomDir}/. /Aurora/Forgejo/custom";
   system.activationScripts.copyTheme = "mkdir -p /Aurora/Forgejo/custom/public/assets/css && cp ${palenight}/dist/theme-palenight.css /Aurora/Forgejo/custom/public/assets/css/";
 
-  services.gitea = {
+  services.forgejo = {
     enable = true;
     package = pkgs.forgejo;
     stateDir = "/Aurora/Forgejo";
     customDir = "/Aurora/Forgejo/custom";
-    appName = "Nickiel's Repos";
 
     dump = {
       enable = true;
@@ -29,6 +28,10 @@ in
     };
 
     settings = {
+
+      DEFAULT = {
+        APP_NAME = "Nickiel's Repos";
+      };
 
       "ui" = {
         DEFAULT_THEME = "palenight";

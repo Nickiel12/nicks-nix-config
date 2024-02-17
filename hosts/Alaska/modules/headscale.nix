@@ -22,6 +22,7 @@ in {
     port = 8082;
     settings = {
       server_url = "https://${domain}";
+      # database.type = "sqlite";
       dns_config = {
         base_domain = baseDomain;
         extra_records = tailscale_dns_entries;

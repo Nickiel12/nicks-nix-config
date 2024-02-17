@@ -167,12 +167,10 @@ in
         servers = {
           gopls = {
             enable = true;
-            installLanguageServer = true;
           };
           templ = {
             enable = true;
             autostart = true;
-            installLanguageServer = true;
           };
           html.enable = true;
           tsserver.enable = true;

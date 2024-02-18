@@ -5,7 +5,10 @@
     enable = true;
     package = pkgs.gitAndTools.gitFull;
     userName = "Nickiel12";
-    userEmail = "nicholasyoungsumner@gmail.com";
-    extraConfig.pull.rebase = true;
+    userEmail = "nickiel@nickiel.net";
+    extraConfig = {
+      pull.rebase = true;
+      rerere.enabled = true;
+    };
   };
 }

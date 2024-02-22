@@ -164,6 +164,7 @@ in
 
       lsp = {
         enable = true;
+        enabledServers = ["ocamllsp"];
         servers = {
           gopls = {
             enable = true;

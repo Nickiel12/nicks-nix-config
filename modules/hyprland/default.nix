@@ -42,7 +42,6 @@ in
     ];
 
     settings = {
-
       "$mod" = "SUPER";
 
       exec-once = [

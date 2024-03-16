@@ -164,8 +164,11 @@ in
 
       lsp = {
         enable = true;
-        enabledServers = ["ocamllsp"];
         servers = {
+          gleam = {
+            enable = true;
+            autostart = true;
+          };
           gopls = {
             enable = true;
           };

@@ -236,7 +236,7 @@ in
 
       telescope.enable = true;
       rust-tools.enable = true;
-      nvim-cmp.enable = true;
+      cmp.enable = true;
 
       cmp-nvim-lsp.enable = true;
       # Read settings  here: https://github.com/mfussenegger/nvim-dap#Usage
@@ -251,7 +251,7 @@ in
       nix.enable = true;
       airline = {
         enable = true;
-        powerlineFonts = true;
+        settings.powerline_fonts = true;
       };
     };
     extraConfigLua = builtins.readFile ./../rsrcs/nvim.lua;

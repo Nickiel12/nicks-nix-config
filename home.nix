@@ -32,7 +32,7 @@ let
       nextcloud-client     # Nextcloud private syncing
       hddtemp
 
-      pkgs-stable.texlive.combined.scheme-medium
+      # pkgs-stable.texlive.combined.scheme-medium # removed LaTex until needed
     
       # commandline utils
       eza
@@ -61,7 +61,7 @@ let
       pkgs-stable.godot_4
       pkgs-stable.helvum   # audio sink gui control
       pkgs-stable.inkscape  # Vector drawing
-      pkgs-stable.kicad     # PCB design
+      # pkgs-stable.kicad     # PCB design Removed until needed due to balooning build times
                   krita     # Raster drawing
       pkgs-stable.libreoffice-fresh   # Office editing
       makemkv       # blue-ray + dvd -> mkv

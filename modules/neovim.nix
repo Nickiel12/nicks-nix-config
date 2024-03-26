@@ -218,9 +218,9 @@ in
         smartRename.enable = true;
       };
 
-      comment-nvim = {
+      comment = {
         enable = true;
-        toggler = {
+        settings.toggler = {
           line = "<C-/>";
           block = "<C-'>";
         };

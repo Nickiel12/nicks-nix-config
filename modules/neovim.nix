@@ -23,7 +23,7 @@ in
       templ = "templ";
     };
 
-    options = {
+    opts = {
       autoindent = true;
       expandtab = true;
       foldlevel=20;
@@ -193,7 +193,7 @@ in
       };
       nvim-autopairs = {
         enable = true;
-        checkTs = true;
+        settings.check_ts = true;
       };
 
       treesitter = {

@@ -12,6 +12,10 @@
 
         autoUpdateApps.enable = true;
 
+        phpOptions = {
+          "opcache.interned_strings_buffer" = "64";
+        };
+
         settings = {
           preview_max_x = 2048;
           preview_max_y = 2048;
@@ -25,7 +29,11 @@
             "OC\\Preview\\MP4"
             "OC\\Preview\\MOVIE"
           ];
-          defaultPhoneRegion = "US";
+
+          log_type = "file";
+          maintenance_window_start = "10"; # 3 AM PDT
+
+          default_phone_region = "US";
           overwriteProtocol = "https";
           extraTrustedDomains = [
             "10.0.0.183"

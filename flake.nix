@@ -20,7 +20,7 @@
     };
     headscale = {
       # url = "github:kradalby/headscale/bbb4c357268998fd02780b7f8f2013f76e3ab80a";
-      url = "github:juanfont/headscale/1e22f17f36f8c13185dff269e6a00424b49b9568";
+      url = "github:juanfont/headscale/c42f25bd72e8b8d740af6c7cc4410507fc686b7e";
       # url = "github:juanfont/headscale"; # Real repo
       inputs."flake-utils".follows = "utils";
       inputs.nixpkgs.follows = "nixpkgs";

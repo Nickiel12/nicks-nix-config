@@ -21,8 +21,15 @@ in {
     address = "0.0.0.0";
     port = 8082;
     settings = {
+      prefixes = {
+        v6 = "fd7a:115c:a1e0::/48";
+        v4 = "100.64.0.0/10";
+      };
       server_url = "https://${domain}";
-      # database.type = "sqlite";
+      database = {
+        type = "sqlite3";
+        sqlite.path = "/var/lib/headscale/db.sqlite";
+      };
       dns_config = {
         base_domain = baseDomain;
         extra_records = tailscale_dns_entries;

@@ -17,17 +17,23 @@
 
   programs.hyprland.enable = true;
 
-  services.xserver = {
-    enable = true;
-    xkb.layout = "us";
-    xkb.options = "caps:super";
+  services = {
+    xserver = {
+      enable = true;
+      xkb.layout = "us";
+      xkb.options = "caps:super";
 
-    desktopManager.plasma5.enable = true;
-    displayManager.defaultSession = "plasma";
+      desktopManager.plasma5.enable = true;
+    };
 
-    displayManager.sddm.enable = true;
+    displayManager = {
+
+      defaultSession = "plasma";
+      sddm.enable = true;
+    };
 
     libinput = {
+
       enable = true;
       touchpad = {
         tapping = true;
@@ -41,6 +47,8 @@
       };
     };
   };
+
+
 
   # Android Debugging interface
   programs.adb.enable = true;

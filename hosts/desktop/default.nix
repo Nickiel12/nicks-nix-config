@@ -50,7 +50,8 @@
   environment.sessionVariables = {
     # Resolves jellyfin black screen under hyprland
     # See also: https://github.com/jellyfin/jellyfin-media-player/issues/165#issuecomment-1030690851
-    QT_QPA_PLATFORM = "xcb";
+    # Now set by hyperland
+    # QT_QPA_PLATFORM = "xcb";
   };
 
 

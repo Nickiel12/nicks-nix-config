@@ -3,7 +3,7 @@
 {
       services.nextcloud = {
         enable = true;
-        package = pkgs.nextcloud28;
+        package = pkgs.nextcloud29;
         enableImagemagick = true;
         nginx.recommendedHttpHeaders = true;
         https = true;

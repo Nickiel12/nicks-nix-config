@@ -19,8 +19,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     headscale = {
-      url = "github:juanfont/headscale/c42f25bd72e8b8d740af6c7cc4410507fc686b7e";
-      # url = "github:juanfont/headscale/bd047928f73687c5d75b804b996951c6fd37b2e6"; # Real repo
+      # url = "github:juanfont/headscale/c42f25bd72e8b8d740af6c7cc4410507fc686b7e";
+      url = "github:juanfont/headscale/a9c568c801a514855396c7dcec031b3598457f20";
       inputs."flake-utils".follows = "utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };

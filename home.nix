@@ -51,7 +51,7 @@ let
     ] ++ pkgs.lib.optionals (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) [
       # Gui application
       pkgs-stable.darktable # RAW processing
-      dbeaver   # SQL management tool
+      dbeaver-bin   # SQL management tool
       pkgs-stable.dragon        # simple audio player
                   firefox   # Internet access
                   freerdp   # RDP client

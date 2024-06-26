@@ -187,10 +187,10 @@ in
         openOnSetup = true;
       };
 
-      ts-autotag = {
-        enable = true;
-        filetypes = [ "html" "javascript" "typescript" "javascriptreact" "typescriptreact" "svelte" "vue" "tsx" "jsx" "rescript" "xml" "php" "markdown" "astro" "glimmer" "handlebars" "hbs" "templ" ];
-      };
+      # ts-autotag = {
+        # enable = true;
+        # filetypes = [ "html" "javascript" "typescript" "javascriptreact" "typescriptreact" "svelte" "vue" "tsx" "jsx" "rescript" "xml" "php" "markdown" "astro" "glimmer" "handlebars" "hbs" "templ" ];
+      # };
       nvim-autopairs = {
         enable = true;
         settings.check_ts = true;

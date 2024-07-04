@@ -13,6 +13,7 @@ let
 
     commandline_only_hosts = [
       "Alaska"
+      "NicksNixWSL"
     ];
 
      install_packages = with pkgs; [
@@ -85,26 +86,28 @@ let
       # Drawing tablet driver
       opentabletdriver
     ];
+
+    filterNulls = list: builtins.filter (x: x != null) list;
+    
 in
 {
 
-  imports = [
+  imports = filterNulls [
         ./modules/atuin.nix
-        ./modules/discord.nix
-        #./modules/emacs.nix
-        ./modules/fusuma.nix
         ./modules/git.nix
-        ./modules/hyprland
-        ./modules/kitty.nix
         ./modules/neovim.nix
-        ./modules/rofi.nix
         ./modules/tmux.nix
         ./modules/wezterm.nix
         ./modules/xdg.nix
         ./modules/yazi.nix
         ./modules/zsh.nix
+        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ./modules/hyprland else null)
+        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ../modules/discord.nix else null)
+        #./modules/emacs.nix
+        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ../modules/fusuma.nix else null)
+        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ../modules/rofi.nix else null)
+        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ../modules/kitty.nix else null)
   ];
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

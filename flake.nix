@@ -9,6 +9,8 @@
       # url = "github:NixOS/nixpkgs/b477b25191fc94ce764428520b83b6b64366e3c8";
     };
 
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     nixpkgs-stable = {
       url = "github:NixOS/nixpkgs/release-23.11";
     };
@@ -43,6 +45,7 @@
     ewwtilities,
     kmonad,
     atuin,
+    nixos-wsl,
     ... 
   }:
     let
@@ -71,6 +74,40 @@
             }
             inputs.nicks_nextcloud_integrations.nixosModules.default
             ./hosts/Alaska
+            home-manager.nixosModules.home-manager {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { 
+                  inherit user ewwtilities atuin pkgs-stable;
+                };
+                users.${user} = {
+                  imports = [
+                    (import ./home.nix)
+                    # Add nixvim to the homemanager
+                    inputs.nixvim.homeManagerModules.nixvim
+                  ];
+                };
+              };
+            }
+          ];
+        };
+
+
+        # To change username after installing: https://nix-community.github.io/NixOS-WSL/how-to/change-username.html
+        NicksNixWSL = lib.nixosSystem {
+          inherit system;
+
+          modules = [
+            nixos-wsl.nixosModules.default
+            ./hosts/WSL
+            {
+              networking.hostName = "NicksNixWSL";
+              system.stateVersion = "24.05";
+              wsl.enable = true;
+              wsl.defaultUser = "nixolas";
+            }
+            #./hosts/WSL
             home-manager.nixosModules.home-manager {
               home-manager = {
                 useGlobalPkgs = true;

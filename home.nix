@@ -101,12 +101,12 @@ in
         ./modules/xdg.nix
         ./modules/yazi.nix
         ./modules/zsh.nix
+        ./modules/kitty.nix
         (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ./modules/hyprland else null)
-        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ../modules/discord.nix else null)
+        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ./modules/discord.nix else null)
         #./modules/emacs.nix
-        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ../modules/fusuma.nix else null)
-        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ../modules/rofi.nix else null)
-        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ../modules/kitty.nix else null)
+        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ./modules/fusuma.nix else null)
+        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ./modules/rofi.nix else null)
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

@@ -104,8 +104,14 @@
             {
               networking.hostName = "NicksNixWSL";
               system.stateVersion = "24.05";
-              wsl.enable = true;
-              wsl.defaultUser = "nixolas";
+              # https://nix-community.github.io/NixOS-WSL/options.html
+              wsl = {
+                enable = true;
+                defaultUser = "nixolas";
+                # startMenuLaunchers = true;
+                useWindowsDriver = true;
+              };
+
             }
             #./hosts/WSL
             home-manager.nixosModules.home-manager {

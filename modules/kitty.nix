@@ -11,6 +11,11 @@ in
     shellIntegration.enableZshIntegration = true;
     # theme = "colbalt-neon";
 
+    keybindings = {
+      "ctrl+shift+l" = "next_tab";
+      "ctrl+shift+h" = "previous_tab";
+    };
+
     settings = {
       allow_remote_control = true;
       shell = "zsh";

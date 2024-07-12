@@ -56,6 +56,10 @@
       "files.nickiel.net" = {
           forceSSL = true;
           enableACME = true;
+          locations."/".extraConfig = ''
+            allow 100.64.0.0/24;
+            deny all;
+          '';
       };
 
       "git.nickiel.net" = {

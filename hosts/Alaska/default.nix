@@ -16,6 +16,7 @@
     ./modules/nginx.nix
     ./modules/nextcloud.nix
     ./modules/nicks_nextcould_integrations.nix
+    ./modules/postgres.nix
     ./modules/protonvpn.nix
     ./modules/tailscale.nix
     ./modules/vaultwarden.nix

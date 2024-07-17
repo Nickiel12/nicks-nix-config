@@ -199,16 +199,18 @@ in
       treesitter = {
         enable = true;
         folding = true;
-        indent = true;
-        ensureInstalled = [
-          "rust"
-          "toml"
-          "templ"
-          "go"
-          "html"
-          "json"
-          "css"
-        ];
+        settings = {
+          indent.enabled = true;
+          ensureInstalled = [
+            "rust"
+            "toml"
+            "templ"
+            "go"
+            "html"
+            "json"
+            "css"
+          ];
+        };
       };
       rainbow-delimiters.enable = true;
       treesitter-refactor = {

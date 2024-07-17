@@ -28,11 +28,6 @@
     useXkbConfig = true; # use xkbOptions in tty.
   };
 
-  sound = {
-    enable = false;
-    mediaKeys.enable = true;
-  };
-
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

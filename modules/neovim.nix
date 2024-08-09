@@ -161,6 +161,7 @@ in
     ];
 
     plugins = {
+      typescript-tools.enable = true;
 
       lsp = {
         enable = true;
@@ -177,7 +178,6 @@ in
             autostart = true;
           };
           html.enable = true;
-          tsserver.enable = true;
           cssls.enable = true;
         };
       };

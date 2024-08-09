@@ -15,6 +15,8 @@
     xkcd-font
   ];
 
+  wsl.useWindowsDriver = true;
+
   nixpkgs.config.allowUnfree = true;
   nix = {
     gc = {

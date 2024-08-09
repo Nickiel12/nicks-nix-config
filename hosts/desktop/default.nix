@@ -41,7 +41,7 @@
       Option "metamodes" "DP-4: 2560x1440 +1920+0, DP-2: 1920x1080 +0+360"
     '';
   };
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # Optionally, you may need to select the appropriate driver version for your specific GPU.
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;

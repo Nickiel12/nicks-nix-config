@@ -9,4 +9,4 @@ esac
 
 [ -n "$command" ] && pw-volume $command
 
-$2 update volume=$(pw-volume status | jq '.percentage // 10')
+$2 update volume=$(pw-volume status | jaq '.percentage // 10')

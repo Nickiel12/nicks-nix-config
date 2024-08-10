@@ -108,11 +108,6 @@
     };
   };
 
-  sound = {
-    enable = false;
-    mediaKeys.enable = true;
-  };
-
   time.timeZone = "America/Los_Angeles";
   time.hardwareClockInLocalTime = true;
 

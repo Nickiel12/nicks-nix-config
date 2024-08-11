@@ -14,6 +14,7 @@ in
 
   imports = [
     ../ewwbar
+    ./window_rules.nix
     ./keybinds.nix
     ./displays.nix
   ];

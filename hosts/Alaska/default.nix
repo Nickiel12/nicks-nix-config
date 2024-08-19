@@ -14,6 +14,7 @@
     ./modules/forgejo.nix
     ./modules/headscale.nix
     ./modules/msmtp.nix
+    ./modules/mosquitto.nix
     ./modules/nginx.nix
     ./modules/nextcloud.nix
     ./modules/nicks_nextcould_integrations.nix

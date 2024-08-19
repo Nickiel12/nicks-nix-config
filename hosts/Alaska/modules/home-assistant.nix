@@ -11,7 +11,16 @@
     # automatically picked up.
     extraComponents = [
       "tasmota"
+      "history"
+      "history_stats"
       "mqtt"
+    ];
+
+    extraPackages = python3Packages:
+      with python3Packages; [
+        numpy
+        pyturbojpeg
+        # psycopg2 # uncomment for recorder postgressql support
     ];
 
     config = {
@@ -26,6 +35,7 @@
         proxyWebsockets = true;
         extraConfig = ''
           allow 100.64.0.0/16;
+          allow 10.0.0.114;
           allow 127.0.0.1;
           deny all;
         '';

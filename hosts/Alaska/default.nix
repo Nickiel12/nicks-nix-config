@@ -9,10 +9,10 @@
     ./configuration.nix
     ./hardware-configuration.nix
     ./modules/dnsmasq.nix
-    ./modules/domoticz.nix
     ./modules/firewall.nix
     ./modules/forgejo.nix
     ./modules/headscale.nix
+    ./modules/home-assistant.nix
     ./modules/msmtp.nix
     ./modules/mosquitto.nix
     ./modules/nginx.nix

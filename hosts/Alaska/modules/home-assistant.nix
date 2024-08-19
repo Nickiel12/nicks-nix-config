@@ -11,12 +11,10 @@
     # automatically picked up.
     extraComponents = [
       "tasmota"
+      "mqtt"
     ];
 
     config = {
-      mqtt = {
-        broker = "0.0.0.0";
-      };
     };
 
   };

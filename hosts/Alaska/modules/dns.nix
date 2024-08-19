@@ -24,4 +24,9 @@
       type = "A";
       value = "100.64.0.1";
     }
+    {
+      name = "home-assistant.nickiel.net";
+      type = "A";
+      value = "100.64.0.1";
+    }
   ]

@@ -11,7 +11,10 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     
-    mcmojave-hyprcursor.url = "github:libadoxon/mcmojave-hyprcursor";
+    mcmojave-hyprcursor = { 
+      url = "github:libadoxon/mcmojave-hyprcursor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixpkgs-stable = {
       url = "github:NixOS/nixpkgs/release-23.11";
@@ -38,7 +41,7 @@
     };
   };
 
-  outputs = inputs@{
+  outputs = {
     self,
     nixpkgs,
     nixpkgs-stable,
@@ -49,7 +52,7 @@
     atuin,
     nixos-wsl,
     ... 
-  }:
+  } @ inputs:
     let
       user = "nixolas";
       system = "x86_64-linux";  
@@ -99,6 +102,9 @@
         # To change username after installing: https://nix-community.github.io/NixOS-WSL/how-to/change-username.html
         NicksNixWSL = lib.nixosSystem {
           inherit system;
+          specialArgs = {
+            inherit inputs;
+          };
 
           modules = [
             nixos-wsl.nixosModules.default
@@ -138,7 +144,7 @@
         NicksNixLaptop = lib.nixosSystem {
           inherit system;
           specialArgs = { 
-            inherit user;
+            inherit user inputs;
           };
 
           modules = [
@@ -170,7 +176,7 @@
 
         NicksNixDesktop = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit user; };
+          specialArgs = { inherit user inputs; };
 
           modules = [
             {

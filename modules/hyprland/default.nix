@@ -16,7 +16,6 @@ in
     ../ewwbar
     ./displays.nix
     ./keybinds.nix
-    ./hyprcursors.nix
     ./window_rules.nix
   ];
   

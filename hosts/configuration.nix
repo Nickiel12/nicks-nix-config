@@ -15,6 +15,12 @@
     WLR_NO_HARDWARE_CURSORS = "1";
   };
 
+  environment.variables.HYPRCURSOR_THEME = "McMojave";
+  environment.variables.HYPRCURSOR_SIZE = "32";
+  environment.systemPackages = [
+    inputs.mcmojave-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
+  ];
+
   programs.hyprland.enable = true;
 
   services = {

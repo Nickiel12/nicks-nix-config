@@ -69,7 +69,7 @@ let
                   qalculate-gtk # unit-friendly calculator
       pkgs-stable.qlcplus       # LED xlr control program
       signal-desktop            # secure messaging service
-      pkgs-stable.vscodium      # when vim and emacs (somehow) isn't enough
+      # pkgs-stable.vscodium      # when vim and emacs (somehow) isn't enough
                   obs-studio    # for video recording and virtual camera
 
       libsForQt5.kate   # kate/kwrite
@@ -103,7 +103,7 @@ in
         ./modules/zsh.nix
         ./modules/kitty.nix
         (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ./modules/hyprland else null)
-        (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ./modules/discord.nix else null)
+        #(if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ./modules/discord.nix else null)
         #./modules/emacs.nix
         (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ./modules/fusuma.nix else null)
         (if (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) then ./modules/rofi.nix else null)

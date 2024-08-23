@@ -14,9 +14,10 @@ in
 
   imports = [
     ../ewwbar
-    ./window_rules.nix
-    ./keybinds.nix
     ./displays.nix
+    ./keybinds.nix
+    ./hyprcursors.nix
+    ./window_rules.nix
   ];
   
   home.packages = with pkgs; [

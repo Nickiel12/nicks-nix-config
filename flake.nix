@@ -10,6 +10,8 @@
     };
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    
+    mcmojave-hyprcursor.url = "github:libadoxon/mcmojave-hyprcursor";
 
     nixpkgs-stable = {
       url = "github:NixOS/nixpkgs/release-23.11";

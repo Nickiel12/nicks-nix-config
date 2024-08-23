@@ -49,8 +49,8 @@ in
       "$mod, mouse_down, workspace, e+1"
       "$mod, mouse_up, workspace, e-1"
 
-      "CTRL_SHIFT, h, ewwtilities prev-next-workspace 0"
-      "CTRL_SHIFT, l, ewwtilities prev-next-workspace 1"
+      "CTRL_SHIFT, h, exec, ewwtilities prev-next-workspace 0"
+      "CTRL_SHIFT, l, exec, ewwtilities prev-next-workspace 1"
     ] ++
       # Change workspace
       (map (n:

@@ -43,9 +43,12 @@
   };
   hardware.graphics.enable = true;
 
-  # Optionally, you may need to select the appropriate driver version for your specific GPU.
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia = {
+    # Optionally, you may need to select the appropriate driver version for your specific GPU.
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    modesetting.enable = true;
+    open = false;
+  };
 
   environment.sessionVariables = {
     # Resolves jellyfin black screen under hyprland

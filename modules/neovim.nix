@@ -162,10 +162,12 @@ in
 
     plugins = {
       typescript-tools.enable = true;
+      zig.enable = true;
 
       lsp = {
         enable = true;
         servers = {
+          zls.enable = true;
           gleam = {
             enable = true;
             autostart = true;
@@ -209,6 +211,7 @@ in
             "html"
             "json"
             "css"
+            "zig"
           ];
         };
       };

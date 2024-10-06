@@ -255,7 +255,7 @@ in
       presence-nvim.enable = true;
       nix.enable = true;
       airline = {
-        enable = 1;
+        enable = true;
         settings.powerline_fonts = true;
       };
     };

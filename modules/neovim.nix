@@ -161,6 +161,7 @@ in
     ];
 
     plugins = {
+      web-devicons.enable = true; # text icons
       typescript-tools.enable = true;
       zig.enable = true;
 
@@ -256,7 +257,7 @@ in
       nix.enable = true;
       airline = {
         enable = true;
-        settings.powerline_fonts = true;
+        settings.powerline_fonts = 1;
       };
     };
     extraConfigLua = builtins.readFile ./../rsrcs/nvim.lua;

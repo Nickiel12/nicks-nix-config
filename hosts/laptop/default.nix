@@ -10,6 +10,9 @@
     "100.64.0.1" = ["files.nickiel.net" "git.nickiel.net" "nickiel.net" 
     "jellyfin.nickiel.net" ];
   };
+
+  hardware.graphics.enable = true;
+
   # tailscale set --exit-node <SEVERNAME> to route through an exit node
   services.tailscale.enable = true;
   networking.firewall = {

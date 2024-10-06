@@ -59,7 +59,7 @@ let
       pkgs-stable.flameshot   # screenshot utility
       pkgs-stable.grim pkgs-stable.slurp pkgs-stable.wl-clipboard  # DIY wayland screenshots
       pkgs-stable.frei0r   # kdenlive video plugins
-      pkgs-stable.godot_4
+      # pkgs-stable.godot_4
       pkgs-stable.helvum   # audio sink gui control
       pkgs-stable.inkscape  # Vector drawing
       # pkgs-stable.kicad     # PCB design Removed until needed due to balooning build times

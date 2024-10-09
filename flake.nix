@@ -26,8 +26,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     headscale = {
-      # url = "github:juanfont/headscale/c42f25bd72e8b8d740af6c7cc4410507fc686b7e";
-      url = "github:juanfont/headscale/a9c568c801a514855396c7dcec031b3598457f20";
+      url = "github:juanfont/headscale/10a72e8d542af68c0c280f2a6ccc84849719b24c";
+      # url = "github:juanfont/headscale/a9c568c801a514855396c7dcec031b3598457f20";
       inputs."flake-utils".follows = "utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };

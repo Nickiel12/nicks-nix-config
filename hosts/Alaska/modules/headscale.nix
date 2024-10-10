@@ -2,8 +2,8 @@
 
 let
   tailscale_dns_entries = import ./dns.nix;
-  baseDomain = "nickiel.net";
-  domain = "headscale.${baseDomain}";
+  baseDomain = "tailscale.nickiel.net";
+  domain = "headscale.nickiel.net";
 in {
   # headscale routes list
   # headscale routes enable -r NUMBER
@@ -30,8 +30,10 @@ in {
         type = "sqlite3";
         sqlite.path = "/var/lib/headscale/db.sqlite";
       };
+      dns_config = {};
       dns = {
         base_domain = baseDomain;
+        magic_dns = true;
         extra_records = tailscale_dns_entries;
       };
       derp = {

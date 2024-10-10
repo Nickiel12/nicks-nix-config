@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, zls, ... }:
 let
 in
 {
@@ -163,16 +163,24 @@ in
     plugins = {
       web-devicons.enable = true; # text icons
       typescript-tools.enable = true;
-      zig.enable = true;
+      zig = {
+        enable = true;
+        settings = {
+          fmt_autosave = 0;
+        };
+      };
 
       lsp = {
         enable = true;
         servers = {
-          zls.enable = true;
-          gleam = {
+          zls = {
             enable = true;
-            autostart = true;
+            package = zls.packages.${pkgs.system}.zls;
           };
+          # gleam = {
+          #  enable = true;
+          #   autostart = true;
+          # };
           gopls = {
             enable = true;
           };

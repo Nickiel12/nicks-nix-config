@@ -4,6 +4,10 @@
   inputs = {
     utils.url = "github:numtide/flake-utils";
     nixvim.url = "github:nix-community/nixvim";
+    zls = {
+      url = "github:zigtools/zls";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
       # url = "github:NixOS/nixpkgs/b477b25191fc94ce764428520b83b6b64366e3c8";
@@ -51,6 +55,7 @@
     kmonad,
     atuin,
     nixos-wsl,
+    zls,
     ... 
   } @ inputs:
     let
@@ -84,7 +89,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities atuin pkgs-stable;
+                  inherit user ewwtilities atuin pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [
@@ -127,7 +132,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities atuin pkgs-stable;
+                  inherit user ewwtilities atuin pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [
@@ -160,7 +165,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities atuin pkgs-stable;
+                  inherit user ewwtilities atuin pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [
@@ -192,7 +197,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities atuin pkgs-stable;
+                  inherit user ewwtilities atuin pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [

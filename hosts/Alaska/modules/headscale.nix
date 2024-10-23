@@ -30,7 +30,6 @@ in {
         type = "sqlite3";
         sqlite.path = "/var/lib/headscale/db.sqlite";
       };
-      dns_config = {};
       dns = {
         base_domain = baseDomain;
         magic_dns = true;

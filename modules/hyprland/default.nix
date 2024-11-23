@@ -56,6 +56,12 @@ in
         "eww open full_screen_bar"
     ];
 
+      binde = if (hostname == "NicksNixLaptop") then
+      [
+        ",XF86MonBrightnessUp, exec, brightnessctl set 10%+"
+        ",XF86MonBrightnessDown, exec, brightnessctl set 10%-"
+      ] else [];
+
       input = if (hostname == "NicksNixLaptop") then
       {
         kb_layout = "us";

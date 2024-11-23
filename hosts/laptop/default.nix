@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 { 
   imports = [
@@ -12,6 +12,10 @@
   };
 
   hardware.graphics.enable = true;
+
+  environment.systemPackages = [
+    pkgs.brightnessctl # brighness manager for hotkeys
+  ];
 
   # tailscale set --exit-node <SEVERNAME> to route through an exit node
   services.tailscale.enable = true;

@@ -54,11 +54,11 @@ in
     ] ++
       # Change workspace
       (map (n:
-        "$mod,${n}, exec, ewwtilities workspace-selector ${n}"
+        "$mod,${n}, exec, ewwtilities workspace ${n} --switch-workspace"
       ) workspaces) ++
       # Move window to workspace
       (map (n:
-        "$modSHIFT,${n},movetoworkspacesilent,name:${n}"
+        "$modSHIFT,${n}, exec, ewwtilities workspace ${n} --move-window"
       ) workspaces) ++
       # Move focus
       (lib.mapAttrsToList (key: direction:

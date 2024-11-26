@@ -98,7 +98,7 @@ in
       decoration = {
         shadow = {
           enabled = true;
-          color = "rgba(00000099)"
+          color = "rgba(00000099)";
           range = 5;
         };
         rounding = 5;

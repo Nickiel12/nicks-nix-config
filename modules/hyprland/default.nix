@@ -96,9 +96,12 @@ in
 
       # https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
-        shadow_offset = "5 5";
+        shadow = {
+          enabled = true;
+          color = "rgba(00000099)"
+          range = 5;
+        };
         rounding = 5;
-        "col.shadow" = "rgba(00000099)";
       };
 
       # https://wiki.hyprland.org/Configuring/Variables/#gestures

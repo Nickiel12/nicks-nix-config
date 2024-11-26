@@ -248,8 +248,9 @@ in
         };
       };
 
+
       telescope.enable = true;
-      rust-tools.enable = true;
+      rustaceanvim.enable = true;
       cmp.enable = true;
 
       cmp-nvim-lsp.enable = true;

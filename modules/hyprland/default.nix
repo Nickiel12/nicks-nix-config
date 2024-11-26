@@ -99,7 +99,8 @@ in
         shadow = {
           enabled = true;
           color = "rgba(00000099)";
-          range = 5;
+          # range = 5;
+          offset = "5 5";
         };
         rounding = 5;
       };

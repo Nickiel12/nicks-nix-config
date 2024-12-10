@@ -15,11 +15,17 @@
     WLR_NO_HARDWARE_CURSORS = "1";
   };
 
-  environment.variables.HYPRCURSOR_THEME = "McMojave";
-  environment.variables.HYPRCURSOR_SIZE = "32";
-  environment.systemPackages = [
-    inputs.mcmojave-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
+  # Also run
+  # dconf write /org/gnome/desktop/interface/cursor-theme "'THEME_NAME'"
+  environment.variables = {
+    HYPRCURSOR_THEME = "McMojave";
+    HYPRCURSOR_SIZE = "32";
+    XCURSOR_THEME = "McMojave-cursors";
+    XCURSOR_SIZE = "32";
+  };
+  #environment.systemPackages = [
+    #inputs.mcmojave-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
+  #];
 
   programs.hyprland.enable = true;
 

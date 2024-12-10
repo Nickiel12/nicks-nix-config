@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mcmojave-xcursor = {
+      url = "git+https://git.nickiel.net/Nickiel/McMojave-cursors.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixpkgs-stable = {
       url = "github:NixOS/nixpkgs/release-23.11";
     };
@@ -197,7 +202,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities atuin pkgs-stable zls;
+                  inherit inputs user ewwtilities atuin pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [

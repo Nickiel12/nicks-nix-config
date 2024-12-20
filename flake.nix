@@ -80,7 +80,7 @@
         Alaska = lib.nixosSystem {
           inherit system;
           specialArgs = { 
-            inherit user headscale;
+            inherit user headscale inputs;
           };
 
           modules = [
@@ -94,7 +94,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities atuin pkgs-stable zls;
+                  inherit inputs user ewwtilities atuin pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [
@@ -137,7 +137,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities atuin pkgs-stable zls;
+                  inherit inputs user ewwtilities atuin pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [
@@ -170,7 +170,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit user ewwtilities atuin pkgs-stable zls;
+                  inherit inputs user ewwtilities atuin pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [

@@ -244,7 +244,7 @@ in
         enable = true;
         settings = {
           position = "auto";
-          keymaps_toggle = "<leader>t";
+          keymap_toggle = "<leader>t";
         };
       };
 

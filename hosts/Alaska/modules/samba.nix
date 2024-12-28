@@ -7,18 +7,27 @@ in {
     enable = true;
     openFirewall = true;
     settings = {
+      global.workgroup = "WORKGROUP";
       global."invalid users" = [
         "root"
       ];
       global.security = "user";
       global."passwd program" = "/run/wrappers/bin/passwd %u";
-      Iceberg = {
+      iceberg = {
         comment = "the Alaska SMB share";
         path = "/Aurora/SharedFolders/Iceberg";
-        "guest ok" = "yes";
+        "guest ok" = "no";
         "read only" = "no";
         browseable = "yes";
       };
+      blizzard = {
+        comment = "Backed up Alaska SMB share";
+        path = "/Aurora/SharedFolders/Blizzard";
+        "guest ok" = "no";
+        "read only" = "no";
+        browseable = "yes";
+      };
+      
     };
   };
 

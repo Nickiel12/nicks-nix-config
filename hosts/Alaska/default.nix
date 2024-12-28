@@ -37,6 +37,11 @@
       backup_dir = "/Aurora/Backups/Vaultwarden";
     };
 
+    samba_shares = {
+      enable = true;
+      backup_dir = "/Aurora/SharedFolders/Blizzard"; # only backup one folder
+    };
+
     forgejo = {
       enable = true;
       backups_dir = "/Aurora/Backups/Forgejo";

@@ -63,6 +63,18 @@ in
       };
     };
 
+    samba_shares = {
+      enable = lib.mkEnableOption (lib.mdDoc "Back up Samba shared folders");
+
+      backup_dir = lib.mkOption {
+        type = lib.types.path;
+        default = "/Aurora/SharedFolders";
+        description = lib.mdDoc ''
+          The path of the shared folders used by samba
+        '';
+      };
+    };
+
     nextcloud = {
       enable = lib.mkEnableOption (lib.mkDoc "Back up nextcloud instance");
       root_dir = lib.mkOption {
@@ -138,6 +150,12 @@ in
 
           echo "Mounting the external backup drive"
           mount /dev/disk/by-label/${cfg.backup1_drive_label} ${builtins.toString cfg.tmp_mount_point} -t ntfs3
+
+          #----- BEGIN SAMBA SHARES
+          if [ "${builtins.toString cfg.samba_shares.enable}" = "1" ]; then
+            rsync -av ${cfg.samba_shares.backup_dir} ${builtins.toString cfg.tmp_mount_point}
+          fi
+          #----- END SAMBA SHARES
 
           #------ BEGIN NEXTCLOUD
           if [ "${builtins.toString cfg.nextcloud.enable}" = "1" ]; then 

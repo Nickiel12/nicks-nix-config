@@ -20,6 +20,7 @@
     ./modules/nicks_nextcould_integrations.nix
     ./modules/postgres.nix
     ./modules/protonvpn.nix
+    ./modules/samba.nix
     ./modules/tailscale.nix
     ./modules/vaultwarden.nix
     ./modules/vsftpd.nix

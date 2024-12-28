@@ -242,9 +242,9 @@ in
 
       floaterm = {
         enable = true;
-        position = "auto";
-        keymaps = {
-          toggle = "<leader>t";
+        settings = {
+          position = "auto";
+          keymaps_toggle = "<leader>t";
         };
       };
 

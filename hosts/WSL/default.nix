@@ -10,7 +10,7 @@
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = ["DejaVuSansMono"]; })
+    nerd-fonts.dejavu-sans-mono
     dejavu_fonts
     xkcd-font
   ];

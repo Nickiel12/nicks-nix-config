@@ -51,6 +51,9 @@ let
 
     ] ++ pkgs.lib.optionals (! builtins.elem osConfig.networking.hostName commandline_only_hosts ) [
 
+      inputs.mcmojave-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.mcmojave-xcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
+
       # Gui application
       pkgs-stable.darktable # RAW processing
       dbeaver-bin   # SQL management tool
@@ -139,10 +142,7 @@ in
     # changes in each release.
     stateVersion = "22.11";
 
-    packages = install_packages ++ [
-      inputs.mcmojave-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
-      inputs.mcmojave-xcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
-    ];
+    packages = install_packages;
     sessionVariables = {
       NIX_SHELL_PRESERVE_PROMPT = 1;
       EDITOR = "nvim";

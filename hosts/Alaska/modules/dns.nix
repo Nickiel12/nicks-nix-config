@@ -29,4 +29,9 @@
       type = "A";
       value = "100.64.0.1";
     }
+    {
+      name = "octoprint.nickiel.net";
+      type = "A";
+      value = "100.64.0.8";
+    }
   ]

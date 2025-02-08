@@ -30,8 +30,8 @@
       value = "100.64.0.1";
     }
     {
-      name = "octoprint.nickiel.net";
+      name = "printers.nickiel.net";
       type = "A";
-      value = "100.64.0.8";
+      value = "100.64.0.1";
     }
   ]

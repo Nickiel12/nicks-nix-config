@@ -74,6 +74,20 @@
         root = "/Aurora/StaticSites/static_pages/public";
       };
 
+      "printers.nickiel.net" = {
+        # forceSSL = true;
+        # enableACME = true;
+        root = "/Aurora/StaticSites/printer_pages";
+        locations = {
+          "/".extraConfig = ''
+            allow 100.64.0.0/24;
+            deny all;
+            '';
+          "/KingGeorge".proxyPass = "http://10.0.0.59";
+          "/Bluey".proxyPass = "http://100.64.0.8";
+        };
+      };
+
     };
   };
 }

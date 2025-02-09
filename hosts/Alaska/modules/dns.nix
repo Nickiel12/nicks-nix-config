@@ -34,4 +34,14 @@
       type = "A";
       value = "100.64.0.1";
     }
+    {
+      name = "bluey.printers.nickiel.net";
+      type = "A";
+      value = "100.64.0.1";
+    }
+    {
+      name = "kinggeorge.printers.nickiel.net";
+      type = "A";
+      value = "100.64.0.1";
+    }
   ]

@@ -85,13 +85,23 @@
         locations."/" = {
           proxyPass = "http://10.0.0.59/";
           proxyWebsockets = true;
+          extraConfig = ''
+            proxy_hide_header X-Frame-Options;
+            add_header 'Referrer-Policy' 'origin-when-cross-origin';
+            add_header X-Content-Type-Options nosniff;
+            add_header X-Frame-Options "";
+          '';
+        };
+        locations."/webcam" = {
+          proxyPass = "http://10.0.0.59:8080/?action=stream";
+          proxyWebsockets = true;
         };
       };
 
       "printers.nickiel.net" = {
         # forceSSL = true;
         # enableACME = true;
-        locations."/".root = "/Aurora/StaticSites/printer_pages";
+        locations."/".root = "/Aurora/StaticSites/printers-static-pages";
       };
 
     };

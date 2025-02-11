@@ -76,7 +76,7 @@
 
       "bluey.printers.nickiel.net" = {
         locations."/" = {
-          proxyPass = "http://100.64.0.8/";
+          proxyPass = "http://100.64.0.10/";
           proxyWebsockets = true;
         };
       };

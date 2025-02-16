@@ -23,6 +23,32 @@
         # psycopg2 # uncomment for recorder postgressql support
     ];
 
+    defaultIntegrations = [
+      "application_credentials"
+      "frontend"
+      "hardware"
+      "logger"
+      "network"
+      "mobile_app"
+      "system_health"
+      "automation"
+      "person"
+      "scene"
+      "script"
+      "tag"
+      "zone"
+      "counter"
+      "input_boolean"
+      "input_button"
+      "input_datetime"
+      "input_number"
+      "input_select"
+      "input_text"
+      "schedule"
+      "timer"
+      "backup"
+    ];
+
     config = {
       http = {
         server_port = 8123;

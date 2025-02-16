@@ -78,6 +78,12 @@
         locations."/" = {
           proxyPass = "http://100.64.0.10/";
           proxyWebsockets = true;
+          extraConfig = ''
+            proxy_hide_header X-Frame-Options;
+            add_header 'Referrer-Policy' 'origin-when-cross-origin';
+            add_header X-Content-Type-Options nosniff;
+            add_header X-Frame-Options "";
+          '';
         };
       };
 

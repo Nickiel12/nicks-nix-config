@@ -14,6 +14,7 @@
       "history"
       "history_stats"
       "mqtt"
+      "mobile_app"
     ];
 
     extraPackages = python3Packages:
@@ -23,31 +24,6 @@
         # psycopg2 # uncomment for recorder postgressql support
     ];
 
-    defaultIntegrations = [
-      "application_credentials"
-      "frontend"
-      "hardware"
-      "logger"
-      "network"
-      "mobile_app"
-      "system_health"
-      "automation"
-      "person"
-      "scene"
-      "script"
-      "tag"
-      "zone"
-      "counter"
-      "input_boolean"
-      "input_button"
-      "input_datetime"
-      "input_number"
-      "input_select"
-      "input_text"
-      "schedule"
-      "timer"
-      "backup"
-    ];
 
     config = {
       http = {
@@ -59,6 +35,7 @@
         name = "Alaska";
         temperature_unit = "F";
       };
+      mobile_app = { }; # this line is required for the mobile app integration to be enabled
     };
 
   };

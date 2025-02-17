@@ -384,11 +384,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1721330371,
-        "narHash": "sha256-aYlHTWylczLt6ERJyg6E66Y/XSCbVL7leVcRuJmVbpI=",
+        "lastModified": 1738664950,
+        "narHash": "sha256-xIeGNM+iivwVHkv9tHwOqoUP5dDrtees34bbFKKMZYs=",
         "owner": "hyprwm",
         "repo": "hyprcursor",
-        "rev": "4493a972b48f9c3014befbbf381ed5fff91a65dc",
+        "rev": "7c6d165e1eb9045a996551eb9f121b6d1b30adc3",
         "type": "github"
       },
       "original": {
@@ -412,11 +412,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721324361,
-        "narHash": "sha256-BiJKO0IIdnSwHQBSrEJlKlFr753urkLE48wtt0UhNG4=",
+        "lastModified": 1737634606,
+        "narHash": "sha256-W7W87Cv6wqZ9PHegI6rH1+ve3zJPiyevMFf0/HwdbCQ=",
         "owner": "hyprwm",
         "repo": "hyprlang",
-        "rev": "adbefbf49664a6c2c8bf36b6487fd31e3eb68086",
+        "rev": "f41271d35cc0f370d300413d756c2677f386af9d",
         "type": "github"
       },
       "original": {
@@ -441,11 +441,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721324102,
-        "narHash": "sha256-WAZ0X6yJW1hFG6otkHBfyJDKRpNP5stsRqdEuHrFRpk=",
+        "lastModified": 1737632363,
+        "narHash": "sha256-X9I8POSlHxBVjD0fiX1O2j7U9Zi1+4rIkrsyHP0uHXY=",
         "owner": "hyprwm",
         "repo": "hyprutils",
-        "rev": "962582a090bc233c4de9d9897f46794280288989",
+        "rev": "006620eb29d54ea9086538891404c78563d1bae1",
         "type": "github"
       },
       "original": {
@@ -511,17 +511,17 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1722822648,
-        "narHash": "sha256-aM3y6Fq156ilzKUPrZTwp+XWmIqcoQeklRERN0Y0Nvo=",
-        "owner": "libadoxon",
-        "repo": "mcmojave-hyprcursor",
-        "rev": "ad4bbde8d87810f74fe72ae102ce824f26bb1b07",
-        "type": "github"
+        "lastModified": 1739752476,
+        "narHash": "sha256-gwf5zxjge/vNfrM62Dm+dxGXb+VJnF4HyLTaNIFYXdo=",
+        "ref": "refs/heads/main",
+        "rev": "a43d1111d3dae9bef787dee6bd442b5260697417",
+        "revCount": 10,
+        "type": "git",
+        "url": "https://git.nickiel.net/nickiel/mcmojave-hyprcursor.git"
       },
       "original": {
-        "owner": "libadoxon",
-        "repo": "mcmojave-hyprcursor",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.nickiel.net/nickiel/mcmojave-hyprcursor.git"
       }
     },
     "mcmojave-xcursor": {
@@ -532,17 +532,17 @@
         "systems": "systems_4"
       },
       "locked": {
-        "lastModified": 1733803873,
-        "narHash": "sha256-T7w0GYIqxoYA//dHxBbsmlruaqU6ZY1mvuNj8i/LBMs=",
+        "lastModified": 1739752990,
+        "narHash": "sha256-QsXk1addIDN3pp8/FEtLIsvXrpGytRj8LFQi35wUxgI=",
         "ref": "refs/heads/master",
-        "rev": "3730719c2e5554b900b6dd637e92a73e8ea64995",
-        "revCount": 12,
+        "rev": "e1ddb4d5394c769e09accd34ec9b6874ebd7ddc7",
+        "revCount": 13,
         "type": "git",
-        "url": "https://git.nickiel.net/Nickiel/McMojave-cursors.git"
+        "url": "https://git.nickiel.net/nickiel/mcmojave-cursors.git"
       },
       "original": {
         "type": "git",
-        "url": "https://git.nickiel.net/Nickiel/McMojave-cursors.git"
+        "url": "https://git.nickiel.net/nickiel/mcmojave-cursors.git"
       }
     },
     "nicks_nextcloud_integrations": {

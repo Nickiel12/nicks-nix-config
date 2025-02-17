@@ -16,12 +16,12 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     
     mcmojave-hyprcursor = { 
-      url = "github:libadoxon/mcmojave-hyprcursor";
+      url = "git+https://git.nickiel.net/nickiel/mcmojave-hyprcursor.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     mcmojave-xcursor = {
-      url = "git+https://git.nickiel.net/Nickiel/McMojave-cursors.git";
+      url = "git+https://git.nickiel.net/nickiel/mcmojave-cursors.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -66,6 +66,10 @@
           forceSSL = true;
           enableACME = true;
           locations."/".proxyPass = "http://127.0.0.1:3001";
+          locations."/".extraConfig = ''
+            allow 100.64.0.0/24;
+            deny all;
+          '';
       };
 
       "staticpages.nickiel.net" = {

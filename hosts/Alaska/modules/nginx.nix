@@ -80,7 +80,7 @@
 
       "bluey.printers.nickiel.net" = {
         locations."/" = {
-          proxyPass = "http://100.64.0.10/";
+          proxyPass = "http://100.64.0.8/";
           proxyWebsockets = true;
           extraConfig = ''
             proxy_hide_header X-Frame-Options;

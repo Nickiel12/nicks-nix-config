@@ -1,43 +1,22 @@
 { config, lib, pkgs, ... }:
 
 {
-  services.home-assistant = {
-    enable = true;
-    openFirewall = false;
 
-     # List extraComponents here to be installed. The names can be found here:
-    # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/home-assistant/component-packages.nix
-    # Components listed here will be possible to add via the webUI if not
-    # automatically picked up.
-    extraComponents = [
-      "tasmota"
-      "history"
-      "history_stats"
-      "mqtt"
-      "mobile_app"
+  virtualisation.oci-containers.containers.homeassistant = {
+    volumes = [
+      "/Aurora/docker/HomeAssistant:/config"
     ];
-
-    extraPackages = python3Packages:
-      with python3Packages; [
-        numpy
-        pyturbojpeg
-        # psycopg2 # uncomment for recorder postgressql support
-    ];
-
-
-    config = {
-      http = {
-        server_port = 8123;
-        trusted_proxies = [ "127.0.0.1" ];
-        use_x_forwarded_for = true;
-      };
-      homeassistant = {
-        name = "Alaska";
-        temperature_unit = "F";
-      };
-      mobile_app = { }; # this line is required for the mobile app integration to be enabled
+    environment = {
+      TZ = "America/Los_Angeles";
     };
-
+    image = "ghcr.io/home-assistant/home-assistant:stable";
+    ports = [
+      "8123:8123"
+    ];
+    extraOptions = [
+      "--network=host"
+      "--pull=always"
+    ];
   };
 
   services.nginx.virtualHosts = {
@@ -49,7 +28,6 @@
         proxyWebsockets = true;
         extraConfig = ''
           allow 100.64.0.0/16;
-          allow 10.0.0.114;
           allow 127.0.0.1;
           deny all;
         '';

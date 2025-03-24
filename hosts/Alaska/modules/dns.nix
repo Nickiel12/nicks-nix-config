@@ -34,8 +34,15 @@
       type = "A";
       value = "100.64.0.1";
     }
+
+    # Printers
     {
       name = "printers.nickiel.net";
+      type = "A";
+      value = "100.64.0.1";
+    }
+    {
+      name = "spoolman.nickiel.net";
       type = "A";
       value = "100.64.0.1";
     }

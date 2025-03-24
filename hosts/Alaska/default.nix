@@ -22,6 +22,7 @@
     ./modules/postgres.nix
     ./modules/protonvpn.nix
     ./modules/samba.nix
+    ./modules/spoolman.nix
     ./modules/tailscale.nix
     ./modules/vaultwarden.nix
     ./modules/vsftpd.nix
@@ -72,6 +73,14 @@
     pkgs.screen
     pkgs.wireguard-tools
   ];
+
+  virtualisation = {
+    podman = {
+      enable = true;
+    };
+
+    oci-containers.backend = "podman";
+  };
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;

@@ -52,13 +52,13 @@
       value = "100.64.0.1";
     }
     {
-      name = "kinggeorge.printers.nickiel.net";
+      name = "bingo.printers.nickiel.net";
       type = "A";
       value = "100.64.0.1";
     }
     {
-      name = "prusamini.printers.nickiel.net";
-      type="A";
-      value = "100.64.0.11";
+      name = "kinggeorge.printers.nickiel.net";
+      type = "A";
+      value = "100.64.0.1";
     }
   ]

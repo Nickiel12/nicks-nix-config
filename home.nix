@@ -69,7 +69,7 @@ let
       # pkgs-stable.kicad     # PCB design Removed until needed due to balooning build times
                   krita     # Raster drawing
       pkgs-stable.libreoffice-fresh   # Office editing
-      makemkv       # blue-ray + dvd -> mkv
+      # makemkv       # blue-ray + dvd -> mkv
                   qalculate-gtk # unit-friendly calculator
       pkgs-stable.qlcplus       # LED xlr control program
       signal-desktop            # secure messaging service

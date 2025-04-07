@@ -68,6 +68,7 @@
       devices = [ "nodev" ];
       efiSupport = true;
       useOSProber = false;
+      extraEntriesBeforeNixOS = true;
       extraEntries = ''
         menuentry 'Windows Boot Manager (on /dev/sda2)' --class windows --class os $menuentry_id_option 'osprober-efi-6877-BD74' {
             insmod part_gpt

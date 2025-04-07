@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 
 {
@@ -81,7 +81,13 @@
             fi
             chainloader /efi/Microsoft/Boot/bootmgfw.efi
         }
-    '';
+      '';
+      theme = "${
+        (builtins.fetchGit {
+          url = "https://git.nickiel.net/Nickiel/Grub-Theme.git";
+          rev = "e9e23da27ba59fb7274dfbca1c19f52e68fe4f5a";
+        })
+      }/Theme";
     };
   };
 }

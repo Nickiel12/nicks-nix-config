@@ -84,6 +84,7 @@
           proxyWebsockets = true;
           extraConfig = ''
             proxy_hide_header X-Frame-Options;
+            client_max_body_size 25M;
             add_header 'Referrer-Policy' 'origin-when-cross-origin';
             add_header X-Content-Type-Options nosniff;
             add_header X-Frame-Options "";
@@ -97,6 +98,7 @@
           proxyWebsockets = true;
           extraConfig = ''
             proxy_hide_header X-Frame-Options;
+            client_max_body_size 25M;
             add_header 'Referrer-Policy' 'origin-when-cross-origin';
             add_header X-Content-Type-Options nosniff;
             add_header X-Frame-Options "";

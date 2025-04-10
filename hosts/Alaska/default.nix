@@ -24,6 +24,7 @@
     ./modules/samba.nix
     ./modules/spoolman.nix
     ./modules/tailscale.nix
+    ./modules/unifi.nix
     ./modules/vaultwarden.nix
     ./modules/vsftpd.nix
   ];

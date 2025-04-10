@@ -24,6 +24,14 @@ in
       # entrypoint # set a startup command if needed
       environment = { # environment variables
         TZ = "America/Los_Angeles";
+        SPOOLMAN_DB_TYPE = "postgres";
+        SPOOLMAN_DB_HOST = "100.64.0.1";
+        SPOOLMAN_DB_PORT = "5432";
+        SPOOLMAN_DB_NAME = "spoolman";
+        SPOOLMAN_DB_USERNAME = "spoolman";
+        SPOOLMAN_DB_PASSWORD_FILE = "/home/app/.local/share/pass_file.txt";
+        SPOOLMAN_DIR_LOGS = "/home/app/.local/share/spoolman_data";
+        SPOOLMAN_AUTOMATIC_BACKUP = "FALSE";
       };
       extraOptions = [
         "--network=host"

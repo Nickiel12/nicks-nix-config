@@ -35,7 +35,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     headscale = {
-      url = "github:juanfont/headscale/43943aeee9134cf6a76a380ebb1bc3ac7803d830";
+      url = "github:juanfont/headscale/ade7f2a2b1795768ce146913e25011cd11a1a012";
       inputs."flake-utils".follows = "utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };

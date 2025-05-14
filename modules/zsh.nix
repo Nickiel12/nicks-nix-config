@@ -13,12 +13,9 @@ in
     enable = true; # technically also enabled in user shell
     dotDir = ".config/zsh";
 
-    initExtraFirst = '' 
+    initContent = ''
       pfetch
-      fortune
-    '';
 
-    initExtra = ''
       [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';

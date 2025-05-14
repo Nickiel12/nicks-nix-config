@@ -38,7 +38,6 @@ let
       # commandline utils
       eza
       fd
-      fortune
       neofetch
       nftables
       pfetch

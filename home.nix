@@ -32,6 +32,7 @@ let
       pkgs-stable.qmk      # QMK utility for compiling qmk firmware
       nextcloud-client     # Nextcloud private syncing
       hddtemp
+      freecad-wayland
 
       # pkgs-stable.texlive.combined.scheme-medium # removed LaTex until needed
     

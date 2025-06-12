@@ -1,4 +1,4 @@
-{  config, pkgs, ... }:
+{  config, pkgs, headscale, ... }:
 
 let
   tailscale_dns_entries = import ./dns.nix;
@@ -16,6 +16,7 @@ in {
 
   # https://carjorvaz.com/posts/setting-up-headscale-on-nixos/
   services.headscale = {
+    package = headscale.packages.${pkgs.system}.headscale;
     enable = true;
     address = "0.0.0.0";
     port = 8082;

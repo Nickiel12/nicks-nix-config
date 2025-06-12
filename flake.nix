@@ -34,6 +34,11 @@
       url = "github:atuinsh/atuin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    headscale = {
+      url = "github:juanfont/headscale/ade7f2a2b1795768ce146913e25011cd11a1a012";
+      inputs."flake-utils".follows = "utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nicks_nextcloud_integrations.url = "git+https://git.nickiel.net/Nickiel/nicks_nextcloud_integrations.git";
     ewwtilities.url = "git+https://git.nickiel.net/Nickiel/Ewwtilities.git";
@@ -48,6 +53,7 @@
     self,
     nixpkgs,
     nixpkgs-stable,
+    headscale,
     home-manager,
     ewwtilities,
     kmonad,
@@ -73,7 +79,7 @@
         Alaska = lib.nixosSystem {
           inherit system;
           specialArgs = { 
-            inherit user inputs;
+            inherit user headscale inputs;
           };
 
           modules = [

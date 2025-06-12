@@ -1,5 +1,5 @@
 
-{ config, lib, pkgs, headscale, ... }:
+{ config, lib, pkgs, ... }:
 
 
 {

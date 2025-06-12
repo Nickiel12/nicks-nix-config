@@ -1,4 +1,4 @@
-{  config, pkgs, headscale, ... }:
+{  config, pkgs, ... }:
 
 let
   tailscale_dns_entries = import ./dns.nix;
@@ -16,7 +16,6 @@ in {
 
   # https://carjorvaz.com/posts/setting-up-headscale-on-nixos/
   services.headscale = {
-    package = headscale.packages.${pkgs.system}.headscale;
     enable = true;
     address = "0.0.0.0";
     port = 8082;
@@ -31,6 +30,12 @@ in {
         sqlite.path = "/var/lib/headscale/db.sqlite";
       };
       dns = {
+        override_local_dns = true;
+        nameservers.global = [
+          "1.1.1.1"
+          "9.9.9.9"
+        ];
+
         base_domain = baseDomain;
         magic_dns = true;
         extra_records = tailscale_dns_entries;

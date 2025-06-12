@@ -226,30 +226,6 @@
         "type": "github"
       }
     },
-    "headscale": {
-      "inputs": {
-        "flake-utils": [
-          "utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1740503902,
-        "narHash": "sha256-CrdMxRAgrDE1lJ3v9AhCN+cKOVqmIVwjE0x+msSVT+c=",
-        "owner": "juanfont",
-        "repo": "headscale",
-        "rev": "ade7f2a2b1795768ce146913e25011cd11a1a012",
-        "type": "github"
-      },
-      "original": {
-        "owner": "juanfont",
-        "repo": "headscale",
-        "rev": "ade7f2a2b1795768ce146913e25011cd11a1a012",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -672,7 +648,6 @@
       "inputs": {
         "atuin": "atuin",
         "ewwtilities": "ewwtilities",
-        "headscale": "headscale",
         "home-manager": "home-manager",
         "kmonad": "kmonad",
         "mcmojave-hyprcursor": "mcmojave-hyprcursor",

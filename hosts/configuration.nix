@@ -34,9 +34,9 @@
       enable = true;
       xkb.layout = "us";
       xkb.options = "caps:super";
-
-      desktopManager.plasma6.enable = true;
     };
+
+    desktopManager.plasma6.enable = true;
 
     displayManager = {
 

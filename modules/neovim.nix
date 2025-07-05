@@ -181,13 +181,13 @@ in
           #  enable = true;
           #   autostart = true;
           # };
-          gopls = {
-            enable = true;
-          };
-          templ = {
-            enable = true;
-            autostart = true;
-          };
+          # gopls = {
+            # enable = true;
+          # };
+          # templ = {
+            # enable = true;
+            # autostart = true;
+          # };
           html.enable = true;
           cssls.enable = true;
         };

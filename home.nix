@@ -58,7 +58,7 @@ let
       pkgs-stable.darktable # RAW processing
       dbeaver-bin   # SQL management tool
       pkgs-stable.dragon        # simple audio player
-                  firefox   # Internet access
+                  brave   # Internet access
                   freerdp   # RDP client
       pkgs-stable.flameshot   # screenshot utility
       pkgs-stable.grim pkgs-stable.slurp pkgs-stable.wl-clipboard  # DIY wayland screenshots

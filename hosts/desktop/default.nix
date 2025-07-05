@@ -38,8 +38,13 @@
     # xrandr for screen information. <connection>: <resolution> <offset>, <next connection>
     # Option "nvidiaXineramaInfoOrder" "DFP-0"
     screenSection = ''
-      Option "metamodes" "DP-4: 2560x1440 +1920+0, DP-2: 1920x1080 +0+360"
+      Option "metamodes" "DP-2: 2560x1440 +1920+0, DP-5: 1920x1080 +0+360"
     '';
+
+    displayManager.setupCommands = ''
+      xrandr --output DP-2 --brightness 0
+    '';
+
   };
   hardware.graphics.enable = true;
 

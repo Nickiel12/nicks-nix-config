@@ -44,12 +44,6 @@
           "/" = {
             root = "/Aurora/StaticSites/iot";
           };
-          "/groovy_green_machine" = {
-            proxyPass = "http://10.0.184/";
-            extraConfig = ''
-              rewrite ^/groovy_green_machine(/.*)$ $1 break;
-            '';
-          };
         };
       };
 
@@ -105,23 +99,6 @@
           '';
         };
 
-      };
-
-      "kinggeorge.printers.nickiel.net" = {
-        locations."/" = {
-          proxyPass = "http://10.0.0.59/";
-          proxyWebsockets = true;
-          extraConfig = ''
-            proxy_hide_header X-Frame-Options;
-            add_header 'Referrer-Policy' 'origin-when-cross-origin';
-            add_header X-Content-Type-Options nosniff;
-            add_header X-Frame-Options "";
-          '';
-        };
-        locations."/webcam" = {
-          proxyPass = "http://10.0.0.59:8080/?action=stream";
-          proxyWebsockets = true;
-        };
       };
 
       "printers.nickiel.net" = {

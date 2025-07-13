@@ -101,7 +101,6 @@ in
         ./modules/git.nix
         ./modules/neovim.nix
         ./modules/tmux.nix
-        ./modules/wezterm.nix
         ./modules/xdg.nix
         ./modules/yazi.nix
         ./modules/zsh.nix

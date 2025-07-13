@@ -12,7 +12,7 @@
       sidebar-mode = true;
       cycle = true;
       show-icons = true;
-      terminal = "wezterm";
+      terminal = "kitty";
 
       lines = 7;
     };

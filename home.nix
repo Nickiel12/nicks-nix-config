@@ -1,5 +1,5 @@
 
-{ inputs, config, osConfig, pkgs, pkgs-stable, ewwtilities, atuin, user, ... }:
+{ inputs, config, osConfig, pkgs, pkgs-stable, ewwtilities, user, ... }:
 
 let
     moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
@@ -19,7 +19,7 @@ let
      install_packages = with pkgs; [
     # (pkgs.callPackage ./modules/minecraft-bedrock/minecraft-bedrock-server.nix {}) # the possible minecraft-bedrock-server package for testing
       # utilities
-      atuin.packages.${pkgs.system}.atuin
+      atuin
       bat      # cat with wings (better cat)
       bottom   # system monitor
       du-dust  # directory disk-space analyzer

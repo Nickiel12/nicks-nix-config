@@ -30,11 +30,6 @@
     };
     kmonad.url = "github:kmonad/kmonad?dir=nix";
 
-    atuin = {
-      url = "github:atuinsh/atuin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nicks_nextcloud_integrations.url = "git+https://git.nickiel.net/Nickiel/nicks_nextcloud_integrations.git";
     ewwtilities.url = "git+https://git.nickiel.net/Nickiel/Ewwtilities.git";
 
@@ -51,7 +46,6 @@
     home-manager,
     ewwtilities,
     kmonad,
-    atuin,
     nixos-wsl,
     zls,
     ... 
@@ -87,7 +81,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit inputs user ewwtilities atuin pkgs-stable zls;
+                  inherit inputs user ewwtilities pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [
@@ -130,7 +124,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit inputs user ewwtilities atuin pkgs-stable zls;
+                  inherit inputs user ewwtilities pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [
@@ -164,7 +158,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit inputs user ewwtilities atuin pkgs-stable zls;
+                  inherit inputs user ewwtilities pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [
@@ -196,7 +190,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit inputs user ewwtilities atuin pkgs-stable zls;
+                  inherit inputs user ewwtilities pkgs-stable zls;
                 };
                 users.${user} = {
                   imports = [

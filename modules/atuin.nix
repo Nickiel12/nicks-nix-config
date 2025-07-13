@@ -1,4 +1,4 @@
-{osConfig, config, pkgs, atuin, ...}:
+{osConfig, config, pkgs, ...}:
 
 let
   hostname = osConfig.networking.hostName;
@@ -6,7 +6,6 @@ in
 {
   programs.atuin = {
     enable = true;
-    package = atuin.packages.${pkgs.system}.atuin;
     enableZshIntegration = true;
     flags = [
 

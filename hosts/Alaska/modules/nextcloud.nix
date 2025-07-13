@@ -36,7 +36,7 @@
       default_phone_region = "US";
       overwriteProtocol = "https";
       extraTrustedDomains = [
-        "10.0.0.183"
+        "10.0.1.183"
         "files.nickiel.net"
       ];
       trustedProxies = [

@@ -11,7 +11,7 @@
     alwaysKeepRunning = true;
     resolveLocalQueries = true;
     settings = {
-      listen-address = "::1,127.0.0.1,10.0.0.183";
+      listen-address = "::1,127.0.0.1,10.0.1.183";
       port = 53;
       # Manual expection for frustrating windows devices to point at headscale server
       address = [ 

@@ -15,10 +15,10 @@
       allowedTCPPorts = [ 11100 ];
     };
 
-    nameservers = ["10.0.0.183" "1.1.1.1"];
+    nameservers = ["10.0.1.183" "1.1.1.1"];
 
     hosts = {
-      "10.0.0.183" = [ "headscale.nickiel.net" ];
+      "10.0.1.183" = [ "headscale.nickiel.net" ];
       "100.64.0.1" = [ "vaultwarden.nickiel.net" "files.nickiel.net" "git.nickiel.net" "nickiel.net" "jellyfin.nickiel.net" ];
     };
   };

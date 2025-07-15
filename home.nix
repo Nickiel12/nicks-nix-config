@@ -130,6 +130,7 @@ in
 
     sessionVariables = {
       CARGO_TARGET_DIR = "$HOME/.target/";
+      QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
     };
 
 

@@ -11,6 +11,11 @@
     "jellyfin.nickiel.net" ];
   };
 
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = [ "nixolas" ];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
   hardware.graphics.enable = true;
 
   environment.systemPackages = [

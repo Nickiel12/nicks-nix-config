@@ -81,6 +81,8 @@ let
       libsForQt5.kio    # extra file-type click support
       libsForQt5.kio-extras # even more extra file-type click support
       # libsForQt5.soundkonverter # audio cd ripping
+      # KDE tiling windows
+      kdePackages.krohnkite
 
       # Kdenlive and deps
       pkgs-stable.libsForQt5.kdenlive  

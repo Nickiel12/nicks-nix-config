@@ -123,6 +123,14 @@ in
 
   home = {
 
+    pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true;
+      name = "McMojave";
+      size = 48;
+      package = inputs.mcmojave-xcursor.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    };
+
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
     username = user;

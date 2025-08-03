@@ -5,7 +5,7 @@
     utils.url = "github:numtide/flake-utils";
     nixvim.url = "github:nix-community/nixvim";
     zls = {
-      url = "github:zigtools/zls";
+      url = "github:zigtools/zls/7485feeeda45d1ad09422ae83af73307ab9e6c9e";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs = {

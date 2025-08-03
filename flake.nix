@@ -4,10 +4,6 @@
   inputs = {
     utils.url = "github:numtide/flake-utils";
     nixvim.url = "github:nix-community/nixvim";
-    zls = {
-      url = "github:zigtools/zls/7485feeeda45d1ad09422ae83af73307ab9e6c9e";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
       # url = "github:NixOS/nixpkgs/b477b25191fc94ce764428520b83b6b64366e3c8";
@@ -47,7 +43,6 @@
     ewwtilities,
     kmonad,
     nixos-wsl,
-    zls,
     ... 
   } @ inputs:
     let
@@ -81,7 +76,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit inputs user ewwtilities pkgs-stable zls;
+                  inherit inputs user ewwtilities pkgs-stable;
                 };
                 users.${user} = {
                   imports = [
@@ -124,7 +119,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit inputs user ewwtilities pkgs-stable zls;
+                  inherit inputs user ewwtilities pkgs-stable;
                 };
                 users.${user} = {
                   imports = [
@@ -158,7 +153,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit inputs user ewwtilities pkgs-stable zls;
+                  inherit inputs user ewwtilities pkgs-stable;
                 };
                 users.${user} = {
                   imports = [
@@ -190,7 +185,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { 
-                  inherit inputs user ewwtilities pkgs-stable zls;
+                  inherit inputs user ewwtilities pkgs-stable;
                 };
                 users.${user} = {
                   imports = [

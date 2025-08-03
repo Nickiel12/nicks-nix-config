@@ -1,4 +1,4 @@
-{ pkgs, lib, zls, ... }:
+{ pkgs, lib, ... }:
 let
 in
 {
@@ -175,7 +175,7 @@ in
         servers = {
           zls = {
             enable = true;
-            package = zls.packages.${pkgs.system}.zls;
+            # package = zls.packages.${pkgs.system}.zls;
           };
           # gleam = {
           #  enable = true;

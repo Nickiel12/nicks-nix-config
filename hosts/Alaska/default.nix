@@ -13,6 +13,7 @@
     ./modules/forgejo.nix
     ./modules/headscale.nix
     ./modules/home-assistant.nix
+    ./modules/minecraft-with-proxy-chat.nix
     ./modules/msmtp.nix
     ./modules/mosquitto.nix
     ./modules/navidrome.nix

@@ -16,6 +16,7 @@ in
       environment = {
         EULA = "TRUE";
         TYPE = "FABRIC";
+        MEMORY = "3G";
         MODRINTH_PROJECTS = "fabric-api,simple-voice-chat:fabric-1.21.8-2.6.1";
       };
       volumes = [

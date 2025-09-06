@@ -11,7 +11,7 @@ in
   
   programs.zsh = {
     enable = true; # technically also enabled in user shell
-    dotDir = ".config/zsh";
+    dotDir = config.home.homeDirectory + ".config/zsh";
 
     initContent = ''
       pfetch

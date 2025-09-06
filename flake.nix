@@ -82,7 +82,7 @@
                   imports = [
                     (import ./home.nix)
                     # Add nixvim to the homemanager
-                    inputs.nixvim.homeManagerModules.nixvim
+                    inputs.nixvim.homeModules.nixvim
                   ];
                 };
               };
@@ -125,7 +125,7 @@
                   imports = [
                     (import ./home.nix)
                     # Add nixvim to the homemanager
-                    inputs.nixvim.homeManagerModules.nixvim
+                    inputs.nixvim.homeModules.nixvim
                   ];
                 };
               };
@@ -159,7 +159,7 @@
                   imports = [
                     (import ./home.nix)
                     # Add nixvim to the homemanager
-                    inputs.nixvim.homeManagerModules.nixvim
+                    inputs.nixvim.homeModules.nixvim
                   ];
                 };
               };
@@ -191,7 +191,7 @@
                   imports = [
                     (import ./home.nix)
                     # Add nixvim to the homemanager
-                    inputs.nixvim.homeManagerModules.nixvim
+                    inputs.nixvim.homeModules.nixvim
                   ];
                 };
               };

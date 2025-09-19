@@ -17,7 +17,7 @@ in
         EULA = "TRUE";
         TYPE = "FABRIC";
         MEMORY = "3G";
-        MODRINTH_PROJECTS = "fabric-api,simple-voice-chat:fabric-1.21.8-2.6.1";
+        MODRINTH_PROJECTS = "fabric-api,simple-voice-chat:fabric-1.21.8-2.6.1,lithium:mc1.21.8-0.18.0-fabric,ferrite-core:8.0.0-fabric";
       };
       volumes = [
         "/home/minecraft:/data"

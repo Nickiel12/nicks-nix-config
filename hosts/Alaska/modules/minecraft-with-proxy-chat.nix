@@ -17,6 +17,8 @@ in
         EULA = "TRUE";
         TYPE = "FABRIC";
         MEMORY = "3G";
+        ENABLE_WHITELIST = "TRUE";
+        WHITELIST = "Nickiel,KikiLuve,MadamePotaytoe";
         MODRINTH_PROJECTS = "fabric-api,simple-voice-chat:fabric-1.21.8-2.6.1,lithium:mc1.21.8-0.18.0-fabric,ferrite-core:8.0.0-fabric";
       };
       volumes = [

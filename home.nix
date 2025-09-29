@@ -76,10 +76,10 @@ let
       # pkgs-stable.vscodium      # when vim and emacs (somehow) isn't enough
                   obs-studio    # for video recording and virtual camera
 
-      libsForQt5.kate   # kate/kwrite
-      libsForQt5.ark    # kde archive manager
-      libsForQt5.kio    # extra file-type click support
-      libsForQt5.kio-extras # even more extra file-type click support
+      kdePackages.kate   # kate/kwrite
+      kdePackages.ark    # kde archive manager
+      kdePackages.kio    # extra file-type click support
+      kdePackages.kio-extras # even more extra file-type click support
       # libsForQt5.soundkonverter # audio cd ripping
       # KDE tiling windows
       kdePackages.krohnkite

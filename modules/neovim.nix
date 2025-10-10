@@ -262,7 +262,7 @@ in
       cmp-nvim-lua.enable = true;
       cmp-path.enable = true;
 
-      presence-nvim.enable = true;
+      presence.enable = true;
       nix.enable = true;
       airline = {
         enable = true;

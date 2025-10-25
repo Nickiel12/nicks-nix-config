@@ -51,6 +51,13 @@
       save_old_count = 5;
     };
 
+    navidrome = {
+      enable = true;
+      backup_dir = "/Aurora/Navidrome/Music";
+    };
+
+
+
     nextcloud = {
       enable = true;
       root_dir = /Aurora/nextcloud;

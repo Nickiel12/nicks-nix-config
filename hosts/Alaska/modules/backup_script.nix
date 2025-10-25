@@ -62,6 +62,17 @@ in
         '';
       };
     };
+    navidrome = {
+      enable = lib.mkEnableOption (lib.mdDoc "Back up navidrome media files");
+
+      backup_dir = lib.mkOption {
+        type = lib.types.path;
+        default = "/Aurora/Navidrome/Music";
+        description = lib.mdDoc ''
+          The path to the folder of navidrome to back up
+        '';
+      };
+    };
 
     samba_shares = {
       enable = lib.mkEnableOption (lib.mdDoc "Back up Samba shared folders");
@@ -209,6 +220,14 @@ in
 
           fi
           #----- END VAULTWARDEN
+
+          #----- BEGIN NAVIDROME
+          if [ "${builtins.toString cfg.navidrome.enable}" = "1" ]; then
+            rsync -av ${cfg.navidrome.backup_dir} ${builtins.toString cfg.tmp_mount_point}
+
+          fi
+
+          #----- END NAVIDROME
 
           echo "Unmounting the external drive"
           umount ${builtins.toString cfg.tmp_mount_point}

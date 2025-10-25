@@ -19,9 +19,6 @@ in
       mapleader = " ";
     };
 
-    filetype.extension = {
-      templ = "templ";
-    };
 
     opts = {
       autoindent = true;
@@ -129,11 +126,13 @@ in
         key = "K";
         action = ":m '<-2<CR>gv=gv";
       }
+        # Indent visual selection without deselecting
       {
         mode = "v";
         key = ">";
         action = ">gv";
       }
+        # Dedent visual selection without deselecing
       {
         mode = "v";
         key = "<";
@@ -166,7 +165,7 @@ in
       zig = {
         enable = true;
         settings = {
-          fmt_autosave = 0;
+          fmt_autosave = 1;
         };
       };
 
@@ -177,16 +176,8 @@ in
             enable = true;
             # package = zls.packages.${pkgs.system}.zls;
           };
-          # gleam = {
-          #  enable = true;
-          #   autostart = true;
-          # };
           # gopls = {
             # enable = true;
-          # };
-          # templ = {
-            # enable = true;
-            # autostart = true;
           # };
           html.enable = true;
           cssls.enable = true;
@@ -200,7 +191,7 @@ in
 
       # ts-autotag = {
         # enable = true;
-        # filetypes = [ "html" "javascript" "typescript" "javascriptreact" "typescriptreact" "svelte" "vue" "tsx" "jsx" "rescript" "xml" "php" "markdown" "astro" "glimmer" "handlebars" "hbs" "templ" ];
+        # filetypes = [ "html" "javascript" "typescript" "javascriptreact" "typescriptreact" "svelte" "vue" "tsx" "jsx" "rescript" "xml" "php" "markdown" "astro" "glimmer" "handlebars" "hbs"];
       # };
       nvim-autopairs = {
         enable = true;
@@ -215,7 +206,6 @@ in
           ensureInstalled = [
             "rust"
             "toml"
-            "templ"
             "go"
             "html"
             "json"
@@ -241,15 +231,6 @@ in
           block = "<C-'>";
         };
       };
-
-      floaterm = {
-        enable = true;
-        settings = {
-          position = "auto";
-          keymap_toggle = "<leader>t";
-        };
-      };
-
 
       telescope.enable = true;
       rustaceanvim.enable = true;

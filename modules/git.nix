@@ -4,9 +4,9 @@
   programs.git = {
     enable = true;
     package = pkgs.gitAndTools.gitFull;
-    settings = {
-      user.name = "Nickiel12";
-      user.email = "nickiel@nickiel.net";
+    userName = "Nickiel12";
+    userEmail = "nickiel@nickiel.net";
+    extraConfig = {
       pull.rebase = true;
       branch.sort = "-committerdate";
       column.ui = "auto";

@@ -3,8 +3,9 @@
 {
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud32;
+    package = pkgs.nextcloud31;
     enableImagemagick = true;
+    nginx.recommendedHttpHeaders = true;
     https = true;
     hostName = "files.nickiel.net";
     home = "/Aurora/nextcloud";

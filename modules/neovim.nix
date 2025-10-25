@@ -218,10 +218,8 @@ in
       treesitter-refactor = {
         enable = true;
         #highlightCurrentScope.enable = true;
-        settings = {
-          navigation.enable = true;
-          smartRename.enable = true;
-        };
+        navigation.enable = true;
+        smartRename.enable = true;
       };
 
       comment = {

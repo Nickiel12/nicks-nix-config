@@ -5,8 +5,8 @@
     enable = true;
     package = pkgs.gitFull;
     settings = {
-      userName = "Nickiel12";
-      userEmail = "nickiel@nickiel.net";
+      user.name = "Nickiel12";
+      user.email = "nickiel@nickiel.net";
       pull.rebase = true;
       branch.sort = "-committerdate";
       column.ui = "auto";

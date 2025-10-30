@@ -22,7 +22,7 @@ let
       atuin
       bat      # cat with wings (better cat)
       bottom   # system monitor
-      du-dust  # directory disk-space analyzer
+      dust  # directory disk-space analyzer
       ffmpeg-full  # ffmpeg for video/audio rendering
       ewwtilities.packages.${pkgs.system}.ewwtilities
       pkgs-stable.fontpreview # utility to preview fonts

@@ -3,7 +3,7 @@
 {
   programs.git = {
     enable = true;
-    package = pkgs.gitAndTools.gitFull;
+    package = pkgs.gitFull;
     userName = "Nickiel12";
     userEmail = "nickiel@nickiel.net";
     extraConfig = {

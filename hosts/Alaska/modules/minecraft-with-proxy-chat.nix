@@ -19,7 +19,7 @@ in
         MEMORY = "3G";
         ENABLE_WHITELIST = "TRUE";
         WHITELIST = "Nickiel,KikiLuve,MadamePotaytoe,blueesskyyy";
-        MODRINTH_PROJECTS = "fabric-api,simple-voice-chat:fabric-1.21.10-2.6.5,lithium:mc1.21.10-0.20.0-fabric,ferrite-core:CtMpt7Jr";
+        MODRINTH_PROJECTS = "fabric-api,simple-voice-chat:fabric-1.21.10-2.6.5,lithium:mc1.21.10-0.20.0-fabric,ferrite-core:CtMpt7Jr,death_coordinates:NmiWRO8A";
       };
       volumes = [
         "/home/minecraft:/data"

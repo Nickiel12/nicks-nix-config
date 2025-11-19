@@ -9,7 +9,7 @@ in
     # Set to sqlite to enable the default backups
     dbBackend = "sqlite";
     backupDir = "/Aurora/Backups/Vaultwarden";
-    environmentFile = "/home/nixolas/.passfiles/vaultwarden.env";
+    # environmentFile = "/home/nixolas/.passfiles/vaultwarden.env";
     # https://github.com/dani-garcia/vaultwarden/blob/main/.env.template
     config = {
       DOMAIN = "https://vaultwarden.nickiel.net";
@@ -20,6 +20,8 @@ in
       LOG_LEVEL = "trace";
       SIGNUPS_VERIFY = true;
       SIGNUPS_ALLOWED = false;
+      
+      DATA_FOLDER="/Aurora/VaultWarden";
 
       # You can enable this in the admin portal
       # USE_SENDMAIL = true; # is broken rn :`(

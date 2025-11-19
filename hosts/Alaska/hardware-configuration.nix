@@ -14,14 +14,15 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b3dc488e-6d1a-42de-8122-cafe04642abb";
+    { device = "/dev/disk/by-uuid/244b1540-d018-4da6-b7eb-57aa391f5668";
       fsType = "ext4";
     };
 
-  fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/CD19-925B";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/802B-FC66";
+    fsType = "vfat";
+    options = [ "fmask=0077" "dmask=0077" ];
+   };
 
   fileSystems."/Aurora" = 
     { device = "/dev/disk/by-uuid/9e84f746-f128-4682-896b-0857e77182fd";
@@ -29,7 +30,7 @@
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/e45edaf8-78f9-4a67-a2ec-97d45a3c7311"; }
+    [ { device = "/dev/disk/by-uuid/626292ef-d7b7-4960-921b-f093ec0cfb71"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

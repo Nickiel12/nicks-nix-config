@@ -24,7 +24,7 @@ let
       bottom   # system monitor
       dust  # directory disk-space analyzer
       ffmpeg-full  # ffmpeg for video/audio rendering
-      ewwtilities.packages.${pkgs.system}.ewwtilities
+      ewwtilities.packages.${pkgs.stdenv.hostPlatform.system}.ewwtilities
       pkgs-stable.fontpreview # utility to preview fonts
       gitui    # command line git tui
       hugo

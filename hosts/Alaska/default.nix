@@ -32,12 +32,18 @@
   programs.alaska_backup_script = {
     enable = true;
     run_nightly = false;
-    tmp_mount_point = /Aurora/backup_drive_mount_point;
+    tmp_mount_point = "/Aurora/backup_drive_mount_point";
     backup1_drive_label = "AlaskaBackup";
 
     vaultwarden = {
       enable = true;
       backup_dir = "/Aurora/Backups/Vaultwarden";
+      docker_dir = "/Aurora/VaultWarden";
+    };
+
+    minecraft = {
+      enable = true;
+      backup_dir = "/Aurora/Backups/Minecraft";
     };
 
     samba_shares = {

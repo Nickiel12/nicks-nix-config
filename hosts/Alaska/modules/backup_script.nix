@@ -61,6 +61,13 @@ in
           The path where vaultwarden backups are put
         '';
       };
+      docker_dir = lib.mkOption {
+        type = lib.types.path;
+        default = "/Aurora/VaultWarden";
+        description = lib.mdDoc ''
+          The path where vaultwarden lives
+        '';
+      };
     };
     navidrome = {
       enable = lib.mkEnableOption (lib.mdDoc "Back up navidrome media files");
@@ -70,6 +77,18 @@ in
         default = "/Aurora/Navidrome/Music";
         description = lib.mdDoc ''
           The path to the folder of navidrome to back up
+        '';
+      };
+    };
+
+    minecraft = {
+      enable = lib.mkEnableOption (lib.mdDoc "Back up minecraft backup files");
+
+      backup_dir = lib.mkOption {
+        type = lib.types.path;
+        default = "/Aurora/Backups/Minecraft";
+        description = lib.mdDoc ''
+          The path to the folder where minecraft server backup are stored
         '';
       };
     };
@@ -152,9 +171,11 @@ in
         rsync
         mount 
         umount
+        sqlite
       ];
       script = ''
-        # ${pkgs.lib.makeBinPath [ pkgs.screen ]}/screen -dmS AlaskaBackupJob \
+        # not currently using either screen or bash so we can have systemctl output
+        # ${pkgs.lib.makeBinPath [ pkgs.screen ]}/screen -dmS AlaskaBackupJob \ 
         # ${pkgs.lib.makeBinPath [ pkgs.bash ]}/bash -c "
           echo "Created the temporary mount point if it does not exit"
           mkdir -p ${builtins.toString cfg.tmp_mount_point}
@@ -175,7 +196,7 @@ in
 
             echo "Backing up the nextcloud database"
             mkdir -p ${builtins.toString cfg.tmp_mount_point}/nextcloud/db_backups
-            password='cat ${builtins.toString cfg.nextcloud.db_passfile}'
+            password='cat ${builtins.toString cfg.nextcloud.db_passfile}'back
             PGPASSWORD="$password" pg_dump \
               ${builtins.toString cfg.nextcloud.db_name} -h ${builtins.toString cfg.nextcloud.db_server} \
               -U ${builtins.toString cfg.nextcloud.db_user} \
@@ -216,6 +237,14 @@ in
 
           #----- BEGIN VAULTWARDEN
           if [ "${builtins.toString cfg.vaultwarden.enable}" = "1" ]; then
+            # Create proper sqlite backups of the vaultwarden files
+            # using the sqlite .backup command consolidates the changes in the shm and WAL 
+            # files into the backup, so those files don't need to be saved
+            sqlite3 ${cfg.vaultwarden.docker_dir}/db.sqlite3 ".backup ${cfg.vaultwarden.backup_dir}/db_backup.sqlite3"
+            # copy all non-sqlite files to the backup dir
+            rsync -av ${cfg.vaultwarden.docker_dir}/ --exclude="*.sqlite3*" ${builtins.toString cfg.vaultwarden.backup_dir}
+
+            # copy backup files to the external drive
             rsync -av ${cfg.vaultwarden.backup_dir} ${builtins.toString cfg.tmp_mount_point}
 
           fi
@@ -224,10 +253,14 @@ in
           #----- BEGIN NAVIDROME
           if [ "${builtins.toString cfg.navidrome.enable}" = "1" ]; then
             rsync -av ${cfg.navidrome.backup_dir} ${builtins.toString cfg.tmp_mount_point}
-
           fi
-
           #----- END NAVIDROME
+
+          #----- BEGIN MINECRAFT
+          if [ "${builtins.toString cfg.minecraft.enable}" = "1" ]; then
+            rsync -av ${cfg.minecraft.backup_dir} ${builtins.toString cfg.tmp_mount_point}
+          fi
+          #----- END MINECRAFT
 
           echo "Unmounting the external drive"
           umount ${builtins.toString cfg.tmp_mount_point}

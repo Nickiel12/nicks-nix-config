@@ -27,16 +27,17 @@ in
     };
     minecraft-backups = {
       autoStart = true;
-      image = "itzg:docker-mc-backup";
+      image = "itzg/mc-backup";
       environment = {
         BACKUP_INTERVAL = "24h";
-        BACKUP_ON_STARTUP = "false";
-        INITIAL_DELAY = "5h";
+        BACKUP_ON_STARTUP = "TRUE";
+        # INITIAL_DELAY = "5h";
       };
       volumes = [
         "/home/nixolas/minecraft:/data:ro"
-        "/Aurora/Backups/Minecraft/backups"
+        "/Aurora/Backups/Minecraft:/backups"
       ];
+      extraOptions = [ "--network=container:minecraft-server" ];
     };
   };
 }

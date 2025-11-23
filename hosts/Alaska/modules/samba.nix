@@ -3,6 +3,7 @@
 let 
 
 in {
+  # https://askubuntu.com/questions/182131/samba-does-not-accept-my-password
   services.samba = {
     enable = true;
     openFirewall = true;

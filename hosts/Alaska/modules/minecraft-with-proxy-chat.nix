@@ -18,7 +18,7 @@ in
         TYPE = "FABRIC";
         MEMORY = "3G";
         ENABLE_WHITELIST = "TRUE";
-        WHITELIST = "Nickiel,KikiLuve,MadamePotaytoe,blueesskyyy";
+        WHITELIST = "Nickiel,KikiLuve,MadamePotaytoe,blueesskyyy,Ahanagod";
         MODRINTH_PROJECTS = "fabric-api,simple-voice-chat:fabric-1.21.10-2.6.5,lithium:mc1.21.10-0.20.0-fabric,ferrite-core:CtMpt7Jr,death_coordinates:d4RzEbQZ";
       };
       volumes = [
@@ -26,6 +26,7 @@ in
       ];
     };
     minecraft-backups = {
+      dependsOn = [ "minecraft-server" ];
       autoStart = true;
       image = "itzg/mc-backup";
       environment = {

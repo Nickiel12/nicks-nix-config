@@ -258,7 +258,7 @@ in
 
           #----- BEGIN MINECRAFT
           if [ "${builtins.toString cfg.minecraft.enable}" = "1" ]; then
-            rsync -av ${cfg.minecraft.backup_dir} ${builtins.toString cfg.tmp_mount_point}
+            rsync --delete -av ${cfg.minecraft.backup_dir} ${builtins.toString cfg.tmp_mount_point}
           fi
           #----- END MINECRAFT
 

@@ -74,7 +74,7 @@
 
       "bluey.printers.nickiel.net" = {
         locations."/" = {
-          proxyPass = "http://100.64.0.8/";
+          proxyPass = "http://100.64.0.5/";
           proxyWebsockets = true;
           extraConfig = ''
             proxy_hide_header X-Frame-Options;
@@ -88,7 +88,7 @@
 
       "bingo.printers.nickiel.net" = {
         locations."/" = {
-          proxyPass = "http://100.64.0.10/";
+          proxyPass = "http://100.64.0.6/";
           proxyWebsockets = true;
           extraConfig = ''
             proxy_hide_header X-Frame-Options;

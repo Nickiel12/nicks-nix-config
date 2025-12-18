@@ -16,6 +16,7 @@ in
       environment = {
         EULA = "TRUE";
         TYPE = "FABRIC";
+        VERSION = "1.21.10";
         MEMORY = "3G";
         ENABLE_WHITELIST = "TRUE";
         WHITELIST = "Nickiel,KikiLuve,MadamePotaytoe,blueesskyyy,Ahanagod";

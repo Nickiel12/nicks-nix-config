@@ -30,6 +30,11 @@
       value = "100.64.0.1";
     }
     {
+      name = "zigbee2mqtt.nickiel.net";
+      type = "A";
+      value = "100.64.0.1";
+    }
+    {
       name = "navidrome.nickiel.net";
       type = "A";
       value = "100.64.0.1";

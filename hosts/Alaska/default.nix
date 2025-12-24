@@ -13,6 +13,7 @@
     ./modules/forgejo.nix
     ./modules/headscale.nix
     ./modules/home-assistant.nix
+    ./modules/zigbee2mqtt.nix
     ./modules/minecraft-with-proxy-chat.nix
     ./modules/msmtp.nix
     ./modules/mosquitto.nix

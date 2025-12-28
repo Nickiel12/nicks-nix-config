@@ -13,7 +13,6 @@
     ./modules/forgejo.nix
     ./modules/headscale.nix
     ./modules/home-assistant.nix
-    ./modules/zigbee2mqtt.nix
     ./modules/minecraft-with-proxy-chat.nix
     ./modules/msmtp.nix
     ./modules/mosquitto.nix
@@ -21,6 +20,7 @@
     ./modules/nginx.nix
     ./modules/nextcloud.nix
     ./modules/nicks_nextcould_integrations.nix
+    ./modules/planka.nix
     ./modules/postgres.nix
     ./modules/protonvpn.nix
     ./modules/samba.nix
@@ -28,6 +28,7 @@
     ./modules/tailscale.nix
     ./modules/vaultwarden.nix
     ./modules/vsftpd.nix
+    ./modules/zigbee2mqtt.nix
   ];
 
   programs.alaska_backup_script = {

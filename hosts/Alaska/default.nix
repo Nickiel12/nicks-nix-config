@@ -24,7 +24,7 @@
     ./modules/postgres.nix
     ./modules/protonvpn.nix
     ./modules/samba.nix
-    ./modules/spoolman.nix
+    # ./modules/spoolman.nix
     ./modules/tailscale.nix
     ./modules/vaultwarden.nix
     ./modules/vsftpd.nix

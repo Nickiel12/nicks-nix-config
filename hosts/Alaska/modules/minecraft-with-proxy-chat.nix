@@ -16,11 +16,11 @@ in
       environment = {
         EULA = "TRUE";
         TYPE = "FABRIC";
-        VERSION = "1.21.10";
+        VERSION = "1.21.11";
         MEMORY = "3G";
         ENABLE_WHITELIST = "TRUE";
-        WHITELIST = "Nickiel,KikiLuve,MadamePotaytoe,blueesskyyy,Ahanagod";
-        MODRINTH_PROJECTS = "fabric-api,simple-voice-chat:fabric-1.21.10-2.6.5,lithium:mc1.21.10-0.20.0-fabric,ferrite-core:CtMpt7Jr,death_coordinates:d4RzEbQZ";
+        WHITELIST = "Nickiel,SneakyLilBean,MadamePotaytoe,blueesskyyy,Ahanagod,backrapier25";
+        MODRINTH_PROJECTS = "fabric-api,simple-voice-chat:fabric-1.21.11-2.6.11,lithium:mc1.21.11-0.21.2-fabric,ferrite-core:8.0.3-fabric,death_coordinates:m1I6Qblh,disconnect-packet-fix:2.0.0-fabric";
       };
       volumes = [
         "/home/nixolas/minecraft:/data"

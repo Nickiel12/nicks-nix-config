@@ -24,15 +24,11 @@ let
       bottom   # system monitor
       dust  # directory disk-space analyzer
       ffmpeg-full  # ffmpeg for video/audio rendering
-      ewwtilities.packages.${pkgs.stdenv.hostPlatform.system}.ewwtilities
-      pkgs-stable.fontpreview # utility to preview fonts
       gitui    # command line git tui
       hugo
       pkgs-stable.pandoc   # utility for converting between document types
-      pkgs-stable.qmk      # QMK utility for compiling qmk firmware
       nextcloud-client     # Nextcloud private syncing
       hddtemp
-      freecad-wayland
 
       # pkgs-stable.texlive.combined.scheme-medium # removed LaTex until needed
     
@@ -40,7 +36,7 @@ let
       eza
       fd
       neofetch
-      nftables
+      # nftables
       pfetch
       rmtrash
       testdisk # file recovery https://itsfoss.com/recover-deleted-files-linux/
@@ -53,6 +49,12 @@ let
 
       inputs.mcmojave-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.mcmojave-xcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
+
+      pkgs-stable.qmk      # QMK utility for compiling qmk firmware
+
+      freecad-wayland
+      ewwtilities.packages.${pkgs.stdenv.hostPlatform.system}.ewwtilities
+      pkgs-stable.fontpreview # utility to preview fonts
 
       # Gui application
       pkgs-stable.darktable # RAW processing

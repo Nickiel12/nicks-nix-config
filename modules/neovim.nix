@@ -200,7 +200,7 @@ in
 
       treesitter = {
         enable = true;
-        folding = true;
+        folding.enable = true;
         settings = {
           indent.enabled = true;
           ensureInstalled = [

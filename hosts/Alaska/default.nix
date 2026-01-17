@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ./modules/dnsmasq.nix
     ./modules/firewall.nix
+    ./modules/firefly.nix
     ./modules/forgejo.nix
     ./modules/headscale.nix
     ./modules/home-assistant.nix

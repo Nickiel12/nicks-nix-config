@@ -215,13 +215,6 @@ in
         };
       };
       rainbow-delimiters.enable = true;
-      treesitter-refactor = {
-        enable = true;
-        settings = {
-          navigation.enable = true;
-          smartRename.enable = true;
-        };
-      };
 
       comment = {
         enable = true;
@@ -258,7 +251,6 @@ in
           monokai-pro-nvim
           nvim-lspconfig
           vim-vsnip
-          hop-nvim
       ];
   };
 }

@@ -114,16 +114,6 @@ cmp.setup({
   },
 })
 
--- https://github.com/phaazon/hop.nvim/wiki/Advanced-Hop
-local hop = require('hop')
-hop.setup {
-  keys = 'etovxqpdygfblzhckisuran',
-}
-local directions = require('hop.hint').HintDirection
-vim.keymap.set('', '<leader>ff', function()
-    hop.hint_patterns({ multi_windows = true, current_line_only = false })
-end, {remap=true})
-
 vim.opt.scrolloff = 8;
 
 

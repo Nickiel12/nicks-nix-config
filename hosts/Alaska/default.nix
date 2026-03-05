@@ -28,7 +28,7 @@
     # ./modules/spoolman.nix
     ./modules/tailscale.nix
     ./modules/vaultwarden.nix
-    ./modules/vsftpd.nix
+    # ./modules/vsftpd.nix
     ./modules/zigbee2mqtt.nix
   ];
 

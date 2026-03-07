@@ -52,27 +52,12 @@
 
     # Printers
     {
-      name = "printers.nickiel.net";
-      type = "A";
-      value = "100.64.0.1";
-    }
-    {
-      name = "spoolman.nickiel.net";
-      type = "A";
-      value = "100.64.0.1";
-    }
-    {
-      name = "bluey.printers.nickiel.net";
+      name = "muffin.printers.nickiel.net";
       type = "A";
       value = "100.64.0.1";
     }
     {
       name = "bingo.printers.nickiel.net";
-      type = "A";
-      value = "100.64.0.1";
-    }
-    {
-      name = "kinggeorge.printers.nickiel.net";
       type = "A";
       value = "100.64.0.1";
     }

@@ -72,9 +72,9 @@
         root = "/Aurora/StaticSites/static_pages/public";
       };
 
-      "bluey.printers.nickiel.net" = {
+      "muffin.printers.nickiel.net" = {
         locations."/" = {
-          proxyPass = "http://100.64.0.5/";
+          proxyPass = "http://100.64.0.10/";
           proxyWebsockets = true;
           extraConfig = ''
             proxy_hide_header X-Frame-Options;
@@ -88,7 +88,7 @@
 
       "bingo.printers.nickiel.net" = {
         locations."/" = {
-          proxyPass = "http://100.64.0.6/";
+          proxyPass = "http://100.64.0.9/";
           proxyWebsockets = true;
           extraConfig = ''
             proxy_hide_header X-Frame-Options;
@@ -99,12 +99,6 @@
           '';
         };
 
-      };
-
-      "printers.nickiel.net" = {
-        # forceSSL = true;
-        # enableACME = true;
-        locations."/".root = "/Aurora/StaticSites/printers-static-pages";
       };
 
     };

@@ -35,7 +35,6 @@ let
       # commandline utils
       eza
       fd
-      neofetch
       # nftables
       pfetch
       rmtrash

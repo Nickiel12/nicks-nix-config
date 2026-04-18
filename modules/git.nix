@@ -2,6 +2,7 @@
 
 {
   programs.git = {
+    signing.format = "openpgp";
     enable = true;
     package = pkgs.gitFull;
     settings = {

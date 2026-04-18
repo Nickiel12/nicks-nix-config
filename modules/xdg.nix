@@ -4,6 +4,7 @@
 {
   xdg = {
     userDirs = {
+      setSessionVariables = true;
       enable = true;
       templates = null;
 

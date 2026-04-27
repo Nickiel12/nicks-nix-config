@@ -29,7 +29,7 @@ in
         SPOOLMAN_DB_PORT = "5432";
         SPOOLMAN_DB_NAME = "spoolman";
         SPOOLMAN_DB_USERNAME = "spoolman";
-        SPOOLMAN_DB_PASSWORD_FILE = "/home/app/.local/share/pass_file.txt";
+        SPOOLMAN_DB_PASSWORD = "spoolman_user";
         SPOOLMAN_DIR_LOGS = "/home/app/.local/share/spoolman_data";
         SPOOLMAN_AUTOMATIC_BACKUP = "FALSE";
       };

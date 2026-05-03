@@ -40,15 +40,35 @@ in
     };
   };
 
-  services.nginx.virtualHosts."spoolman.nickiel.net" = {
-    locations."/" = {
-      proxyPass = "http://127.0.0.1:7912";
-      proxyWebsockets = true;
-      extraConfig = ''
-        allow 100.64.0.0/16;
-        allow 127.0.0.1;
-        deny all;
-      '';
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 7912 ];
+  };
+
+  services.nginx.virtualHosts = {
+    "localnetwork-spoolman" = {
+      listen = [ { addr = "10.0.1.183"; port = 7912; } ];
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:7912";
+        proxyWebsockets = true;
+        extraConfig = ''
+          allow 10.0.1.0/16;
+          deny all;
+        '';
+
+      };
+    };
+
+    "spoolman.nickiel.net" = {
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:7912";
+        proxyWebsockets = true;
+        extraConfig = ''
+          allow 100.64.0.0/16;
+          allow 127.0.0.1;
+          deny all;
+        '';
+      };
     };
   };
 }

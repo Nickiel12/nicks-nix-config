@@ -26,6 +26,7 @@
     ./modules/protonvpn.nix
     ./modules/samba.nix
     ./modules/spoolman.nix
+    ./modules/tracefinity.nix
     ./modules/tailscale.nix
     ./modules/vaultwarden.nix
     # ./modules/vsftpd.nix

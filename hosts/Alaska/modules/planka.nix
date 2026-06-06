@@ -3,7 +3,7 @@
 {
   virtualisation.oci-containers.containers.planka = {
     autoStart = true;
-    image = "ghcr.io/plankanban/planka:2.0.0-rc.4";
+    image = "ghcr.io/plankanban/planka:latest";
     volumes = [
       "/Aurora/docker/planka/user_avatars:/app/public/user-avatars"
       "/Aurora/docker/planka/project_background_images:/app/public/background-images"

@@ -8,6 +8,7 @@
     ./modules/backup_script.nix
     ./configuration.nix
     ./hardware-configuration.nix
+    ./modules/esphome.nix
     ./modules/dnsmasq.nix
     ./modules/firewall.nix
     ./modules/firefly.nix

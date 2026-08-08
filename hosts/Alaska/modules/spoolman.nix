@@ -7,6 +7,7 @@ in
     spoolman = {
       autoStart = true;
       image = "ghcr.io/donkie/spoolman:latest";
+      pull = "always";
       entrypoint = "uvicorn";
       cmd = [
         "spoolman.main:app"

@@ -12,6 +12,7 @@
       TZ = "America/Los_Angeles";
     };
     image = "ghcr.io/koenkk/zigbee2mqtt";
+    pull = "always";
 
     ports = [
       "8124:8080"

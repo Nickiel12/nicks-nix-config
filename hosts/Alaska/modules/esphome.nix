@@ -6,6 +6,7 @@ in
   virtualisation.oci-containers.containers.esphome = {
     autoStart = true;
     image = "ghcr.io/esphome/esphome:latest";
+    pull = "always";
     volumes = [
       "/Aurora/docker/esphome:/config"
     ];

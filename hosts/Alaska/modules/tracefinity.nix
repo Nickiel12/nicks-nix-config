@@ -7,6 +7,7 @@ in
     tracefinity = {
       autoStart = true;
       image = "ghcr.io/tracefinity/tracefinity";
+      pull = "always";
       ports = [
         "8105:3000"
       ];

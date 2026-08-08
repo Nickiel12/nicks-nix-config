@@ -8,6 +8,7 @@ in
     vaultwarden = {
       autoStart = true;
       image = "vaultwarden/server:latest";
+      pull = "always";
       ports = [
         "8022:8022"
         "3012:3013"

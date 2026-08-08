@@ -10,6 +10,7 @@
       TZ = "America/Los_Angeles";
     };
     image = "ghcr.io/home-assistant/home-assistant:stable";
+    pull = "always";
     ports = [
       "8123:8123"
     ];

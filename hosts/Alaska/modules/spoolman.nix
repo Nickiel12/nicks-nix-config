@@ -26,13 +26,14 @@ in
       environment = { # environment variables
         TZ = "America/Los_Angeles";
         SPOOLMAN_DB_TYPE = "postgres";
-        SPOOLMAN_DB_HOST = "100.64.0.1";
+        SPOOLMAN_DB_HOST = "10.0.1.183";
         SPOOLMAN_DB_PORT = "5432";
         SPOOLMAN_DB_NAME = "spoolman";
         SPOOLMAN_DB_USERNAME = "spoolman";
         SPOOLMAN_DB_PASSWORD = "spoolman_user";
         SPOOLMAN_DIR_LOGS = "/home/app/.local/share/spoolman_data";
         SPOOLMAN_AUTOMATIC_BACKUP = "FALSE";
+        SPOOLMAN_CORS_ORIGIN="http://10.0.1.183:7912";
       };
       extraOptions = [
         "--network=host"
